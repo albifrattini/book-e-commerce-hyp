@@ -8,6 +8,6 @@
 
 # Node modules #
 ################
-node-modules/
-
+node_modules/
+output/
 
