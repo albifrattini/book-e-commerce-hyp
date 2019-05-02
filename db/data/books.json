@@ -1,0 +1,16 @@
+[
+	{
+		"title": "Il deserto dei tartari",
+		"author": "Dino Buzzati",
+		"price": "7.10",
+		"currency": "eur",
+		"status": "available"
+	},
+	{
+		"title": "La memoria del topo",
+		"author": "Michael Connelly",
+		"price": "9.10",
+		"currency": "eur",
+		"status": "available"
+	}
+]
