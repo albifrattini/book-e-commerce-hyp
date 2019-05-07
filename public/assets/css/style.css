@@ -1,0 +1,36 @@
+.body-background {
+    background: #F8F9F5;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    color: #F8F9F5;
+    
+}
+
+#mainNav {
+    font-family: 'Roboto';
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: #f9f7f7;
+    align-items: flex-end;
+    text-align: center;
+    
+    
+}
+
+.navbar-wrapper .navbar .container {
+    width: auto;
+}
+
+.navbar-wrapper .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+}
