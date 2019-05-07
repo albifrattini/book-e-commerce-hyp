@@ -9,3 +9,7 @@
 # Node modules #
 ################
 node_modules/
+
+# My files #
+############
+usef_code.txt

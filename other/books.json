@@ -1,0 +1,20 @@
+[
+	{
+		"ISBN": "8804668040",
+		"title": "Il deserto dei tartari",
+		"genre": "Fiction",
+		"publisher": "Mondadori",
+		"description": "Un libro",
+		"price": "10.20",
+		"status": "available"
+	},
+	{
+		"ISBN": "8868366452",
+		"title": "La memoria del topo",
+		"genre": "Mystery",
+		"publisher": "Piemme",
+		"description": "Un altro libro.",
+		"price": "9.26",
+		"status": "available"
+	}
+]
