@@ -39,13 +39,15 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                             <span class="icon-bar"> </span>
                             <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>                        
+                            <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Libreggiamo</a>
+                        
+                        <a class="navbar-brand" id="home" href="#">Libreggiamo</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">Events</a></li>
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a id="events" href="#">Events</a></li>
                             <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Books<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -54,11 +56,10 @@
                                     <li><a href="#">Best Seller</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Author </a></li>
-                            <li><a href="#">Ordering information</a></li>
-                            <li><a href="#">Contact Us </a></li>
+                            <li><a href="#" id="orderingShipping">Ordering information</a></li>
+                            <li><a id="contactUs" href="#">Contact Us </a></li>
                         </ul>
-                        search bar  
+                        <!--search bar  
                         <form class="navbar-form navbar-left" action="/action_page.php">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Search" name="search">
@@ -68,7 +69,7 @@
                                         </button>
                                     </div>
                             </div>
-                        </form>
+                        </form> -->
                         <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
