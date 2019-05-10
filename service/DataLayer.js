@@ -5,14 +5,12 @@ const sqlDbFactory = require('knex');
 const dbConnection = sqlDbFactory(envConfig);
 
 let { booksDbSetup } = require('./BookService');
-// let { authorsDbSetup } = require('./AuthorService');
-// let { eventsDbSetup } = require('./EventService');
+let { usersDbSetup } = require('./UserService');
 
 function setupDb () {
 	console.log('Setting up the Database...');
 	booksDbSetup(dbConnection);
-	// authorsDbSetup(dbConnection);
-	// eventsDbSetup(dbConnection);
+	usersDbSetup(dbConnection);
 	console.log('Database up running!');
 }
 

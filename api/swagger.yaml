@@ -103,6 +103,62 @@ paths:
         404:
           description: "Books not found"
       x-swagger-router-controller: "Book"
+  /users/login:
+    post:
+      tags:
+      - "user"
+      summary: "Login"
+      description: "Login of a user"
+      operationId: "signInUser"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "email"
+        in: "formData"
+        required: true
+        type: "string"
+      - name: "password"
+        in: "formData"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "succesfull login"
+        404:
+          description: "unauthorized"
+      x-swagger-router-controller: "User"
+  /users/signUp:
+    post:
+      tags:
+      - "user"
+      summary: "SignUp"
+      description: "SignUp of a user"
+      operationId: "signUpUser"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "name"
+        in: "formData"
+        required: true
+        type: "string"
+      - name: "email"
+        in: "formData"
+        required: true
+        type: "string"
+      - name: "password"
+        in: "formData"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "succesfull login"
+        404:
+          description: "unauthorized"
+      x-swagger-router-controller: "User"
 definitions:
   Book:
     type: "object"
@@ -140,7 +196,25 @@ definitions:
       author: "Dino Buzzati"
       price: 7.1
       status: "available" 
-
+  User:
+    type: "object"
+    required:
+    - "name"
+    - "email"
+    - "password"
+    properties:
+      name:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+    title: "User"
+    description: "A user of the book store."
+    example:
+      name: "Mario Rossi"
+      email: "example@example.com"
+      password: "****"
 
 
 
