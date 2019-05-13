@@ -13,7 +13,6 @@ function addStaticLinks() {
 	console.log('Adding static links.');
 
 	const homeUrl = window.location.origin;
-	// const homeUrl = '../index.html';
 	$('#home').attr('href', homeUrl);
 	$('#events').attr('href', homeUrl+'/pages/events.html');
 }

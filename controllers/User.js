@@ -3,37 +3,35 @@ const Joi = require('joi');
 const bcrypt = require('bcrypt');
 const User = require('../service/UserService');
 
-module.exports.signUpUser = function signUpUser (request, response, next) {
-
-	console.log(request.body);
+module.exports.signUpUser = async function signUpUser (request, response, next) {
 	
-	const email = request.swagger.params['email'].value;
-	/*
-	const name = request.swagger.params['name'].value;
-	const password = request.swagger.params['password'].value;
-	*/
-	const { error } = validateUser(request.body);
+	let newUser = request.body;
+
+	const { error } = validateUser(newUser);
 	if (error) return response.status(400).send(error.details[0].message);
 
-	let user = User.isAlreadyRegistered(email);
-
+	const user = await User.isAlreadyRegistered(newUser.email);
 	if (user) return response.status(400).send('User already registered!');
 
-	user = _.pick(request.swagger.params, ['name', 'email', 'password']);
-	const salt = bcrypt.genSalt(10);
-	user.password = bcrypt.hash(user.password, salt);
-	User.signUpUser(user).then(() => {
-		response.status(200).send('SignUp successful!');
+	const salt = await bcrypt.genSalt(10);
+	newUser.password = await bcrypt.hash(newUser.password, salt);
+	User.signUpUser(newUser).then((result) => {
+		response.status(200).send({
+			info: 'SignUp successful!',
+			user: _.pick(newUser, ['name', 'email'])
+		});
 	});
+	
 }
 
 module.exports.signInUser = function signInUser (request, response, next) {
-	const email = request.swagger.params['email'].value;
-	const password = request.swagger.params['password'].value;
+	
+	const user = request.body;
 	// TODO: Hash password
-	User.signInUser(email, password).then(answer => {
-		if (answer) {
-			response.json(_.pick(answer, ['name', 'email']));
+
+	User.signInUser(user.email, user.password).then(result => {
+		if (result) {
+			response.json(_.pick(result[0], ['name', 'email']));
 		} else {
 			response.status(400).send('Invalid email or password.');
 		}
@@ -46,6 +44,5 @@ function validateUser(user) {
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(255).required()
   };
-
   return Joi.validate(user, schema);
 }

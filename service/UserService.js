@@ -23,7 +23,7 @@ module.exports.signUpUser = function(user) {
 }
 
 module.exports.signInUser = function(email, password) {
-	return dbConnection('users').where('email', email).andWhere('password', password);
+	return dbConnection('users').where('email', email).andWhere('password', password).first();
 }
 
 module.exports.isAlreadyRegistered = function(email) {
