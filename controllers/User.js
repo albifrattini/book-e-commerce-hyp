@@ -21,6 +21,7 @@ module.exports.signUpUser = async function signUpUser (request, response, next) 
 			user: _.pick(newUser, ['name', 'email'])
 		});
 	});
+
 	
 }
 

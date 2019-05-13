@@ -1,0 +1,48 @@
+.body-background {
+    background-color: #FFFFFF;
+}
+
+#title {
+    font-size: 45px;
+    color: #707070;
+}
+
+img {
+    object-fit: cover;
+}
+
+.breathe {
+    padding-top: 10px;
+}
+
+.breathe-element {
+    padding-left: 20px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.book-cover {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 4% auto;
+}
+
+body {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#mainNav {
+}
+
+.navbar-brand {
+}
+
+#icon {
+}

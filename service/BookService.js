@@ -41,3 +41,7 @@ module.exports.getBookById = function(bookId) {
 module.exports.getBooksByGenre = function(bookGenre) {
 	return dbConnection('books').where('genre', bookGenre);
 }
+
+module.exports.getBooksByTheme = function (bookTheme) {
+	return dbConnection('books').where('theme', bookTheme);
+}

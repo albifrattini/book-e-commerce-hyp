@@ -35,11 +35,29 @@ module.exports.getBookById = function getBookById (request, response, next) {
 module.exports.getBooksByGenre = function getBookByGenre (request, response, next) {
 	const bookGenre = request.swagger.params['genre'].value;
 	Book.getBooksByGenre(bookGenre)
-		.then(book => {
-			if (book) {
-				response.json(book);
+		.then(books => {
+			if (books) {
+				response.json(books);
 			} else {
 				next();
 			}
 		});
 }
+
+module.exports.getBooksByTheme = function getBooksByTheme (request, response, next) {
+	const bookTheme = request.swagger.params['theme'].value;
+	Book.getBooksByTheme(bookTheme)
+		.then(books => {
+			if (books) {
+				response.json(books);
+			} else {
+				next();
+			}
+		});
+}
+
+
+
+
+
+

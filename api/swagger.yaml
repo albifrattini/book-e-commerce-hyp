@@ -90,7 +90,7 @@ paths:
       parameters:
       - name: "genre"
         in: "query"
-        description: "Genre of books to return"
+        description: "Genre of books to be returned"
         required: true
         type: "string"
       responses:
@@ -100,6 +100,31 @@ paths:
             $ref: "#/definitions/Book"
         400:
           description: "Invalid genre supplied"
+        404:
+          description: "Books not found"
+      x-swagger-router-controller: "Book"
+  /books/themes:
+    get:
+      tags:
+      - "book"
+      summary: "Find book by theme"
+      description: "Returns books of a specific theme"
+      operationId: "getBooksByTheme"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "theme"
+        in: "query"
+        description: "Theme of books to be returned"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful operation"
+          schema: 
+            $ref: "#/definitions/Book"
+        400:
+          description: "Invalid theme supplied"
         404:
           description: "Books not found"
       x-swagger-router-controller: "Book"
