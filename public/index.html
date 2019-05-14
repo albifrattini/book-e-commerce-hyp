@@ -9,11 +9,18 @@
      
     <!-- Latest compiled and minified CSS -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+     <!-- Stylesheet -->
      <link rel="stylesheet" href="assets/css/style.css">
+
+     <!-- Load font awesome icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
      <!-- Optional theme -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
 
+     <style>
+         a.link:hover {color:#BDBDBD;}       
+     </style>
      
      
      
@@ -27,8 +34,7 @@
     <!--Background color-->
  <body class="body-background">
      
-     <!--# means linked to nothing
-            NAVBAR--> 
+    <!--NAVBAR--> 
     <div class="navbar-wrapper">
         <div class="container">
             <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
@@ -48,28 +54,7 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Home</a></li>
                             <li><a id="events" href="#">Events</a></li>
-                            <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Books<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">All Themes</a></li>
-                                    <li><a href="#">All Literary Genre</a></li>
-                                    <li><a href="#">Best Seller</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#" id="orderingShipping">Ordering information</a></li>
-                            <li><a id="contactUs" href="#">Contact Us </a></li>
                         </ul>
-                        <!--search bar  
-                        <form class="navbar-form navbar-left" action="/action_page.php">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="search">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-default" type="submit">
-                                        <i class="glyphicon glyphicon-search"></i>
-                                        </button>
-                                    </div>
-                            </div>
-                        </form> -->
                         <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -79,73 +64,167 @@
             </nav>            
         </div>
      </div>
+     <!--end navbar-->
+
+     <br>
+
+     <!--CAROUSEL-->
+        <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides">
+            <img src="https://images.unsplash.com/photo-1504542944432-f022df771055?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%">
+            <div class="text">Join us and start reading a billion different books</div>
+        </div>
+
+        <div class="mySlides">
+             <img src="https://images.unsplash.com/photo-1528932574509-27a7e195a75b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%">
+            <div class="text">We have all kind of genres and themes</div>
+        </div>
+
+        <div class="mySlides">
+            <img src="https://images.unsplash.com/photo-1535546204504-586398ee6677?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%">
+            <div class="text">Meet your favourite author joining our events </div>
+        </div>
+
+    <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    <!--end carousel-->
+
+    <div class="container">
+    <hr>
+    </div>
+
+    <div class="container">
+        <h2>Our Favorite Readings</h2>
+    <!--Our favorite readings-->
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="assets/img/agatha.jpg" alt="orient express" style="width:100%">
+                <p class="price">$19.99</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="assets/img/agatha1.jpg" alt="folly" style="width:100%">
+                <p class="price">$19.99</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="assets/img/got.jpg" alt="got" style="width:100%">
+                <p class="price">$19.99</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="assets/img/theHobbit.jpg" alt="Hobbit" style="width:100%">
+                <p class="price">$19.99</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+    <hr>
+    </div>
+
+    <!--Best seller this month-->
+    <div class="container">
+        <h2>Best Seller this month</h2>
+     <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="assets/img/agatha.jpg" alt="orient express" style="width:100%">
+                <p class="price">$19.99</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="assets/img/agatha1.jpg" alt="folly" style="width:100%">
+                <p class="price">$19.99</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="assets/img/got.jpg" alt="got" style="width:100%">
+                <p class="price">$19.99</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="assets/img/theHobbit.jpg" alt="Hobbit" style="width:100%">
+                <p class="price">$19.99</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
+
      
-     
+    <!--FOOTER-->
+     <footer class="container-fluid text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Info</h4>                  
+                    <a href="#" class="link">Contact Us</a><br>
+                    <a href="#" class="link">Ordering and Shipping</a>
+                </div>
+                <!-- The social media icon bar -->
+                <div class="col-md-4">
+                    <h4>Connect</h4><br>
+                    <div class="icon-bar">
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+                        <a href="#" class="google"><i class="fa fa-google"></i></a> 
+                        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                  <!--insert img-->
+                </div>
+            </div>
+        </footer>
+     <!--end footer-->
+
      
 
-     <!-- Grid Classes:
-            xs (for phones - screens less than 768px wide)
-            sm (for tablets - screens equal to or greater than 768px wide)
-            md (for small laptops - screens equal to or greater than 992px wide)
-            lg (for laptops and desktops - screens equal to or greater than 1200px wide) -->
-     
-     <div class="container">    
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Book</div>
-                        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:50%" alt="Image"></div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Book</div>
-                        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:50%" alt="Image"></div>
-                </div>
-            </div>
-         </div>
-     </div><br>
-     
-     <div class="container">    
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Book</div>
-                        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:50%" alt="Image"></div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Book</div>
-                        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:50%" alt="Image"></div>
-                </div>
-            </div>
-         </div>
-     </div><br>
-     
-     <div class="container">    
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Book</div>
-                        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:50%" alt="Image"></div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Book</div>
-                        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:50%" alt="Image"></div>
-                </div>
-            </div>
-         </div>
-     </div><br>
      
 
      
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+<script type="text/javascript" src="assets/js/home.js"></script>
+
     
     
 </body>
