@@ -1,43 +1,229 @@
-.img{
-    max-width: 100%;
-    height: auto;
-}
 .body-background {
-    background-color: #EFEFEF;
+    background-color: #FFFFFF;
 }
 
-#title {
-    font-size: 45px;
-    color: #707070;
-}
-
-.container {
-    width: 100%;
-    max-width: 1170px;
-    margin: 4% auto;
-}
 
 body {
     padding-top: 20px;
-    padding-bottom: 40px;
+    margin: 0;   
 }
 
+
+* {box-sizing:border-box}
+
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 2% auto;
+}
+
+
+
+/* NAVBAR STYLING */
 #mainNav {
     font-family: 'Roboto';
-    font-size: 14px;
-    text-transform: uppercase;
+    font-size: 18px;
     background-color: #f9f7f7;
+    height: 60px;
 }
 
-.navbar-brand {
-    font-size: 20px;
+/* centering navbar elements */
+.navbar-nav>li>a {
+    line-height: 30px;
 }
+
+/* brand */
+.navbar-brand {
+    font-size: 30px;
+    line-height: 30px;
+}
+
 
 #icon {
-    max-width: 400px;
-    margin: 1% auto;
+    max-width: 600px;
+    margin: 2% auto;
+}
+
+
+/* CAROUSEL STYLING */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: 'Roboto';
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
 }
 
 
 
+/* CARDS STYLING */
 
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 6px;
+  text-align: center;
+  background-color: #f1f1f1;
+  max-width: 200px;
+  margin: auto;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+/*FOOTER STYLING*/
+footer {
+    padding: 1%;
+    width: 100%;
+    background-color: #707070;
+    color: #EFEFEF;
+}
+
+.link {
+  color: #FFFFFF;
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  text-align: center;
+  padding: 6px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #BDBDBD;
+}
+
+.facebook {
+  background: #000;
+  color: white;
+}
+
+.twitter {
+  background: #000;
+  color: white;
+}
+
+.google {
+  background: #000;
+  color: white;
+}
+
+.linkedin {
+  background: #000;
+  color: white;
+}
+
+.youtube {
+  background: #000;
+  color: white;
+}
