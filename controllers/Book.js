@@ -20,9 +20,9 @@ module.exports.getAllBooks = function getAllBooks (request, response, next) {
 		});
 }
 
-module.exports.getBookById = function getBookById (request, response, next) {
-	const bookId = request.swagger.params['bookId'].value;
-	Book.getBookById(bookId)
+module.exports.getBookByIsbn = function getBookByIsbn (request, response, next) {
+	const bookIsbn = request.swagger.params['ISBN'].value;
+	Book.getBookByIsbn(bookIsbn)
 		.then(book => {
 			if (book) {
 				response.json(book);
@@ -32,6 +32,19 @@ module.exports.getBookById = function getBookById (request, response, next) {
 		});
 }
 
+module.exports.getBooksThroughFilter = function getBooksThroughFilter (request, response, next) {
+	const bookTitle = request.swagger.params['title'].value;
+	const bookAuthor = request.swagger.params['author'].value;
+	const bookGenre = request.swagger.params['genre'].value;
+	const bookTheme = request.swagger.params['theme'].value;
+	const filter = new Array(bookTitle, bookAuthor, bookGenre, bookTheme);
+	Book.getBooksThroughFilter(filter).then(books => {
+		response.json(books);
+		next();
+	});
+}
+
+/*
 module.exports.getBooksByGenre = function getBookByGenre (request, response, next) {
 	const bookGenre = request.swagger.params['genre'].value;
 	Book.getBooksByGenre(bookGenre)
@@ -55,7 +68,7 @@ module.exports.getBooksByTheme = function getBooksByTheme (request, response, ne
 			}
 		});
 }
-
+*/
 
 
 

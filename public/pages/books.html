@@ -62,31 +62,25 @@
     	<div class="col">
     		<div class="row">
 				<div class="col-lg-2">
-					<input type="radio" name="titleOrAuthor" value="Title"> Book title
+					<input type="radio" name="titleOrAuthor" value="Title" id="titleRadio"> Title
 				</div>
 				<div class="col-lg-2">
-					<input type="radio" name="titleOrAuthor" value="Author"> Author
+					<input type="radio" name="titleOrAuthor" value="Author" id="authorRadio"> Author
 	    		</div>
 	    		<div class="col-lg-2">
-					<select class="browser-default custom-select">
-					  <option selected> --- no genre --- </option>
-					  <option value="chrime">Crime</option>
-					  <option value="thriller">Thriller</option>
-					  <option value="romance">Romance</option>
+					<select class="browser-default custom-select" id="genreDropdown">
+					  <option value="" selected> --- no genre --- </option>
 					</select>
 				</div>
 				<div class="col-lg-2">
-			    	<select class="browser-default custom-select">
-					  <option selected> --- no theme --- </option>
-					  <option value="war">War</option>
-					  <option value="racism">Racism</option>
-					  <option value="death">Death</option>
+			    	<select class="browser-default custom-select" id="themeDropdown">
+					  <option value="" selected> --- no theme --- </option>
 					</select>
 				</div>
 	    	</div>
     		<div class="row breathe">
     			<div class="col-lg-8">
-    				<input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    				<input class="form-control" type="text" placeholder="Search" aria-label="Search" id="titleOrAuthorSearch">
     			</div>
     			<div class="col-lg-2">
 					<input type="button" name="search" onclick="getBooks()" class="btn btn-primary" value="Search">	
@@ -96,73 +90,7 @@
 
 		<hr>
 
-		<div class="breathe-element">
-			<div class="row">
-				<div class="col-lg-2 offset-lg-2">
-					<h3>
-						Book title
-					</h3>
-				</div>
-			</div>
-			<div class="row book-cover">
-				<div class="col-lg-3">
-					<img src="/assets/img/dino.jpg" alt="Image dino" width="200" height="310">
-				</div>
-				<div class="col-lg-8">
-					<div>
-						<p>
-							Told in Kvothe's own voice, this is the tale of the magically gifted young man who grows to be the most notorious wizard his world has ever seen. The intimate narrative of his childhood in a troupe of traveling players, his years spent as a near-feral orphan in a crime-ridden city, his daringly brazen yet successful bid to enter a legendary school of magic, and his life as a fugitive after the murder of a king form a gripping coming-of-age story unrivaled in recent literature. 
-							A high-action story written with a poet's hand, The Name of the Wind is a masterpiece that will transport readers into the body and mind of a wizard.
-						</p>
-						<a href="#">Author</a>
-						<h5>Available</h5>
-						<div style="margin-top: 50px;"></div>
-						<div class="row">
-							<div class="col-lg-2">
-								<input type="button" name="purchase" class="btn btn-primary" value="Purchase">
-							</div>
-							<div class="col-lg-2">
-								<input type="button" name="reserve" class="btn btn-primary" value="Reserve">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="breathe-element">
-			<div class="row">
-				<div class="col-lg-2 offset-lg-2">
-					<h3>
-						Book title
-					</h3>
-				</div>
-			</div>
-			<div class="row book-cover">
-				<div class="col-lg-3">
-					<img src="/assets/img/dino.jpg" alt="Image dino" width="200" height="310">
-				</div>
-				<div class="col-lg-8">
-					<div>
-						<p>
-							Told in Kvothe's own voice, this is the tale of the magically gifted young man who grows to be the most notorious wizard his world has ever seen. The intimate narrative of his childhood in a troupe of traveling players, his years spent as a near-feral orphan in a crime-ridden city, his daringly brazen yet successful bid to enter a legendary school of magic, and his life as a fugitive after the murder of a king form a gripping coming-of-age story unrivaled in recent literature. 
-							A high-action story written with a poet's hand, The Name of the Wind is a masterpiece that will transport readers into the body and mind of a wizard.
-						</p>
-						<a href="#">Author</a>
-						<h5>Available</h5>
-						<div style="margin-top: 50px;"></div>
-						<div class="row">
-							<div class="col-lg-2">
-								<input type="button" name="purchase" class="btn btn-primary" value="Purchase">
-							</div>
-							<div class="col-lg-2">
-								<input type="button" name="reserve" class="btn btn-primary" value="Reserve">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div id="bookList"></div>
 
     </div>     
 
