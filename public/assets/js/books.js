@@ -41,11 +41,13 @@ function getBooks() {
 	}
 	if (document.getElementById('titleRadio').checked) {
 		title = document.getElementById('titleOrAuthorSearch').value.replace(' ', '+');
-		query += `title=${document.getElementById('titleOrAuthorSearch').value}`;
+		query += `title=${title}`;
 	} else if (document.getElementById('authorRadio').checked){
 		author = document.getElementById('titleOrAuthorSearch').value.replace(' ', '+');
-		query += `author=${document.getElementById('titleOrAuthorSearch').value}`;
+		query += `author=${author}`;
 	}
+
+	console.log(query);
 
 	fetch(query)
 		.then(function (response) {
@@ -55,30 +57,31 @@ function getBooks() {
 			if (data.length > 0) {
 				data.map(displayBook);
 			} else {
-				$('#bookList').append('<h3>Nessun libro trovato con queste specifiche!</h3>');
+				$('#bookList').append('<h3>No book found with this features!</h3>');
 			}
 	});
 }
 
-function displayBook(book) {
+function displayBook2(book) {
 
 	$('#bookList').append(
-		`<div class="breathe-element">
+		`
+		<div class="breathe-element">
 			<div class="row">
 				<div class="col">
 					<h3>
-						${book.title}
+						<a href="/pages/book.html?ISBN=${book.ISBN}">${book.title}</a>
 					</h3>
 				</div>
 			</div>
 			<div class="row book-cover">
 				<div class="col-lg-3">
-					<img src="${book.cover}" alt="${book.title} cover" width="200" height="310">
+					<img src="${book.coverUrl}" alt="${book.title} cover" width="200" height="310">
 				</div>
 				<div class="col-lg-8">
 					<div>
 						<p>${book.description}</p>
-						<a href="#">${book.name}</a>
+						<a href="#">${book.authorName}</a>
 						<p>Published by: ${book.publisher}</p>
 						<p>${book.price} €</p>
 						<h5>Availability: ${book.status}</h5>
@@ -95,7 +98,22 @@ function displayBook(book) {
 		`
 	);
 
+}
 
+function displayBook(book) {
+
+	// Rendering fo multiple books!!
+	$('#bookList').append(
+		`
+		<div class="col-lg-2">
+            <div class="card">
+                <a href="/pages/book-detail.html?ISBN=${book.ISBN}"><img src="${book.coverUrl}" alt="${book.title} cover" style="width:100%"></a>
+                <p class="price">${book.price} €</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+		`
+	);
 }
 
 function addDropdownValues() {

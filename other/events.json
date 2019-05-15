@@ -1,38 +1,38 @@
 [
 	{
-		"name": "The tartar steppe presentation",
+		"eventName": "The tartar steppe presentation",
 		"bookPresented": "8804668040",
-		"location": "RED Milano Porta Romana",
-		"date": "2019-06-23"	
+		"eventLocation": "RED Milano Porta Romana",
+		"eventDate": "2019-06-23"	
 	},
 	{
-		"name": "The black echo presentation",
+		"eventName": "The black echo presentation",
 		"bookPresented": "8868366452",
-		"location": "RED Milano Porta Romana",
-		"date": "2019-06-23"	
+		"eventLocation": "RED Milano Porta Romana",
+		"eventDate": "2019-06-23"	
 	},
 	{
-		"name": "The hobbit presentation",
+		"eventName": "The hobbit presentation",
 		"bookPresented": "8845268349",
-		"location": "RED Milano Porta Romana",
-		"date": "2019-06-23"	
+		"eventLocation": "RED Milano Porta Romana",
+		"eventDate": "2019-06-23"	
 	},
 	{
-		"name": "Educated presentation",
+		"eventName": "Educated presentation",
 		"bookPresented": "8807032937",
-		"location": "RED Milano Porta Romana",
-		"date": "2019-06-23"	
+		"eventLocation": "RED Milano Porta Romana",
+		"eventDate": "2019-06-23"	
 	},
 	{
-		"name": "Norwegian wood presentation",
+		"eventName": "Norwegian wood presentation",
 		"bookPresented": "8806216465",
-		"location": "RED Milano Porta Romana",
-		"date": "2019-06-23"	
+		"eventLocation": "RED Milano Porta Romana",
+		"eventDate": "2019-06-23"	
 	},
 	{
-		"name": "Of mice and men presentation",
+		"eventName": "Of mice and men presentation",
 		"bookPresented": "8830101133",
-		"location": "RED Milano Porta Romana",
-		"date": "2019-06-23"	
+		"eventLocation": "RED Milano Porta Romana",
+		"eventDate": "2019-06-23"	
 	}
 ]

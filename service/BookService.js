@@ -1,14 +1,18 @@
 let dbConnection;
 
 module.exports.booksDbSetup = function(database) {
+
 	dbConnection = database;
+
 	let booksList = require('../other/books.json');
 	let authorsList = require('../other/authors.json');
 	let eventsList = require('../other/events.json');
 	let writtenbyList = require('../other/writtenby.json');
 	let writesList = require('../other/writes.json');
 	let presentedatList = require('../other/presentedat.json');
+
 	return dbConnection.schema.hasTable('books').then(exists => {
+
 		if(!exists) {
 			dbConnection.schema.createTable('books', table => {
 				table.string('ISBN').primary(); // key for the book
@@ -19,7 +23,7 @@ module.exports.booksDbSetup = function(database) {
 				table.text('description');
 				table.float('price');
 				table.enum('status', ['Available', 'Out of stock']);
-				table.string('cover');
+				table.string('coverUrl');
 			})
 			.then(function() {
 				return dbConnection('books').insert(booksList);
@@ -33,8 +37,8 @@ module.exports.booksDbSetup = function(database) {
 			.then(function() {
 				return dbConnection.schema.createTable('authors', table => {
 					table.increments('id').primary();
-					table.string('name');
-					table.text('biography');
+					table.string('authorName');
+					table.text('authorBiography');
 				});
 			})
 			.then(function() {
@@ -61,10 +65,10 @@ module.exports.booksDbSetup = function(database) {
 			.then(function() {
 				return dbConnection.schema.createTable('events', table => {
 					table.increments('id').primary();
-					table.string('name');
+					table.string('eventName');
 					table.string('bookPresented').references('ISBN').inTable('books');
-					table.string('location');
-					table.date('date');
+					table.string('eventLocation');
+					table.date('eventDate');
 				});
 			})
 			.then(function() {
@@ -92,10 +96,33 @@ module.exports.getAllBooks = function(offset, limit) {
 
 module.exports.getBookByIsbn = function(bookIsbn) {
 	return dbConnection('books')
-		.where('ISBN', bookIsbn)
 		.join('writtenby', 'books.ISBN', 'writtenby.ISBN')
 		.join('authors', 'writtenby.authorId', 'authors.id')
+		.where('books.ISBN', bookIsbn)
 		.first();
+}
+
+module.exports.getBooksThroughFilter = function (filter) {
+	var query = dbConnection('books')
+		.join('writtenby', 'books.ISBN', 'writtenby.ISBN')
+		.join('authors', 'writtenby.authorId', 'authors.id');
+	if (filter[0]) {
+		let title = filter[0].toLowerCase();
+		// query = query.where('title', filter[0]);
+		query.whereRaw('LOWER("title") = ?', filter[0]);
+	}
+	if (filter[1]) {
+		let author = filter[1].toLowerCase();
+		// query = query.where('name', filter[1]);
+		query = query.whereRaw('LOWER("authorName") = ?', filter[1]);
+	}
+	if (filter[2]) {
+		query = query.where('genre', filter[2]);
+	}
+	if (filter[3]) {
+		query = query.where('theme', filter[3]);
+	}
+	return query.select();
 }
 
 /*
@@ -113,28 +140,6 @@ module.exports.getBooksByTheme = function (bookTheme) {
 		.join('authors', 'writtenby.authorId', 'authors.id');
 }
 */
-
-module.exports.getBooksThroughFilter = function (filter) {
-	var query = dbConnection('books')
-		.join('writtenby', 'books.ISBN', 'writtenby.ISBN')
-		.join('authors', 'writtenby.authorId', 'authors.id');
-	if (filter[0]) {
-		query = query.where('title', filter[0]);
-	}
-	if (filter[1]) {
-		query = query.where('name', filter[1]);
-	}
-	if (filter[2]) {
-		query = query.where('genre', filter[2]);
-	}
-	if (filter[3]) {
-		query = query.where('theme', filter[3]);
-	}
-	return query.select();
-}
-
-
-
 
 
 

@@ -106,8 +106,7 @@ paths:
         in: "path"
         description: "ID of book to return"
         required: true
-        type: "integer"
-        format: "int64"
+        type: "string"
       responses:
         200:
           description: "Successful operation"
@@ -187,6 +186,8 @@ definitions:
       title:
         type: "string"
       genre:
+        type: "string"
+      theme:
         type: "string"
       publisher:
         type: "string"

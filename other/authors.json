@@ -1,26 +1,26 @@
 [
 	{
-		"name": "Dino Buzzati",
-		"biography": "Dino Buzzati was an Italian novelist, short story writer, painter and poet, as well as a journalist for Corriere della Sera. His worldwide fame is mostly due to his novel The Tartar Steppe, and he is also known for his well received collections of short stories."
+		"authorName": "Dino Buzzati",
+		"authorBiography": "Dino Buzzati was an Italian novelist, short story writer, painter and poet, as well as a journalist for Corriere della Sera. His worldwide fame is mostly due to his novel The Tartar Steppe, and he is also known for his well received collections of short stories."
 	},
 	{
-		"name": "Michael Connelly",
-		"biography": "Michael Connelly is an American author of detective novels and other crime fiction, notably those featuring LAPD Detective Hieronymus 'Harry' Bosch and criminal defense attorney Mickey Haller. Connelly is the bestselling author of thirty-one novels and one work of non-fiction."
+		"authorName": "Michael Connelly",
+		"authorBiography": "Michael Connelly is an American author of detective novels and other crime fiction, notably those featuring LAPD Detective Hieronymus 'Harry' Bosch and criminal defense attorney Mickey Haller. Connelly is the bestselling author of thirty-one novels and one work of non-fiction."
 	},
 	{
-		"name": "J.R.R. Tolkien",
-		"biography": "John Ronald Reuel Tolkien was an English writer, poet, philologist, and academic, who is best known as the author of the classic high fantasy works The Hobbit, The Lord of the Rings, and The Silmarillion."
+		"authorName": "J.R.R. Tolkien",
+		"authorBiography": "John Ronald Reuel Tolkien was an English writer, poet, philologist, and academic, who is best known as the author of the classic high fantasy works The Hobbit, The Lord of the Rings, and The Silmarillion."
 	},
 	{
-		"name": "Tara Westover",
-		"biography": "Tara Westover is an American memoirist, essayist and historian. Her memoir Educated (2018) debuted at #1 on the New York Times bestseller list and was a finalist for a number of national awards, including the LA Times Book Prize, PEN America's Jean Stein Book Award, and two awards from the National Book Critics Circle Award. The New York Times named Educated one of the 10 Best Books of 2018, and in a piece written by Bill Gates, Westover was chosen by Time Magazine as one of the 100 most influential people of 2019."
+		"authorName": "Tara Westover",
+		"authorBiography": "Tara Westover is an American memoirist, essayist and historian. Her memoir Educated (2018) debuted at #1 on the New York Times bestseller list and was a finalist for a number of national awards, including the LA Times Book Prize, PEN America's Jean Stein Book Award, and two awards from the National Book Critics Circle Award. The New York Times authorNamed Educated one of the 10 Best Books of 2018, and in a piece written by Bill Gates, Westover was chosen by Time Magazine as one of the 100 most influential people of 201authorB."
 	},
 	{
-		"name": "Haruki Murakami",
-		"biography": "Haruki Murakami is a Japanese writer. His books and stories have been bestsellers in Japan as well as internationally, with his work being translated into 50 languages and selling millions of copies outside his native country. His work has received numerous awards, including the World Fantasy Award, the Frank O'Connor International Short Story Award, the Franz Kafka Prize, and the Jerusalem Prize."
+		"authorName": "Haruki Murakami",
+		"authorBiography": "Haruki Murakami is a Japanese writer. His books and stories have been bestsellers in Japan as well as internationally, with his work being translated into 50 languages and selling millions of copies outside his native country. His work has received numerous awards, including the World Fantasy Award, the Frank O'Connor International Short Story Award, the Franz Kafka Prize, and the Jerusalem Prize."
 	},
 	{
-		"name": "John Steinbeck",
-		"biography": "John Ernst Steinbeck Jr. was an American author. He won the 1962 Nobel Prize in Literature 'for his realistic and imaginative writings, combining as they do sympathetic humour and keen social perception.' He has been called 'a giant of American letters,' and many of his works are considered classics of Western literature."
+		"authorName": "John Steinbeck",
+		"authorBiography": "John Ernst Steinbeck Jr. was an American author. He won the 1962 Nobel Prize in Literature 'for his realistic and imaginative writings, combining as they do sympathetic humour and keen social perception.' He has been called 'a giant of American letters,' and many of his works are considered classics of Western literature."
 	}
 ]

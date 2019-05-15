@@ -11,7 +11,7 @@ const { setupDb } = require('./service/DataLayer');
 const spec = fs.readFileSync(path.join(__dirname, "api/swagger.yaml"), "utf8");
 const swaggerDoc = jsyaml.safeLoad(spec);
 
-// app.use(morgan('tiny'));
+app.use(morgan('tiny'));
 
 swaggerTools.initializeMiddleware(swaggerDoc, function(middleware) {
 

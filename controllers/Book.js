@@ -21,7 +21,7 @@ module.exports.getAllBooks = function getAllBooks (request, response, next) {
 }
 
 module.exports.getBookByIsbn = function getBookByIsbn (request, response, next) {
-	const bookIsbn = request.swagger.params['ISBN'].value;
+	const bookIsbn = request.swagger.params['bookIsbn'].value;
 	Book.getBookByIsbn(bookIsbn)
 		.then(book => {
 			if (book) {
