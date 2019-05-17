@@ -7,9 +7,8 @@ function addStaticLinks() {
     $('#home').attr('href', homeUrl);
     $('#events').attr('href', homeUrl+'/pages/events.html');
     $('#books').attr('href', homeUrl+'/pages/books.html');
-    console.log('Here');
 }
-
+//copy
 var URL = function () {
     // This function is anonymous, is executed immediately and 
     // the return value is assigned to QueryString!

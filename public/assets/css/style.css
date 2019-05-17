@@ -4,8 +4,7 @@
 
 
 body {
-    padding-top: 20px;
-    margin: 0;   
+    padding-top: 20px;   
 }
 
 
@@ -22,10 +21,10 @@ body {
 
 /* NAVBAR STYLING */
 #mainNav {
-    font-family: 'Roboto';
+    font-family: 'Lora', serif;
     font-size: 18px;
     background-color: #f9f7f7;
-    height: 60px;
+    height: 60px;  
 }
 
 /* centering navbar elements */
@@ -37,13 +36,110 @@ body {
 .navbar-brand {
     font-size: 30px;
     line-height: 30px;
+    font-family: 'Lora', serif;
+}
+
+.selectable {
+  background-color: #f9f7f7; 
 }
 
 
-#icon {
-    max-width: 600px;
-    margin: 2% auto;
+
+/*-----------------------------------------------------------------------------------------*/
+
+/* Login styling */
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
+
+/* Set a style for all login buttons */
+.login {
+  background-color: #f9f7f7;
+  color: #555;
+  padding: 8px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #b10e27;
+  color: black;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5px auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+/*-----------------------------------------------------------------------------------------*/
+
 
 
 /* CAROUSEL STYLING */
@@ -90,7 +186,7 @@ body {
 .text {
   color: #FFFFFF;
   font-size: 20px;
-  font-family: 'Roboto';
+  font-family: 'Lora', serif;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
@@ -113,7 +209,7 @@ body {
 .active, .dot:hover {
   background-color: #717171;
 }
-
+/*-----------------------------------------------------------------------------------------*/
 
 
 /* CARDS STYLING */
@@ -123,6 +219,20 @@ body {
   float: left;
   width: 25%;
   padding: 0 10px;
+}
+
+.col-container {
+    display: flex; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+
+/* If the browser window is smaller than 600px, make the columns stack on top of each other */
+@media only screen and (max-width: 600px) {
+  .column { 
+    display: block;
+    width: 100%;
+  }
 }
 
 /* Remove extra left and right margins, due to padding in columns */
@@ -143,7 +253,7 @@ body {
   background-color: #f1f1f1;
   max-width: 200px;
   margin: auto;
-  font-family: arial;
+  font-family: 'Lora', serif;
 }
 
 .price {
@@ -175,6 +285,7 @@ body {
     margin-bottom: 20px;
   }
 }
+/*-----------------------------------------------------------------------------------------*/
 
 
 /*FOOTER STYLING*/
@@ -183,11 +294,26 @@ footer {
     width: 100%;
     background-color: #707070;
     color: #EFEFEF;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 
+/* Links styling */
 .link {
   color: #FFFFFF;
 }
+
+.link:hover {
+  color:#BDBDBD;
+}
+
+.logo {
+  max-width: 100px;
+  max-height: 100px;
+}
+
 
 /* Style the icon bar links */
 .icon-bar a {
@@ -226,4 +352,45 @@ footer {
 .youtube {
   background: #000;
   color: white;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+
+/*ContactUs page form*/
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.containerForm {
+  width: 100%;
+  max-width: 1000px;
+  margin: 2% auto;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }

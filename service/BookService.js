@@ -125,6 +125,19 @@ module.exports.getBooksThroughFilter = function (filter) {
 	return query.select();
 }
 
+module.exports.getAllEvents = function () {
+	return dbConnection('events');
+}
+
+module.exports.getEventById = function (eventId) {
+	return dbConnection('events')
+		.join('books', 'events.bookPresented', 'books.ISBN')
+		.join('writtenby', 'events.bookPresented', 'writtenby.ISBN')
+		.join('authors', 'writtenby.authorId', 'authors.id')
+		.where('events.id', eventId)
+		.first();
+}
+
 /*
 module.exports.getBooksByGenre = function(bookGenre) {
 	return dbConnection('books')

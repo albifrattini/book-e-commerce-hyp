@@ -117,6 +117,50 @@ paths:
         404:
           description: "Book not found"
       x-swagger-router-controller: "Book"
+  /events:
+    get:
+      tags:
+      - "book"
+      summary: "Events available"
+      description: "List of events available"
+      operationId: "getAllEvents"
+      produces:
+      - "applications/json"
+      responses:
+        200:
+          description: "A collection of Books"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Book"
+        404:
+          description: "Unexpected error"
+      x-swagger-router-controller: "Book"
+  /events/{eventId}:
+    get:
+      tags:
+      - "book"
+      summary: "Find book by ID"
+      description: "Returns a book"
+      operationId: "getEventById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "eventId"
+        in: "path"
+        description: "ID of event to return"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Book"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Book not found"
+      x-swagger-router-controller: "Book"
   /users/login:
     post:
       tags:

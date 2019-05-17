@@ -18,85 +18,99 @@
     <!--Background color-->
  <body class="body-background">
      
-     <!--# means linked to nothing
-            NAVBAR--> 
+        <!--NAVBAR--> 
     <div class="navbar-wrapper">
         <div class="container">
             <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
                 <div class="container-fluid">
                     <div class="navbar-header">
+                
                     <!--collapse bar -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class = "sr-only">Toggle navigation</span>
                             <span class="icon-bar"> </span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <!--logo-->
-                        <a class="navbar-brand" id="home" href="#">
-                            Libreggiamo
-                        </a>
+                        
+                        <a class="navbar-brand" id="home" href="#">Libreggiamo</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a id="events" href="#">Events</a></li>
-                            <li><a href="#" id="orderingShipping">Ordering information</a></li>
-                            <li class="active"><a id="contactUs" href="#">Contact Us </a></li>
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#" class="a selectable" id="events">Events</a></li>
+                            <li><a class="a selectable" id="books" href="#">Books</a></li>
                         </ul>
-                      
                         <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <!-- Button to open the modal login form -->
+                        <li><button class="button login" onclick="showLogin()">Login</button></li>
                         </ul>
                     </div>
                 </div>
             </nav>            
         </div>
      </div>
-     
-     <div class="container text-center">
-        <h1 id="title">Contact Us</h1>
-     </div>
-     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="../assets/img/libri.jpg" class="img-responsive" id="icon">
-            </div>
-            <div class="col-md-6">
-                <h4 class="text-center" id="lowTitle">Who we are</h4>
-                <p class="text-center">
-                    Bla bla bla we are bla bla bla
-                </p>
-            </div>
-        </div>
-        
+     <!--end navbar-->
 
-        <footer class="container-fluid text-center">
+
+     <div class="container-fluid">
+         <img src="https://images.unsplash.com/photo-1519682577862-22b62b24e493?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width: 100%; padding-left: 200px; padding-right: 200px; padding-top: 10px;">
+     </div>
+
+
+     <div class="containerForm">
+        <form action="action_page.php">
+
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="australia">Italy</option>
+                <option value="canada">UK</option>
+                <option value="usa">USA</option>
+            </select>
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+
+
+
+     <!--FOOTER-->
+     <footer>
             <div class="row">
-                <div class="col-sm-4">
-                    <h3>Contact Us</h3>
-                    <br>
-                    <p class="text-center">
-                        libreggiamo@gmail.com<br>
-                        +39 334 715 9627<br>
-                        +39 334 548 7761<br>
-                    </p>
+                <div class="col-md-4">
+                    <h4>Info</h4>                  
+                    <a class="a link" id="contactUs" href="#" >Contact Us</a><br>
+                    <a class="a link" id="ordering" href="#" >Ordering and Shipping</a>
                 </div>
-                <div class="col-sm-4">
-                    <h3>Connect</h3>
-                    <i href="#" class="fa fa-facebook"></i>
-                    <i href="#" class="fa fa-twitter"></i>
-                    <i href="#" class="fa fa-instagram"></i>
-                    <i href="#" class="fa fa-google"></i>
-                    <i href="#" class="fa fa-linkedin"></i>
-                    <i href="#" class="fa fa-youtube"></i>
+                <!-- The social media icon bar -->
+                <div class="col-md-4">
+                    <h4>Connect</h4><br>
+                    <div class="icon-bar">
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+                        <a href="#" class="google"><i class="fa fa-google"></i></a> 
+                        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+                    </div>
                     
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                   <!--insert img-->
+                  <img src="../assets/img/logo.jpg" style="width: 100%" class="logo">
                 </div>
             </div>
         </footer>
-    </div>
+     <!--end footer-->  
         
      
      
@@ -104,11 +118,14 @@
      
      
    
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../assets/js/home.js"></script>
 
  
-    </body>
+</body>
     
 </html>
