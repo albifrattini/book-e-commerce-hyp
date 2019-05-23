@@ -9,19 +9,19 @@
      
     <!-- Latest compiled and minified CSS -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-     <!-- Stylesheet -->
-     <link rel="stylesheet" href="assets/css/style.css">
-
-     <!-- Load font awesome icons -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
      <!-- Optional theme -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
 
+    
+     <!-- Load font awesome icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
      <!-- Font family -->
   	 <link href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic" rel="stylesheet">
 
-     
+     <!-- Our CSS -->
+     <link rel="stylesheet" href="assets/css/style.css">
      
      
      <title>Libreggiamo</title>
@@ -38,7 +38,7 @@
     <div class="navbar-wrapper">
         <div class="container">
             <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
-                <div class="container-fluid">
+                <div class="container-fluid" id="editNavContainer">
                     <div class="navbar-header">
                 
                     <!--collapse bar -->
@@ -75,22 +75,24 @@
   	  	<!-- Modal Content -->
   		<form class="modal-content animate" action="/action_page.php"> 
     		<div class="container">
-      			<label for="uname"><b>Username</b></label>
+      			<label for="uname"><b>Mail</b></label>
       			<input type="text" placeholder="Enter Username" name="uname" required>
 
       			<label for="psw"><b>Password</b></label>
       			<input type="password" placeholder="Enter Password" name="psw" required>
-
-      			<button type="submit" class="button login">Login</button>
-      			<a href="#" class="text-center"> Register</a>
+				<div class="container text-center">
+      				<button type="submit" class="button login">Login</button>
+      				<br>
+      				<a href="#" class="text-center"> Register</a>
+      			</div>
     		</div>
 
-    		<div class="container" style="background-color:#f1f1f1">
+    		<div class="container">
       			<button type="button" onclick="closeLogin()" class="cancelbtn">Cancel</button>     			
       			<span class="psw">Forgot <a href="#">password?</a></span>
     		</div>
   		</form>
-	</div>
+	 </div>
      
 
      <br>
@@ -119,6 +121,7 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+
     <br>
 
     <!-- The dots/circles -->
@@ -129,17 +132,15 @@
     </div>
     <!--end carousel-->
 
-
-    <div class="container">
-    <hr>
-    </div>
-
+	<hr style="max-width: 1000px;">
+    
+    <!-- Cit part -->
     <div class="container">
     	<div class="row">
-    		<div class="col-md-6">
-    			<img src="assets/img/fitz.jpg" style="width: 100%">
+    		<div class="col-md-6 col-sm-6">
+    			<img src="assets/img/fitz.jpg" style="width: 100%;">
     		</div>
-    		<div class="col-md-6" style="padding: 70px; font-size: 18px;">
+    		<div class="col-md-6 col-sm-6" style="padding: 70px; font-size: 18px;">
     			<p class="text-center">
     				"I'm in a muddle about a lot of things -- 
     				 i've just discovered that i've a mind, and i'm starting to read."
@@ -151,122 +152,72 @@
     	</div>
     </div>
 
-    <div class="container">
-    <hr>
-    </div>
+  	
+    <hr style="max-width: 1000px;">
+    
+    <!-- Display book raccomandations  -->
+    <div class="containerTabs">
+    	<div class="row">
+    		<div class="col-md-6 col-sm-6">
+    		<!--Our favorite readings-->
+        		<div class="container">
+    				<h3 style="font-family: 'Lora', serif;" class="text-center";>
+    				Our Favorite Readings</h3>
+        		      <div class="row">
+        			     <div class="col-container" id="favourite"></div>
+        		      </div>
+        		</div>
+    		</div>
+        
 
-
-
-    <div class="container">
-        <h2 style="font-family: 'Lora', serif;" class="text-center";>Our Favorite Readings</h2>
-    <!--Our favorite readings-->
-    <div class="row">
-    	<div class="col-container">
-        	<div class="column">
-            	<div class="card">
-                	<img src="assets/img/agatha.jpg" alt="orient express" style="width:100%">
-                	<p class="price">19.99€</p>
-                	<p><button type="button" class="btn btn-primary">Add to Cart</button></p>
-            	</div>
-        	</div>
-        	<div class="column">
-            	<div class="card">
-                	<img src="assets/img/agatha1.jpg" alt="folly" style="width:100%">
-                	<p class="price">19.99€</p>
-                	<p><button type="button" class="btn btn-primary">Add to Cart</button></p>
-            	</div>
-        	</div>
-        	<div class="column">
-            	<div class="card">
-                	<img src="assets/img/agatha1.jpg" alt="got" style="width:100%">
-                	<p class="price">19.99€</p>
-                	<p><button type="button" class="btn btn-primary">Add to Cart</button></p>
-            	</div>
-        	</div>
-        	<div class="column">
-           		<div class="card">
-                	<img src="assets/img/agatha1.jpg" alt="Hobbit" style="width:100%">
-                	<p class="price">19.99€</p>
-                	<p><button type="button" class="btn btn-primary">Add to Cart</button></p>
-            	</div>
+        
+        	<div class="col-md-6 col-sm-6">
+        	<!--Best seller this month-->
+            	<div class="container">
+                    <h3 style="font-family: 'Lora', serif;" class="text-center" >
+                    Best seller of the month</h3>
+                    <div class="row">
+            		  <div class="col-container" id="best"></div>
+        	        </div>
+        	   </div>
         	</div>
     	</div>
     </div>
-
-    <div class="container">
-    <hr>
-    </div>
-
-    <!--Best seller this month-->
-    <div class="container">
-        <h2 style="font-family: 'Lora', serif;" class="text-center";>Best seller of the month</h2>
-    <!--Our favorite readings-->
-    <div class="row">
-    	<div class="col-container">
-        	<div class="column">
-            	<div class="card">
-                	<img src="assets/img/agatha.jpg" alt="orient express" style="width:100%">
-                	<p class="price">19.99€</p>
-                	<p><button type="button" class="btn btn-primary">Add to Cart</button></p>
-            	</div>
-        	</div>
-        	<div class="column">
-            	<div class="card">
-                	<img src="assets/img/agatha1.jpg" alt="folly" style="width:100%">
-                	<p class="price">19.99€</p>
-                	<p><button type="button" class="btn btn-primary">Add to Cart</button></p>
-            	</div>
-        	</div>
-        	<div class="column">
-            	<div class="card">
-                	<img src="assets/img/agatha1.jpg" alt="got" style="width:100%">
-                	<p class="price">19.99€</p>
-                	<p><button type="button" class="btn btn-primary">Add to Cart</button></p>
-            	</div>
-        	</div>
-        	<div class="column">
-           		<div class="card">
-                	<img src="assets/img/agatha1.jpg" alt="Hobbit" style="width:100%">
-                	<p class="price">19.99€</p>
-                	<p><button type="button" class="btn btn-primary">Add to Cart</button></p>
-            	</div>
-        	</div>
-    	</div>
-    </div>
+	
 
     
     <br>
     <br>
     <br>
 
-     
+    
     <!--FOOTER-->
      <footer>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-4 col-xs-4">
                     <h4>Info</h4>                  
                     <a class="a link" id="contactUs" href="#" >Contact Us</a><br>
                     <a class="a link" id="ordering" href="#" >Ordering and Shipping</a>
                 </div>
                 <!-- The social media icon bar -->
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-4 col-xs-4">
                     <h4>Connect</h4><br>
                     <div class="icon-bar">
-                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
-                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
-                        <a href="#" class="google"><i class="fa fa-google"></i></a> 
-                        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+                        <a><i class="fa fa-facebook"></i></a> 
+                        <a><i class="fa fa-twitter"></i></a> 
+                        <a><i class="fa fa-google"></i></a>
+                        <a><i class="fa fa-youtube"></i></a> 
                     </div>
                     
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-4 col-xs-4">
                   <!--insert img-->
-                  <img src="assets/img/logo.jpg" style="width: 100%" class="logo">
+                  <img src="/assets/img/logo.jpg" class="logo">
                 </div>
             </div>
         </footer>
      <!--end footer-->
+
 
      
 
@@ -282,6 +233,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
 <script type="text/javascript" src="assets/js/home.js"></script>
+<script type="text/javascript" src="/assets/js/navbar-footer-links.js"></script>
 
     
     

@@ -62,6 +62,7 @@ function getBooks() {
 	});
 }
 
+//useless 
 function displayBook2(book) {
 
 	$('#bookList').append(
@@ -86,11 +87,6 @@ function displayBook2(book) {
 						<p>${book.price} €</p>
 						<h5>Availability: ${book.status}</h5>
 						<div style="margin-top: 50px;"></div>
-						<div class="row">
-							<div class="col-lg-2">
-								<input type="button" name="addToCart" class="btn btn-primary" value="Add to cart">
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -105,11 +101,12 @@ function displayBook(book) {
 	// Rendering fo multiple books!!
 	$('#bookList').append(
 		`
-		<div class="col-lg-2">
+		<div class="col-md-2">
             <div class="card">
                 <a href="/pages/book-detail.html?ISBN=${book.ISBN}"><img src="${book.coverUrl}" alt="${book.title} cover" style="width:100%"></a>
-                <p class="price">${book.price} €</p>
-                <p><button>Add to Cart</button></p>
+                <p class="price" style="border-style: double; color: black">
+                ${book.title}<br>
+                ${book.price} €</p>
             </div>
         </div>
 		`

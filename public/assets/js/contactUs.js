@@ -1,18 +1,20 @@
 // JS script for contactUs page
 
-console.log('Building contact us page.');
+//Login functions
+// Get the modal
+var modal = document.getElementById('id01');
 
-function addStaticLinks() {
-
-	console.log('Adding static links.');
-
-	const homeUrl = window.location.origin;
-	$('#home').attr('href', homeUrl);
-	$('#events').attr('href', homeUrl+'/pages/events.html');
-	$('#contactUs').attr('href', homeUrl+'/pages/contactUs.html');
-	$('#orderingShipping').attr('href', homeUrl+'/pages/orderingShipping.html');
+function showLogin() {
+  document.getElementById('id01').style.display='block';
 }
 
-function addInformations() {
-	
+function closeLogin() {
+  document.getElementById('id01').style.display='none';
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }

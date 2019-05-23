@@ -1,17 +1,3 @@
-function addStaticLinks() {
-
-    console.log('Adding static links.');
-
-    const homeUrl = window.location.origin;
-    
-    $('#home').attr('href', homeUrl);
-    $('#events').attr('href', homeUrl+'/pages/events.html');
-    $('#books').attr('href', homeUrl+'/pages/books.html');
-    $('#contactUs').attr('href', homeUrl+'/pages/contactUs.html');
-    $('#ordering').attr('href', homeUrl+'/pages/ordering-shipping.html');
-}
-
-
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -61,6 +47,47 @@ window.onclick = function(event) {
   }
 }
 
+//Import books
+function retrieveBooks() {
+  fetch("/v2/books?limit=4")
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(books){
+      books.map(showBooks);
+      books.map(displayBooks);
+    });
+}
 
+function showBooks(book) {
+  $('#favourite').append(
+    `
+      <div class="column">
+        <div class="card">
+          <a href="/pages/book-detail.html?ISBN=${book.ISBN}">
+            <img src="${book.coverUrl}" alt="${book.title} cover" style="width:120%;">
+          </a>
+          <p class="price">${book.price} €</p>
+        </div>
+      </div>
+    `
+  );
+}
 
-addStaticLinks();
+function displayBooks(book) {
+  $('#best').append(
+    `
+      <div class="column">
+        <div class="card">
+          <a href="/pages/book-detail.html?ISBN=${book.ISBN}">
+            <img src="${book.coverUrl}" alt="${book.title} cover" style="width:120%;">
+          </a>
+          <p class="price">${book.price} €</p>
+        </div>
+      </div>
+    `
+  );
+}
+
+retrieveBooks();
+

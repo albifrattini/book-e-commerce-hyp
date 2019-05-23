@@ -20,28 +20,30 @@ body {
 
 
 /* NAVBAR STYLING */
-#mainNav {
+#mainNav{
     font-family: 'Lora', serif;
-    font-size: 18px;
-    background-color: #f9f7f7;
-    height: 60px;  
+    font-size: 16px;
+    height: 50px;  
 }
 
 /* centering navbar elements */
 .navbar-nav>li>a {
     line-height: 30px;
+    height: 55px;
 }
 
 /* brand */
 .navbar-brand {
-    font-size: 30px;
+    font-size: 26px;
     line-height: 30px;
     font-family: 'Lora', serif;
 }
 
-.selectable {
-  background-color: #f9f7f7; 
+#editNavContainer {
+  background-color: #f9f7f7;
 }
+
+
 
 
 
@@ -66,8 +68,11 @@ input[type=text], input[type=password] {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  max-width: 100%;
+  min-width: 50%;
+  border-radius: 10px;
 }
+
 
 /* Add a hover effect for buttons */
 button:hover {
@@ -78,8 +83,9 @@ button:hover {
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
-  background-color: #b10e27;
+  background-color: #EF5350;
   color: black;
+  border-radius: 10px;
 }
 
 /* The "Forgot password" text */
@@ -197,8 +203,8 @@ span.psw {
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 8px;
+  width: 8px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
@@ -213,6 +219,13 @@ span.psw {
 
 
 /* CARDS STYLING */
+.containerTabs {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2% auto;
+}
 
 /* Float four columns side by side */
 .column {
@@ -247,30 +260,33 @@ span.psw {
 
 /* Style the counter cards */
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 6px;
+  padding-top: 12px;
   text-align: center;
-  background-color: #f1f1f1;
   max-width: 200px;
   margin: auto;
   font-family: 'Lora', serif;
+  border-radius: 15px;
 }
 
 .price {
   color: grey;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .card button {
   border: none;
   outline: 0;
-  padding: 12px;
+  padding: 8px;
   color: white;
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  max-width: 100%;
+  min-width: 80%;
   font-size: 18px;
+
 }
 
 .card button:hover {
@@ -312,16 +328,16 @@ footer {
 .logo {
   max-width: 100px;
   max-height: 100px;
+  border-radius: 50px;
 }
 
 
 /* Style the icon bar links */
 .icon-bar a {
-  text-align: center;
-  padding: 6px;
-  transition: all 0.3s ease;
+  padding: 8px;
   color: white;
-  font-size: 20px;
+  font-size: 17px;
+  background-color: #000;
 }
 
 /* Style the social media icons with color, if you want */
@@ -329,30 +345,6 @@ footer {
   background-color: #BDBDBD;
 }
 
-.facebook {
-  background: #000;
-  color: white;
-}
-
-.twitter {
-  background: #000;
-  color: white;
-}
-
-.google {
-  background: #000;
-  color: white;
-}
-
-.linkedin {
-  background: #000;
-  color: white;
-}
-
-.youtube {
-  background: #000;
-  color: white;
-}
 
 /*-----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------*/
@@ -361,12 +353,12 @@ footer {
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
   width: 100%; /* Full width */
-  padding: 12px; /* Some padding */  
+  padding: 12px; 
   border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
+  border-radius: 4px; 
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
+  margin-top: 6px; 
+  margin-bottom: 16px; 
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
@@ -394,3 +386,40 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/* Event page */
+/* Style the buttons */
+.btnFilter {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btnFilter:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btnFilter.active {
+  background-color: #666;
+  color: white;
+}
+
+#myBtnContainer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 2% auto;
+}
+
+.containerEvent {
+  width: 100%;
+  padding-left: 130px;
+  padding-right: 130px;
+  padding-bottom: 80px;
+}
+

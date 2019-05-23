@@ -10,19 +10,26 @@
         
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-        
-    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <!-- Load font awesome icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Font family -->
+     <link href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic" rel="stylesheet">
+
+    <!-- Our CSS -->
+    <link type="text/css" href="/assets/css/style.css" rel="stylesheet">
     
     </head>
     
     <!--Background color-->
- <body class="body-background">
+ <body>
      
-        <!--NAVBAR--> 
+    <!--NAVBAR--> 
     <div class="navbar-wrapper">
         <div class="container">
             <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
-                <div class="container-fluid">
+                <div class="container-fluid" id="editNavContainer">
                     <div class="navbar-header">
                 
                     <!--collapse bar -->
@@ -37,7 +44,6 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
                             <li><a href="#" class="a selectable" id="events">Events</a></li>
                             <li><a class="a selectable" id="books" href="#">Books</a></li>
                         </ul>
@@ -53,14 +59,39 @@
      <!--end navbar-->
 
 
-     <div class="container-fluid">
-         <img src="https://images.unsplash.com/photo-1519682577862-22b62b24e493?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width: 100%; padding-left: 200px; padding-right: 200px; padding-top: 10px;">
+     <!-- Log in Form -->
+     <!-- The Modal -->
+     <div id="id01" class="modal">
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="/action_page.php"> 
+            <div class="container">
+                <label for="uname"><b>Mail</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <div class="container text-center">
+                    <button type="submit" class="button login">Login</button>
+                    <br>
+                    <a href="#" class="text-center"> Register</a>
+                </div>
+            </div>
+
+            <div class="container">
+                <button type="button" onclick="closeLogin()" class="cancelbtn">Cancel</button>              
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+     </div>
+
+
+     <div class="container">
+         <img src="https://images.unsplash.com/photo-1519682577862-22b62b24e493?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width: 100%">
      </div>
 
 
      <div class="containerForm">
-        <form action="action_page.php">
-
+        <form>
             <label for="fname">First Name</label>
             <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
@@ -80,37 +111,37 @@
             <input type="submit" value="Submit">
 
         </form>
-    </div>
+     </div>
+
+    <br>
+    <br>
+    <br>
 
 
 
      <!--FOOTER-->
      <footer>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-4 col-xs-4">
                     <h4>Info</h4>                  
                     <a class="a link" id="contactUs" href="#" >Contact Us</a><br>
                     <a class="a link" id="ordering" href="#" >Ordering and Shipping</a>
                 </div>
-                <!-- The social media icon bar -->
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-4 col-xs-4">
                     <h4>Connect</h4><br>
                     <div class="icon-bar">
-                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
-                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
-                        <a href="#" class="google"><i class="fa fa-google"></i></a> 
-                        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
-                    </div>
-                    
+                        <a  class="facebook"><i class="fa fa-facebook"></i></a> 
+                        <a  class="twitter"><i class="fa fa-twitter"></i></a> 
+                        <a  class="google"><i class="fa fa-google"></i></a>
+                        <a  class="youtube"><i class="fa fa-youtube"></i></a> 
+                    </div>                   
                 </div>
-                <div class="col-md-4">
-                  <!--insert img-->
-                  <img src="../assets/img/logo.jpg" style="width: 100%" class="logo">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <img src="/assets/img/logo.jpg" class="logo">
                 </div>
             </div>
         </footer>
-     <!--end footer-->  
+     <!--end footer--> 
         
      
      
@@ -123,7 +154,8 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="../assets/js/home.js"></script>
+    <script type="text/javascript" src="/assets/js/home.js"></script>
+    <script type="text/javascript" src="/assets/js/navbar-footer-links.js"></script>
 
  
 </body>
