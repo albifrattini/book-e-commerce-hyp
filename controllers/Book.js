@@ -1,4 +1,5 @@
 const Book = require('../service/BookService');
+const _ = require('lodash');
 
 /**
  * Names of functions must be included in Swagger specficiations in order to
@@ -55,6 +56,26 @@ module.exports.getEventById = function getEventById (request, response, next) {
 	const eventId = request.swagger.params['eventId'].value;
 	Book.getEventById(eventId).then(event => {
 		response.json(event);
+		next();
+	});
+}
+
+module.exports.getEventsByMonth = function getEventsByMonth (request, response, next) {
+	const month = request.swagger.params['month'].value;
+	Book.getEventsByMonth(month).then(events => {
+		response.json(events);
+		next();
+	});
+}
+
+module.exports.getAuthorById = function getAuthorById (request, response, next) {
+	const authorId = request.swagger.params['authorId'].value;
+	Book.getAuthorById(authorId).then(author => {
+		response.json(_.pick(author[0], ['authorName', 
+										'authorBiography',
+										'ISBN',
+										'title',
+										'coverUrl']));
 		next();
 	});
 }

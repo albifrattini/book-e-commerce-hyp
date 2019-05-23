@@ -139,6 +139,18 @@ module.exports.getEventById = function (eventId) {
 		.first();
 }
 
+module.exports.getEventsByMonth = function (month) {
+	return dbConnection('events')
+		.whereRaw('EXTRACT(MONTH FROM ??) = ?', ['eventDate', month]);
+}
+
+module.exports.getAuthorById = function (authorId) {
+	return dbConnection('authors')
+		.where('authors.id', authorId)
+		.join('writes', 'authors.id', 'writes.authorId')
+		.join('books', 'writes.ISBN', 'books.ISBN');
+}
+
 /*
 module.exports.getBooksByGenre = function(bookGenre) {
 	return dbConnection('books')
