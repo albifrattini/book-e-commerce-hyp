@@ -145,6 +145,22 @@ module.exports.getBooksThroughFilter = function (filter) {
 	return query.select();
 }
 
+module.exports.getBooksBySimilarity = function (bookIsbn) {
+	return dbConnection('issimilarto')
+		.where('issimilarto.book1', bookIsbn)
+		.join('books', 'issimilarto.book2', 'books.ISBN')
+		.union([
+			dbConnection('issimilarto')
+				.where('issimilarto.book2', bookIsbn)
+				.join('books', 'issimilarto.book1', 'books.ISBN')
+		]);
+}
+
+module.exports.getReviewsOfBook = function (bookIsbn) {
+	return dbConnection('hasreviews')
+		.where('hasreviews.ISBN', bookIsbn);
+}
+
 module.exports.getAllEvents = function () {
 	return dbConnection('events');
 }

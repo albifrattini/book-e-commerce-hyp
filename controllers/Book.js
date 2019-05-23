@@ -45,6 +45,23 @@ module.exports.getBooksThroughFilter = function getBooksThroughFilter (request, 
 	});
 }
 
+module.exports.getBooksBySimilarity = function getBooksBySimilarity (request, response, next) {
+	const bookIsbn = request.swagger.params['bookIsbn'].value;
+	Book.getBooksBySimilarity(bookIsbn).then(books => {
+		response.json(books);
+		next();
+	});
+}
+
+module.exports.getReviewsOfBook = function getReviewsOfBook (request, response, next) {
+	const bookIsbn = request.swagger.params['bookIsbn'].value;
+	console.log(bookIsbn);
+	Book.getReviewsOfBook(bookIsbn).then(reviews => {
+		response.json(reviews);
+		next();
+	});
+}
+
 module.exports.getAllEvents = function getAllEvents (request, response, next) {
 	Book.getAllEvents().then(events => {
 		response.json(events);
