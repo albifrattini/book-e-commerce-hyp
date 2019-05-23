@@ -120,19 +120,19 @@ paths:
   /events:
     get:
       tags:
-      - "book"
+      - "event"
       summary: "Events available"
-      description: "List of events available"
+      description: "List of all events"
       operationId: "getAllEvents"
       produces:
       - "applications/json"
       responses:
         200:
-          description: "A collection of Books"
+          description: "A collection of events"
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Book"
+              $ref: "#/definitions/Event"
         404:
           description: "Unexpected error"
       x-swagger-router-controller: "Book"
@@ -155,7 +155,7 @@ paths:
         200:
           description: "Successful operation"
           schema:
-            $ref: "#/definitions/Book"
+            $ref: "#/definitions/Event"
         400:
           description: "Invalid ID supplied"
         404:
@@ -164,9 +164,9 @@ paths:
   /events/filter:
     get:
       tags:
-      - "book"
+      - "event"
       summary: "Find events by month"
-      description: "Returns events by month"
+      description: "Returns events of the specified month"
       operationId: "getEventsByMonth"
       produces:
       - "application/json"
@@ -180,7 +180,7 @@ paths:
         200:
           description: "Successful operation"
           schema:
-            $ref: "#/definitions/Book"
+            $ref: "#/definitions/Event"
         400:
           description: "Invalid month supplied"
         404:
@@ -198,14 +198,14 @@ paths:
       parameters:
       - name: "authorId"
         in: "path"
-        description: "ID of event to return"
+        description: "ID of author to return"
         required: true
         type: "string"
       responses:
         200:
           description: "Successful operation"
           schema:
-            $ref: "#/definitions/Book"
+            $ref: "#/definitions/Author"
         400:
           description: "Invalid ID supplied"
         404:
@@ -292,6 +292,8 @@ definitions:
         format: "float"
         minimum: 0.01
         maximum: 100000000000000
+      coverUrl:
+        type: "string"
       status:
         type: "string"
         description: "Book availability in the inventory"
@@ -305,7 +307,46 @@ definitions:
       title: "Il deserto dei tartari"
       author: "Dino Buzzati"
       price: 7.1
-      status: "available" 
+      status: "available"
+  Event:
+    type: "object"
+    required:
+    - "eventName"
+    - "bookPresented"
+    properties:
+      eventName:
+        type: "string"
+      bookPresented:
+        type: "string"
+      eventLocation:
+        type: "string"
+      eventDate:
+        type: "string"
+      imageUrl:
+        type: "string"
+    title: "Event"
+    description: "An event scheduled in which a book will be presented"
+    example:
+      eventName: "The tartar steppe presentation"
+      bookPresented: "The tartar steppe"
+      eventLocation: "Feltrinelli"
+      eventDate: "2019-06-20"
+  Author:
+    type: "object"
+    required:
+    - "authorName"
+    properties:
+      authorName:
+        type: "string"
+      authorBiography:
+        type: "string"
+      profileUlr:
+        type: "string"
+    title: "Author"
+    description: "An author of some book in the store"
+    example:
+      authorName: "Michael Connelly"
+      authorBiography: "Michael Connelly was born in..."
   User:
     type: "object"
     required:

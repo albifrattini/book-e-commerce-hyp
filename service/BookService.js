@@ -56,6 +56,7 @@ module.exports.booksDbSetup = function(database) {
 					table.increments('id').primary();
 					table.string('authorName');
 					table.text('authorBiography');
+					table.string('profileUrl');
 				});
 			})
 			.then(function() {
@@ -86,6 +87,7 @@ module.exports.booksDbSetup = function(database) {
 					table.string('bookPresented').references('ISBN').inTable('books');
 					table.string('eventLocation');
 					table.date('eventDate');
+					table.text('eventDescription');
 					table.string('imageUrl');
 				});
 			})
@@ -167,22 +169,6 @@ module.exports.getAuthorById = function (authorId) {
 		.join('writes', 'authors.id', 'writes.authorId')
 		.join('books', 'writes.ISBN', 'books.ISBN');
 }
-
-/*
-module.exports.getBooksByGenre = function(bookGenre) {
-	return dbConnection('books')
-		.where('genre', bookGenre)
-		.join('writtenby', 'books.ISBN', 'writtenby.ISBN')
-		.join('authors', 'writtenby.authorId', 'authors.id');
-}
-
-module.exports.getBooksByTheme = function (bookTheme) {
-	return dbConnection('books')
-		.where('theme', bookTheme)
-		.join('writtenby', 'books.ISBN', 'writtenby.ISBN')
-		.join('authors', 'writtenby.authorId', 'authors.id');
-}
-*/
 
 
 
