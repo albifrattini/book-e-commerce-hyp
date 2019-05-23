@@ -22,16 +22,26 @@ function getEvents() {
 function showEvents(event) {
 	$('#eventsShown').append(
 		` 	
-		 <div class="col-md-6">
-			<div class="titleEventContainer">
-	            <h3 class="text-center">${event.eventName}</h3>
-	        </div>
-	            
-	        <a href="/pages/event.html?id=${event.id}">
-	            <img src="/assets/img/bookstore.jpg" alt="${event.eventName} cover" 
-	            style="width:100%; ">	                	
-	        </a>
-	     </div>
+				 <div class="col-md-6">
+					<div class="titleEventContainer">
+			            <h3 class="text-center">${event.eventName}</h3>
+			        </div>
+			        
+			        <div class="singlEventContainer">  
+				        <a href="/pages/event.html?id=${event.id}">
+				            <img src="${event.imageUrl}" alt="${event.eventName} cover" 
+				             class="imgEvent" style="width:100%; ">	
+
+				            <div class="overlay">
+				            	<div class="overlayText">
+				            		<p>${event.eventLocation}</p>
+				            		<p>${event.eventDate.substring(0,10)}</p>
+				            	</div>
+				    		</div>              	
+				        </a>
+			        </div>
+			     </div>
+		
 	       
 		`
 	);

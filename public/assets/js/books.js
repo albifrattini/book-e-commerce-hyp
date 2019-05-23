@@ -96,11 +96,20 @@ function displayBook2(book) {
 
 }
 
+function displayRows() {
+
+	for (var i = 0; i <= 3; i++) {
+		displayBook(i);
+	}
+}
+
+
 function displayBook(book) {
 
 	// Rendering fo multiple books!!
 	$('#bookList').append(
 		`
+		
 		<div class="col-md-2">
             <div class="card">
                 <a href="/pages/book-detail.html?ISBN=${book.ISBN}"><img src="${book.coverUrl}" alt="${book.title} cover" style="width:100%"></a>
@@ -108,7 +117,8 @@ function displayBook(book) {
                 ${book.title}<br>
                 ${book.price} €</p>
             </div>
-        </div>
+        
+        
 		`
 	);
 }

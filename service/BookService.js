@@ -69,6 +69,7 @@ module.exports.booksDbSetup = function(database) {
 					table.string('bookPresented').references('ISBN').inTable('books');
 					table.string('eventLocation');
 					table.date('eventDate');
+					table.string('imageUrl');
 				});
 			})
 			.then(function() {

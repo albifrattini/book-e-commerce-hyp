@@ -2,37 +2,48 @@
 	{
 		"eventName": "The tartar steppe presentation",
 		"bookPresented": "8804668040",
-		"eventLocation": "RED Milano Porta Romana",
-		"eventDate": "2019-06-23"	
+		"eventLocation": "Feltrinelli piazza Duomo, Milano",
+		"eventDate": "2019-06-23",
+	    "imageUrl" : "/assets/img/bookstore.jpg"
 	},
 	{
 		"eventName": "The black echo presentation",
 		"bookPresented": "8868366452",
-		"eventLocation": "RED Milano Porta Romana",
-		"eventDate": "2019-06-23"	
+		"eventLocation": "Taschen, Monza",
+		"eventDate": "2019-07-23",
+        "imageUrl" : "/assets/img/taschenBookstore.jpg"
+
 	},
 	{
 		"eventName": "The hobbit presentation",
 		"bookPresented": "8845268349",
-		"eventLocation": "RED Milano Porta Romana",
-		"eventDate": "2019-06-23"	
+		"eventLocation": "Mondadori, Bisceglie",
+		"eventDate": "2019-07-23",
+        "imageUrl" : "/assets/img/mondadoriBookstore.jpg"
+
 	},
 	{
 		"eventName": "Educated presentation",
 		"bookPresented": "8807032937",
-		"eventLocation": "RED Milano Porta Romana",
-		"eventDate": "2019-06-23"	
+		"eventLocation": "Mondadori, Torino",
+		"eventDate": "2019-08-23",
+        "imageUrl" : "/assets/img/mondadoriLivorno.jpg"
+
 	},
 	{
 		"eventName": "Norwegian wood presentation",
 		"bookPresented": "8806216465",
-		"eventLocation": "RED Milano Porta Romana",
-		"eventDate": "2019-06-23"	
+		"eventLocation": "Libri Antichi, Porta Venezia, Milano",
+		"eventDate": "2019-06-23",
+        "imageUrl" : "/assets/img/libreriaRandom.jpg"
+
 	},
 	{
 		"eventName": "Of mice and men presentation",
 		"bookPresented": "8830101133",
-		"eventLocation": "RED Milano Porta Romana",
-		"eventDate": "2019-06-23"	
+		"eventLocation": "Feltrinelli Duomo Milano",
+		"eventDate": "2019-05-23",
+        "imageUrl" : "/assets/img/feltrinelli.jpg"
+
 	}
 ]
