@@ -1,13 +1,4 @@
-function addStaticLinks() {
 
-    console.log('Adding static links.');
-
-    const homeUrl = window.location.origin;
-    
-    $('#home').attr('href', homeUrl);
-    $('#events').attr('href', homeUrl+'/pages/events.html');
-    $('#books').attr('href', homeUrl+'/pages/books.html');
-}
 //copy
 var URL = function () {
     // This function is anonymous, is executed immediately and 
@@ -51,7 +42,7 @@ function displayBook(book) {
 
     $('#book').append(
         `
-        <div class="breathe-element">
+
             <div class="row">
                 <div class="col">
                     <h2>
@@ -80,14 +71,13 @@ function displayBook(book) {
                         </div>
                     </div>
                 </div>
-            </div>
+
         </div>
         `
     );
 
 }
 
-addStaticLinks();
 getBookDetails();
 
 

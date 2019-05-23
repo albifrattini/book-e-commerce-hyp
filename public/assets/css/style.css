@@ -14,7 +14,8 @@ body {
 .container {
     width: 100%;
     max-width: 1000px;
-    margin: 2% auto;
+    margin: 1% auto;
+    position: relative;
 }
 
 
@@ -306,6 +307,7 @@ span.psw {
 
 /*FOOTER STYLING*/
 footer {
+    bottom: fixed;
     padding: 1%;
     width: 100%;
     background-color: #707070;
@@ -334,7 +336,7 @@ footer {
 
 /* Style the icon bar links */
 .icon-bar a {
-  padding: 8px;
+  padding: 4px;
   color: white;
   font-size: 17px;
   background-color: #000;
@@ -349,7 +351,7 @@ footer {
 /*-----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------*/
 
-/*ContactUs page form*/
+/*CONTACT US PAGE FORM*/
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
   width: 100%; /* Full width */
@@ -389,7 +391,8 @@ input[type=submit]:hover {
 
 /*-----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------*/
-/* Event page */
+
+/* EVENTS PAGE */
 /* Style the buttons */
 .btnFilter {
   border: none;
@@ -419,7 +422,7 @@ input[type=submit]:hover {
 .containerEvents {
   width: 100%;
   padding-left: 130px;
-  padding-right: 130px;
+  padding-right: 40px;
   padding-bottom: 80px;
 }
 
@@ -431,7 +434,10 @@ input[type=submit]:hover {
 .imgEvent {
   display: block;
   width: 100%;
-  height: auto;
+  height: 240px;
+  /*centering*/
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .overlay {
@@ -454,7 +460,7 @@ input[type=submit]:hover {
 
 .overlayText {
   color: black;
-  font-size: 24px;
+  font-size: 16px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -462,4 +468,37 @@ input[type=submit]:hover {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   white-space: nowrap;
+  font-family: 'Lora', serif;
+}
+
+div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+div.titleEventContainer {
+  text-align: center;
+  padding: 5px 5px;
+  font-family: 'Lora', serif;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+
+/* EVENT PAGE*/
+.imgEventPage {
+  width: 100%;
+  height: auto;
+  /*centering*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.containerBook {
+   width: 100%;
+   max-width: 1000px;
+   margin: 1% auto;
+  padding-bottom: 110px;
 }

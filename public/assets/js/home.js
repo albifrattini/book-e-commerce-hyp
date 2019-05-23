@@ -27,25 +27,7 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-//Login functions
-// Get the modal
-var modal = document.getElementById('id01');
 
-function showLogin() {
-  document.getElementById('id01').style.display='block';
-  // $('#myNavBar').attr('class', 'collapse navbar-collapse');
-}
-
-function closeLogin() {
-  document.getElementById('id01').style.display='none';
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 
 //Import books
 function retrieveBooks() {

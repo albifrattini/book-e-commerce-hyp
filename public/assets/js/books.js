@@ -5,16 +5,7 @@ console.log('Building books main page...');
 var genres = ["Fiction", "Thriller", "Crime", "Romance", "Adventure", "Action", "Horror", "History", "Biography", "Fantasy", "Manga", "Comedy"];
 var themes = ["War", "Courage and Heroism", "Education", "Love", "Survival"];
 
-function addStaticLinks() {
 
-	console.log('Adding static links.');
-
-	const homeUrl = window.location.origin;
-	
-	$('#home').attr('href', homeUrl);
-	$('#events').attr('href', homeUrl+'/pages/events.html');
-	$('#books').attr('href', homeUrl+'/pages/books.html');
-}
 
 function getBooks() {
 	var genreEl = document.getElementById('genreDropdown');
@@ -62,39 +53,6 @@ function getBooks() {
 	});
 }
 
-//useless 
-function displayBook2(book) {
-
-	$('#bookList').append(
-		`
-		<div class="breathe-element">
-			<div class="row">
-				<div class="col">
-					<h3>
-						<a href="/pages/book.html?ISBN=${book.ISBN}">${book.title}</a>
-					</h3>
-				</div>
-			</div>
-			<div class="row book-cover">
-				<div class="col-lg-3">
-					<img src="${book.coverUrl}" alt="${book.title} cover" width="200" height="310">
-				</div>
-				<div class="col-lg-8">
-					<div>
-						<p>${book.description}</p>
-						<a href="#">${book.authorName}</a>
-						<p>Published by: ${book.publisher}</p>
-						<p>${book.price} €</p>
-						<h5>Availability: ${book.status}</h5>
-						<div style="margin-top: 50px;"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		`
-	);
-
-}
 
 function displayRows() {
 
@@ -117,6 +75,7 @@ function displayBook(book) {
                 ${book.title}<br>
                 ${book.price} €</p>
             </div>
+        </div>
         
         
 		`
@@ -141,7 +100,7 @@ function addDropdownValues() {
 }
 
 addDropdownValues();
-addStaticLinks();
+
 
 
 

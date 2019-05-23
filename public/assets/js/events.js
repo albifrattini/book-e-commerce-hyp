@@ -1,14 +1,3 @@
-function addStaticLinks() {
-
-    console.log('Adding static links.');
-
-    const homeUrl = window.location.origin;
-    
-    $('#home').attr('href', homeUrl);
-    $('#events').attr('href', homeUrl+'/pages/events.html');
-    $('#books').attr('href', homeUrl+'/pages/books.html');
-}
-
 function getEvents() {
 	fetch("/v2/events")
 		.then(function(response){
@@ -22,15 +11,13 @@ function getEvents() {
 function showEvents(event) {
 	$('#eventsShown').append(
 		` 	
-				 <div class="col-md-6">
-					<div class="titleEventContainer">
-			            <h3 class="text-center">${event.eventName}</h3>
-			        </div>
-			        
+			
+				 <div class="col-md-6 col-sm-6">
+			      <div class="polaroid">
 			        <div class="singlEventContainer">  
-				        <a href="/pages/event.html?id=${event.id}">
+				        <a href="/pages/event-detail.html?id=${event.id}">
 				            <img src="${event.imageUrl}" alt="${event.eventName} cover" 
-				             class="imgEvent" style="width:100%; ">	
+				             class="imgEvent">	
 
 				            <div class="overlay">
 				            	<div class="overlayText">
@@ -40,7 +27,13 @@ function showEvents(event) {
 				    		</div>              	
 				        </a>
 			        </div>
+
+			        <div class="titleEventContainer">
+			            <h4 class="text-center">${event.eventName}</h4>
+			        </div>
+			       </div>
 			     </div>
+			
 		
 	       
 		`
@@ -95,5 +88,4 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-addStaticLinks();
 getEvents();
