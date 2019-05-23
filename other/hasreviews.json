@@ -1,0 +1,44 @@
+[
+	{
+		"ISBN": "8804668040",
+		"reviewer": "Peppino di Capri",
+		"rating": "4",
+		"description": "I liked this book a lot because it took me back to the hard moments of the war."
+	},
+	{
+		"ISBN": "8868366452",
+		"reviewer": "Dexter Morgan",
+		"rating": "5",
+		"description": "I've been serving my country as lieutenant during the Vietnam war and Connelly made the tears come to my eyes with this writing..."
+	},
+	{
+		"ISBN": "8845268349",
+		"reviewer": "Bill Gates",
+		"rating": "5",
+		"description": "Nothing to say... everyone must read this book!"
+	},
+	{
+		"ISBN": "8807032937",
+		"reviewer": "Daenerys Targaryen",
+		"rating": "3",
+		"description": "I don't why I read a book called Educated since I didn't attend any school..."
+	},
+	{
+		"ISBN": "8806216465",
+		"reviewer": "Zio Boscaiolo",
+		"rating": "1",
+		"description": "I thought this book could help me develop knowledge in a new type of timber. I was wrong... totally misleading title! Beware men of the forest like me :("
+	},
+	{
+		"ISBN": "8830101133",
+		"reviewer": "Jerry Scotti",
+		"rating": "4",
+		"description": "I read the book in just one day. Such a deep and touching story!"
+	},
+	{
+		"ISBN": "8806216945",
+		"reviewer": "Franz Kafka",
+		"rating": "4",
+		"description": "I appreciate my name has been used for this book and the story had been thrilling me a lot!"
+	}
+]

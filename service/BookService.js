@@ -5,6 +5,8 @@ module.exports.booksDbSetup = function(database) {
 	dbConnection = database;
 
 	let booksList = require('../other/books.json');
+	let issimilartoList = require('../other/issimilarto.json');
+	let hasreviewsList = require('../other/hasreviews.json');
 	let authorsList = require('../other/authors.json');
 	let eventsList = require('../other/events.json');
 	let writtenbyList = require('../other/writtenby.json');
@@ -14,6 +16,7 @@ module.exports.booksDbSetup = function(database) {
 	return dbConnection.schema.hasTable('books').then(exists => {
 
 		if(!exists) {
+			console.log('Starting DB from scratch...');
 			dbConnection.schema.createTable('books', table => {
 				table.string('ISBN').primary(); // key for the book
 				table.string('title');
@@ -33,6 +36,20 @@ module.exports.booksDbSetup = function(database) {
 					table.string('book1').references('ISBN').inTable('books');
 					table.string('book2').references('ISBN').inTable('books');
 				})
+			})
+			.then(function () {
+				return dbConnection('issimilarto').insert(issimilartoList);
+			})
+			.then(function () {
+				return dbConnection.schema.createTable('hasreviews', table => {
+					table.string('ISBN').references('ISBN').inTable('books');
+					table.string('reviewer');
+					table.integer('rating');
+					table.string('description');
+				})
+			})
+			.then(function() {
+				return dbConnection('hasreviews').insert(hasreviewsList);
 			})
 			.then(function() {
 				return dbConnection.schema.createTable('authors', table => {

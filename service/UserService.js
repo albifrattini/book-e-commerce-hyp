@@ -3,9 +3,9 @@ let dbConnection;
 module.exports.usersDbSetup = function(database) {
 	dbConnection = database;
 	let users = require('../other/users.json');
-	console.log('Initializing user table...');
 	return dbConnection.schema.hasTable('users').then(exists => {
 		if(!exists) {
+			console.log('Starting users table from scratch...');
 			dbConnection.schema.createTable('users', table => {
 				table.increments();
 				table.text('name');

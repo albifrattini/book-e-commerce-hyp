@@ -8,10 +8,8 @@ let { booksDbSetup } = require('./BookService');
 let { usersDbSetup } = require('./UserService');
 
 function setupDb () {
-	console.log('Setting up the Database...');
 	booksDbSetup(dbConnection);
 	usersDbSetup(dbConnection);
-	console.log('Database up running!');
 }
 
 module.exports = { database: dbConnection, setupDb };

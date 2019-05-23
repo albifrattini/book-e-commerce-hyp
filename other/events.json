@@ -4,6 +4,7 @@
 		"bookPresented": "8804668040",
 		"eventLocation": "Feltrinelli piazza Duomo, Milano",
 		"eventDate": "2019-06-23",
+		"eventDescription": "The event will take place at 16.00. In the first part, the author will explain how the idea for the book started and how it turned out to be a successful book. At 17.00 the interview will finish and questions can be asked. For the people that want to join us, the author will offer an aperitivo and face to face speaking.",
 	    "imageUrl" : "/assets/img/bookstore.jpg"
 	},
 	{
@@ -11,47 +12,47 @@
 		"bookPresented": "8868366452",
 		"eventLocation": "Taschen, Monza",
 		"eventDate": "2019-07-23",
+		"eventDescription": "The event will take place at 18.00. In the first part, the author will explain how the idea for the book started and how it turned out to be a successful book. At 19.00 the interview will finish and questions can be asked. For the people that want to join us, the author will offer an aperitivo and face to face speaking.",
         "imageUrl" : "/assets/img/taschenBookstore.jpg"
-
 	},
 	{
 		"eventName": "The hobbit presentation",
 		"bookPresented": "8845268349",
 		"eventLocation": "Mondadori, Bisceglie",
 		"eventDate": "2019-07-23",
+		"eventDescription": "The event will take place at 16.00. In the first part, the author will explain how the idea for the book started and how it turned out to be a successful book. At 17.00 the interview will finish and questions can be asked. For the people that want to join us, the author will offer an aperitivo and face to face speaking.",
         "imageUrl" : "/assets/img/mondadoriBookstore.jpg"
-
 	},
 	{
 		"eventName": "Educated presentation",
 		"bookPresented": "8807032937",
 		"eventLocation": "Mondadori, Torino",
 		"eventDate": "2019-08-23",
+		"eventDescription": "The event will take place at 20.00. In the first part, the author will explain how the idea for the book started and how it turned out to be a successful book. At 21.30 the interview will finish and questions can be asked. For the people that want to join us, the author will offer an aperitivo and face to face speaking.",
         "imageUrl" : "/assets/img/mondadoriLivorno.jpg"
-
 	},
 	{
 		"eventName": "Norwegian wood presentation",
 		"bookPresented": "8806216465",
 		"eventLocation": "Libri Antichi, Porta Venezia, Milano",
 		"eventDate": "2019-06-23",
+		"eventDescription": "The event will take place at 15.00. In the first part, the author will explain how the idea for the book started and how it turned out to be a successful book. At 16.00 the interview will finish and questions can be asked. For the people that want to join us, the author will offer an aperitivo and face to face speaking.",
         "imageUrl" : "/assets/img/libreriaRandom.jpg"
-
 	},
 	{
 		"eventName": "Kafka on the shore presentation",
 		"bookPresented": "8806216945",
 		"eventLocation": "Libri Antichi, Porta Venezia, Milano",
 		"eventDate": "2019-06-23",
+		"eventDescription": "The event will take place at 15.00. In the first part, the author will explain how the idea for the book started and how it turned out to be a successful book. At 16.00 the interview will finish and questions can be asked. For the people that want to join us, the author will offer an aperitivo and face to face speaking.",
         "imageUrl" : "/assets/img/libreriaRandom.jpg"
-
 	},
 	{
 		"eventName": "Of mice and men presentation",
 		"bookPresented": "8830101133",
 		"eventLocation": "Feltrinelli Duomo Milano",
 		"eventDate": "2019-05-23",
+		"eventDescription": "The event will take place at 11.00. In the first part, the author will explain how the idea for the book started and how it turned out to be a successful book. At 12.00 the interview will finish and questions can be asked. For the people that want to join us, the author will offer an aperitivo and face to face speaking.",
         "imageUrl" : "/assets/img/feltrinelli.jpg"
-
 	}
 ]
