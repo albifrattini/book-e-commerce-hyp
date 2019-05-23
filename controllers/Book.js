@@ -71,11 +71,7 @@ module.exports.getEventsByMonth = function getEventsByMonth (request, response, 
 module.exports.getAuthorById = function getAuthorById (request, response, next) {
 	const authorId = request.swagger.params['authorId'].value;
 	Book.getAuthorById(authorId).then(author => {
-		response.json(_.pick(author[0], ['authorName', 
-										'authorBiography',
-										'ISBN',
-										'title',
-										'coverUrl']));
+		response.json(author);
 		next();
 	});
 }

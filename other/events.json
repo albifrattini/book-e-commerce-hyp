@@ -39,6 +39,14 @@
 
 	},
 	{
+		"eventName": "Kafka on the shore presentation",
+		"bookPresented": "8806216945",
+		"eventLocation": "Libri Antichi, Porta Venezia, Milano",
+		"eventDate": "2019-06-23",
+        "imageUrl" : "/assets/img/libreriaRandom.jpg"
+
+	},
+	{
 		"eventName": "Of mice and men presentation",
 		"bookPresented": "8830101133",
 		"eventLocation": "Feltrinelli Duomo Milano",
