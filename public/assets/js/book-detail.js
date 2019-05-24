@@ -1,5 +1,4 @@
 
-//copy
 var URL = function () {
     // This function is anonymous, is executed immediately and 
     // the return value is assigned to QueryString!
@@ -44,20 +43,21 @@ function displayBook(book) {
         `
 
             <div class="row">
-                <div class="col">
-                    <h2>
+                <div class="text-center">
+                    <h3>
                         ${book.title}
-                    </h2>
-                    <h4>
-                        by <a href="#">${book.authorName}</a>
-                    </h4>
+                    </h3>
+                    <hr style="max-width: 1000px;">
                 </div>
             </div>
-            <div class="row book-cover">
-                <div class="col-lg-5">
-                    <img src="${book.coverUrl}" alt="${book.title} cover" width="200" height="310">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="${book.coverUrl}" alt="${book.title} cover" id="bookCover">
+                    <h5>
+                        by <a href="/pages/author-detail.html?id=${book.authorId}">${book.authorName}</a>
+                    </h5>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-md-6">
                     <div>
                         <p>${book.description}</p>
                         <p>Published by: ${book.publisher}</p>

@@ -307,7 +307,6 @@ span.psw {
 
 /*FOOTER STYLING*/
 footer {
-    bottom: fixed;
     padding: 1%;
     width: 100%;
     background-color: #707070;
@@ -500,5 +499,16 @@ div.titleEventContainer {
    width: 100%;
    max-width: 1000px;
    margin: 1% auto;
-  padding-bottom: 110px;
+   padding-bottom: 500px;
 }
+
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/* BOOK PAGE*/
+
+#bookCover {
+  width: 70%;
+  margin-left: 20px;
+  margin-right: auto;
+}
+
