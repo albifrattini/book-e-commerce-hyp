@@ -10,14 +10,9 @@ function getBooks() {
 	var genreEl = genreEl.options[genreEl.selectedIndex].value;
 	var themeEl = document.getElementById('themeDropdown');
 	var themeEl = themeEl.options[themeEl.selectedIndex].value;
-	console.log('Fetching books with:\n- Book title radio: ' +
-		document.getElementById('titleRadio').checked + 
-		'\n- Author radio: ' + 
-		document.getElementById('authorRadio').checked + 
-		'\n- Genre: ' + 
-		genreEl + 
-		'\n- Theme: ' + 
-		themeEl + 
+	console.log('Fetching books with: ' + 
+		'\n- Genre: ' + genreEl + 
+		'\n- Theme: ' + themeEl + 
 		'\n- Search: ' + document.getElementById('titleOrAuthorSearch').value
 	);
 
@@ -28,12 +23,9 @@ function getBooks() {
 	if (themeEl) {
 		query += `theme=${themeEl}&`;
 	}
-	if (document.getElementById('titleRadio').checked) {
-		title = document.getElementById('titleOrAuthorSearch').value.replace(' ', '+');
-		query += `title=${title}`;
-	} else if (document.getElementById('authorRadio').checked){
-		author = document.getElementById('titleOrAuthorSearch').value.replace(' ', '+');
-		query += `author=${author}`;
+	if (document.getElementById('titleOrAuthorSearch').value) {
+		titleOrAuthor = document.getElementById('titleOrAuthorSearch').value.replace(' ', '+');
+		query += `titleOrAuthor=${titleOrAuthor}`;
 	}
 
 	console.log(query);
@@ -101,7 +93,30 @@ getBooks();
 
 
 
-
+/*
+$(function() {
+		$.getJSON('genres.json', function(data) {
+				$.each(data, function(genre) {
+					$('#genreDropdown').append(
+						`
+							<option value="${genre}">${genre}</option>
+						`
+					);
+				});
+			}
+		);
+		$.getJSON('genres.json', function(data) {
+				$.each(data, function(genre) {
+					$('#genreDropdown').append(
+						`
+							<option value="${genre}">${genre}</option>
+						`
+					);
+				});
+			}
+		);
+	});
+*/
 
 
 

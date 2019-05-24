@@ -34,11 +34,13 @@ module.exports.getBookByIsbn = function getBookByIsbn (request, response, next) 
 }
 
 module.exports.getBooksThroughFilter = function getBooksThroughFilter (request, response, next) {
-	const bookTitle = request.swagger.params['title'].value;
-	const bookAuthor = request.swagger.params['author'].value;
+	// const bookTitle = request.swagger.params['title'].value;
+	// const bookAuthor = request.swagger.params['author'].value;
+	const titleOrAuthor = request.swagger.params['titleOrAuthor'].value;
 	const bookGenre = request.swagger.params['genre'].value;
 	const bookTheme = request.swagger.params['theme'].value;
-	const filter = new Array(bookTitle, bookAuthor, bookGenre, bookTheme);
+	const filter = new Array(titleOrAuthor, bookGenre, bookTheme);
+	console.log(filter);
 	Book.getBooksThroughFilter(filter).then(books => {
 		response.json(books);
 		next();

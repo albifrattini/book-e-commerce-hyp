@@ -500,7 +500,7 @@ div.titleEventContainer {
    height: auto;
    max-width: 1000px;
    margin: 1% auto;
-   padding-bottom: 500px;
+   padding-bottom: 100px;
 }
 
 /*-----------------------------------------------------------------------------------------*/
@@ -511,5 +511,16 @@ div.titleEventContainer {
   width: 70%;
   margin-left: 20px;
   margin-right: auto;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.checked {
+  color: orange;
 }
 

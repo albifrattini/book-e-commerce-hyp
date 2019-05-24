@@ -62,14 +62,9 @@ paths:
       produces:
       - "applications/json"
       parameters:
-      - name: "title"
+      - name: "titleOrAuthor"
         in: "query"
-        description: "Title of the book"
-        required: false
-        type: "string"
-      - name: "author"
-        in: "query"
-        description: "Author name"
+        description: "Title or Author of the book"
         required: false
         type: "string"
       - name: "genre"
