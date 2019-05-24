@@ -97,9 +97,9 @@
 
     <!-- Filter button system -->
      <div id="myBtnContainer">
-        <button class="btnFilter active" onclick="filterSelection('all')"> Show all</button>
-        <button class="btnFilter" onclick="filterSelection('currentMonth')"> This Month</button>
-        <button class="btnFilter" onclick="filterSelection('nextMonth')"> Next Month</button>
+        <button class="btnFilter active" onclick="getEvents()"> Show all</button>
+        <button class="btnFilter" onclick="getEventsByMonth(new Date().getMonth() + 1)"> This Month</button>
+        <button class="btnFilter" onclick="getEventsByMonth(new Date().getMonth() + 2)"> Next Month</button>
      </div>
 
 
