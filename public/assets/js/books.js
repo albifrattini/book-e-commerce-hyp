@@ -54,22 +54,17 @@ function getBooks() {
 }
 
 
-function displayRows() {
 
-	for (var i = 0; i <= 3; i++) {
-		displayBook(i);
-	}
-}
 
 
 function displayBook(book) {
 
-	// Rendering fo multiple books!!
+	// Rendering of multiple books!!
 	$('#bookList').append(
 		`
 		
-		<div class="col-md-2">
-            <div class="card">
+		<div class="col-md-3 col-sm-3">
+            <div class="polaroid">
                 <a href="/pages/book-detail.html?ISBN=${book.ISBN}"><img src="${book.coverUrl}" alt="${book.title} cover" style="width:100%"></a>
                 <p class="price" style="border-style: double; color: black">
                 ${book.title}<br>
@@ -100,7 +95,7 @@ function addDropdownValues() {
 }
 
 addDropdownValues();
-
+getBooks();
 
 
 
