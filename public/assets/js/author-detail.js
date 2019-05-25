@@ -40,26 +40,17 @@ function displayAuthor(author) {
 
     $('#author').append(
         `
+            <h3 class="text-center">${author.authorName}</h3>
+            <hr style="max-width: 1000px;">
+            <div class="container">
+                <img src="${author.profileUrl}" alt="${author.authorName} cover" id="authorImg">
+                <hr style="max-width: 1000px;">
+                <p>${author.authorBiography}</p>
+            </div>          
+             
+                
 
-            <div class="row">
-                <div class="col">
-                    <h2>
-                        ${author.authorName}
-                    </h2>
-                </div>
-            </div>
-            <div class="row book-cover">
-                <div class="col-lg-5">
-                    <img src="${author.profileUrl}" alt="${author.authorName} cover" width="200" height="310">
-                </div>
-                <div class="col-lg-7">
-                    <div>
-                        <p>${author.authorBiography}</p>
-                        
-                    </div>
-                </div>
-
-        </div>
+        
         `
     );
 
