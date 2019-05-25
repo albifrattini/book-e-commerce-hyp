@@ -1,12 +1,6 @@
 const Book = require('../service/BookService');
 const _ = require('lodash');
 
-/**
- * Names of functions must be included in Swagger specficiations in order to
- * answer to the specific request.
-**/
-
-
 
 module.exports.getAllBooks = function getAllBooks (request, response, next) {
 	const offset = request.swagger.params['offset'].value;
@@ -34,13 +28,10 @@ module.exports.getBookByIsbn = function getBookByIsbn (request, response, next) 
 }
 
 module.exports.getBooksThroughFilter = function getBooksThroughFilter (request, response, next) {
-	// const bookTitle = request.swagger.params['title'].value;
-	// const bookAuthor = request.swagger.params['author'].value;
 	const titleOrAuthor = request.swagger.params['titleOrAuthor'].value;
 	const bookGenre = request.swagger.params['genre'].value;
 	const bookTheme = request.swagger.params['theme'].value;
 	const filter = new Array(titleOrAuthor, bookGenre, bookTheme);
-	console.log(filter);
 	Book.getBooksThroughFilter(filter).then(books => {
 		response.json(books);
 		next();

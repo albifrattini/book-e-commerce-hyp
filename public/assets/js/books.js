@@ -1,11 +1,7 @@
 // JS script for books page
 
-var genres = ["Fiction", "Thriller", "Crime", "Romance", "Adventure", "Action", "Horror", "History", "Biography", "Fantasy", "Manga", "Comedy"];
-var themes = ["War", "Courage and Heroism", "Education", "Love", "Survival"];
-
-
-
 function getBooks() {
+
 	var genreEl = document.getElementById('genreDropdown');
 	var genreEl = genreEl.options[genreEl.selectedIndex].value;
 	var themeEl = document.getElementById('themeDropdown');
@@ -41,9 +37,11 @@ function getBooks() {
 				$('#bookList').append('<h3>No book found with this features!</h3>');
 			}
 	});
+
 }
 
 function displayBooks(books) {
+
 	for (var i = 0; i < books.length/4; i++) {
 		$('#bookList').append('<div class="row">');
 		for (var j = 0; j < 4; j++) {
@@ -68,56 +66,39 @@ function displayBooks(books) {
 		}
 		$('#bookList').append('</div>');
 	}
+
 }
 
 
 function addDropdownValues() {
-	for (i in genres) {
-		$('#genreDropdown').append(
+
+	genres.map(fillGenreDropdown);
+	themes.map(fillThemeDropdown);
+
+}
+
+function fillGenreDropdown(el) {
+
+	$('#genreDropdown').append(
 			`
-			<option value="${genres[i]}">${genres[i]}</option>
+			<option value="${el.genre}">${el.genre}</option>
 			`
-		);
-	}
-	for (i in themes) {
-		$('#themeDropdown').append(
+	);
+
+}
+
+function fillThemeDropdown(el) {
+
+	$('#themeDropdown').append(
 			`
-			<option value="${themes[i]}">${themes[i]}</option>
+			<option value="${el.theme}">${el.theme}</option>
 			`
-		);
-	} 
+	);
+
 }
 
 addDropdownValues();
 getBooks();
-
-
-
-/*
-$(function() {
-		$.getJSON('genres.json', function(data) {
-				$.each(data, function(genre) {
-					$('#genreDropdown').append(
-						`
-							<option value="${genre}">${genre}</option>
-						`
-					);
-				});
-			}
-		);
-		$.getJSON('genres.json', function(data) {
-				$.each(data, function(genre) {
-					$('#genreDropdown').append(
-						`
-							<option value="${genre}">${genre}</option>
-						`
-					);
-				});
-			}
-		);
-	});
-*/
-
 
 
 
