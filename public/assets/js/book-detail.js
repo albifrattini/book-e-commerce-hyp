@@ -33,7 +33,27 @@ function getBookDetails() {
         })
         .then(function (data) {
             displayBook(data);
-    });
+        })
+        .then(function() {
+            fetch(`/v2/books/similar/${isbn}`)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    displaySimilarBooks(data);
+                });
+        })
+        .then(function() {
+            fetch(`/v2/books/reviews/${isbn}`)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    startReviewSection();
+                    data.map(displayBookReviews);
+                });
+        });
+
 
 }
 
@@ -76,6 +96,106 @@ function displayBook(book) {
         `
     );
 
+}
+
+function displaySimilarBooks(books) {
+    $('#similarBooks').append(
+        `
+            <div class="row">
+                <div class="text-center">
+                    <h3>
+                        Similar Books
+                    </h3>
+                    <hr style="max-width: 1000px;">
+                </div>
+            </div>
+            <div style="margin-bottom: 20px"></div>
+        `
+    );
+    for (var i = 0; i < books.length/4; i++) {
+        $('#similarBooks').append('<div class="row">');
+        for (var j = 0; j < 4; j++) {
+            var index = i*4+j;
+            if (index < books.length) {
+                $('#similarBooks').append(
+                    `
+                    
+                    <div class="col-md-3 col-sm-3">
+                        <div class="polaroid">
+                            <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%" height="auto"></a>
+                            <p class="price text-center" style="color: black; padding: 5px">
+                            ${books[index].title}<br>
+                            ${books[index].price} €</p>
+                        </div>
+                    </div>
+                    
+                    
+                    `
+                );
+            }
+        }
+        $('#similarBooks').append('</div>');
+    }
+}
+
+function startReviewSection() {
+    $('#bookReviews').append(
+        `
+            <div class="row">
+                <div class="text-center">
+                    <h3>
+                        Book Reviews
+                    </h3>
+                    <hr style="max-width: 1000px;">
+                </div>
+            </div>
+            <div style="margin-bottom: 20px"></div>
+        `
+    );
+}
+
+function displayBookReviews(review) {
+
+    $('#bookReviews').append(
+        `
+            <div class="row">
+                <div class="col-sm-2 col-md-2">
+                    <div class="text-center">
+                        <img src="/assets/img/avatar.png" alt="${review.reviewer}" class="avatar">
+                    </div>
+                </div>
+                <div class="col-sm-10 col-md-10">
+                    <h4>${review.reviewer}</h4>
+                    <div id="rating"></div>
+                    <br>
+                    <p>${review.description}</p>
+                </div>
+            </div>
+            <hr>
+        `
+    );
+
+    insertStarRating(review.rating);
+}
+
+function insertStarRating(rating) {
+
+    for (var i = 0; i < 5; i++) {
+
+        if(i < rating) {
+            $('#rating').append(
+                `
+                    <span class="fa fa-star checked"></span>
+                `
+            );
+        } else {
+            $('#rating').append(
+                `
+                    <span class="fa fa-star"></span>
+                `
+            );
+        }
+    }
 }
 
 getBookDetails();

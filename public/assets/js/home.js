@@ -36,12 +36,18 @@ function retrieveBooks() {
       return response.json();
     })
     .then(function(books){
-      books.map(showBooks);
-      books.map(displayBooks);
-    });
+      books.map(showFavouriteBooks);
+  });
+  fetch("/v2/books?limit=4&offset=3")
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(books){
+      books.reverse().map(showBestSellerBooks);
+  });
 }
 
-function showBooks(book) {
+function showFavouriteBooks(book) {
   $('#favourite').append(
     `
       <div class="column">
@@ -56,7 +62,7 @@ function showBooks(book) {
   );
 }
 
-function displayBooks(book) {
+function showBestSellerBooks(book) {
   $('#best').append(
     `
       <div class="column">

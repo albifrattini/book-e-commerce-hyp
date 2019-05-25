@@ -127,20 +127,14 @@ module.exports.getBooksThroughFilter = function (filter) {
 		.join('writtenby', 'books.ISBN', 'writtenby.ISBN')
 		.join('authors', 'writtenby.authorId', 'authors.id');
 	if (filter[0]) {
-		let title = filter[0].toLowerCase();
-		// query = query.where('title', filter[0]);
-		query.whereRaw('LOWER("title") = ?', filter[0]);
+		let titleOrAuthor = filter[0].toLowerCase();
+		query.whereRaw('LOWER(??) LIKE ?', ['books.title', `%${titleOrAuthor}%`]).orWhere(dbConnection.raw('LOWER(??) LIKE ?', ['authors.authorName', `%${titleOrAuthor}%`]));
 	}
 	if (filter[1]) {
-		let author = filter[1].toLowerCase();
-		// query = query.where('name', filter[1]);
-		query = query.whereRaw('LOWER("authorName") = ?', filter[1]);
+		query = query.where('books.genre', filter[1]);
 	}
 	if (filter[2]) {
-		query = query.where('genre', filter[2]);
-	}
-	if (filter[3]) {
-		query = query.where('theme', filter[3]);
+		query = query.where('books.theme', filter[2]);
 	}
 	return query.select();
 }

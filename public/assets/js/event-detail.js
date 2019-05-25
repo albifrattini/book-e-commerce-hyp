@@ -66,7 +66,7 @@ function displayEvent(event) {
                  <p style="margin: 3% auto;">${event.eventDescription}</p>
                  <p style="margin: 3% auto;">${event.eventLocation}</p>
                  <p style="margin: 3% auto;">${event.eventDate.substring(0,10)}</p>
-                 <a href="#">${event.authorName}</a><br>
+                 <a href="/pages/author-detail.html?id=${event.authorId}">${event.authorName}</a><br>
                  <a href="/pages/book-detail.html?ISBN=${event.ISBN}">${event.title}</a>
                  
                </div>

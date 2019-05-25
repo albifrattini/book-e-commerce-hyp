@@ -1,7 +1,5 @@
 // JS script for books page
 
-console.log('Building books main page...');
-
 var genres = ["Fiction", "Thriller", "Crime", "Romance", "Adventure", "Action", "Horror", "History", "Biography", "Fantasy", "Manga", "Comedy"];
 var themes = ["War", "Courage and Heroism", "Education", "Love", "Survival"];
 
@@ -12,14 +10,9 @@ function getBooks() {
 	var genreEl = genreEl.options[genreEl.selectedIndex].value;
 	var themeEl = document.getElementById('themeDropdown');
 	var themeEl = themeEl.options[themeEl.selectedIndex].value;
-	console.log('Fetching books with:\n- Book title radio: ' +
-		document.getElementById('titleRadio').checked + 
-		'\n- Author radio: ' + 
-		document.getElementById('authorRadio').checked + 
-		'\n- Genre: ' + 
-		genreEl + 
-		'\n- Theme: ' + 
-		themeEl + 
+	console.log('Fetching books with: ' + 
+		'\n- Genre: ' + genreEl + 
+		'\n- Theme: ' + themeEl + 
 		'\n- Search: ' + document.getElementById('titleOrAuthorSearch').value
 	);
 
@@ -30,12 +23,9 @@ function getBooks() {
 	if (themeEl) {
 		query += `theme=${themeEl}&`;
 	}
-	if (document.getElementById('titleRadio').checked) {
-		title = document.getElementById('titleOrAuthorSearch').value.replace(' ', '+');
-		query += `title=${title}`;
-	} else if (document.getElementById('authorRadio').checked){
-		author = document.getElementById('titleOrAuthorSearch').value.replace(' ', '+');
-		query += `author=${author}`;
+	if (document.getElementById('titleOrAuthorSearch').value) {
+		titleOrAuthor = document.getElementById('titleOrAuthorSearch').value.replace(' ', '+');
+		query += `titleOrAuthor=${titleOrAuthor}`;
 	}
 
 	console.log(query);
@@ -46,36 +36,40 @@ function getBooks() {
 			return response.json();
 		}).then(function (data) {
 			if (data.length > 0) {
-				data.map(displayBook);
+				displayBooks(data);
 			} else {
 				$('#bookList').append('<h3>No book found with this features!</h3>');
 			}
 	});
 }
 
-
-
-
-
-function displayBook(book) {
-
-	// Rendering of multiple books!!
-	$('#bookList').append(
-		`
-		
-		<div class="col-md-3 col-sm-3">
-            <div class="polaroid">
-                <a href="/pages/book-detail.html?ISBN=${book.ISBN}"><img src="${book.coverUrl}" alt="${book.title} cover" style="width:100%"></a>
-                <p class="price" style="border-style: double; color: black">
-                ${book.title}<br>
-                ${book.price} €</p>
-            </div>
-        </div>
-        
-        
-		`
-	);
+function displayBooks(books) {
+	for (var i = 0; i < books.length/4; i++) {
+		$('#bookList').append('<div class="row">');
+		for (var j = 0; j < 4; j++) {
+			var index = i*4+j;
+			if (index < books.length) {
+				$('#bookList').append(
+					`
+					
+					<div class="col-md-3 col-sm-3">
+			            <div class="polaroid">
+			                <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%" height="auto"></a>
+			                <p class="price text-center" style="color: black; padding: 5px">
+			                ${books[index].title}<br>
+			                ${books[index].price} €</p>
+			            </div>
+			        </div>
+			        
+			        
+					`
+				);
+			}
+		}
+		$('#bookList').append('</div>');
+	}
 }
+
 
 function addDropdownValues() {
 	for (i in genres) {
@@ -99,7 +93,30 @@ getBooks();
 
 
 
-
+/*
+$(function() {
+		$.getJSON('genres.json', function(data) {
+				$.each(data, function(genre) {
+					$('#genreDropdown').append(
+						`
+							<option value="${genre}">${genre}</option>
+						`
+					);
+				});
+			}
+		);
+		$.getJSON('genres.json', function(data) {
+				$.each(data, function(genre) {
+					$('#genreDropdown').append(
+						`
+							<option value="${genre}">${genre}</option>
+						`
+					);
+				});
+			}
+		);
+	});
+*/
 
 
 
