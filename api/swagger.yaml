@@ -385,7 +385,15 @@ definitions:
         type: "string"
       authorBiography:
         type: "string"
-      profileUlr:
+      nationality:
+        type: "string"
+      birthDate:
+        type: "string"
+      birthPlace:
+        type: "string"
+      mainGenre:
+        type: "string"
+      profileUrl:
         type: "string"
     title: "Author"
     description: "An author of some book in the store"

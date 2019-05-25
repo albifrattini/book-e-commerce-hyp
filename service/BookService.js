@@ -56,6 +56,10 @@ module.exports.booksDbSetup = function(database) {
 					table.increments('id').primary();
 					table.string('authorName');
 					table.text('authorBiography');
+					table.string('nationality');
+					table.date('birthDate');
+					table.string('birthPlace');
+					table.string('mainGenre');
 					table.string('profileUrl');
 				});
 			})
