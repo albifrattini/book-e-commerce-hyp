@@ -86,6 +86,14 @@ module.exports.getAuthorById = function getAuthorById (request, response, next) 
 	});
 }
 
+module.exports.getQuotesByAuthorId = function getQuotesByAuthorId (request, response, next) {
+	const authorId = request.swagger.params['authorId'].value;
+	Book.getQuotesByAuthorId(authorId).then(quotes => {
+		response.json(quotes);
+		next();
+	})
+}
+
 
 
 

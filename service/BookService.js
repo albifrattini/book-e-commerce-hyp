@@ -8,6 +8,7 @@ module.exports.booksDbSetup = function(database) {
 	let issimilartoList = require('../other/issimilarto.json');
 	let hasreviewsList = require('../other/hasreviews.json');
 	let authorsList = require('../other/authors.json');
+	let quotesList = require('../other/quotes.json');
 	let eventsList = require('../other/events.json');
 	let writtenbyList = require('../other/writtenby.json');
 	let writesList = require('../other/writes.json');
@@ -83,6 +84,15 @@ module.exports.booksDbSetup = function(database) {
 			})
 			.then(function() {
 				return dbConnection('writes').insert(writesList);
+			})
+			.then(function() {
+				return dbConnection.schema.createTable('quotes', table => {
+					table.integer('authorId').references('id').inTable('authors');
+					table.text('quote');
+				});
+			})
+			.then(function() {
+				return dbConnection('quotes').insert(quotesList);
 			})
 			.then(function() {
 				return dbConnection.schema.createTable('events', table => {
@@ -182,6 +192,10 @@ module.exports.getAuthorById = function (authorId) {
 		.where('authors.id', authorId)
 		.join('writes', 'authors.id', 'writes.authorId')
 		.join('books', 'writes.ISBN', 'books.ISBN');
+}
+
+module.exports.getQuotesByAuthorId = function (authorId) {
+	return dbConnection('quotes').where('authorId', authorId);
 }
 
 

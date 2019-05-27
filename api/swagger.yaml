@@ -256,6 +256,31 @@ paths:
         404:
           description: "Author not found"
       x-swagger-router-controller: "Book"
+  /authors/quotes:
+    get:
+      tags:
+      - "quotes"
+      summary: "Quotes of the selected author"
+      description: "List of quotes of the selected author"
+      operationId: "getQuotesByAuthorId"
+      produces:
+      - "applications/json"
+      parameters:
+      - name: "authorId"
+        in: "query"
+        description: "Id of the author used to retrieve quotes"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "A collection of quotes"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Book"
+        404:
+          description: "Unexpected error"
+      x-swagger-router-controller: "Book"
   /users/login:
     post:
       tags:
