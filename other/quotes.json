@@ -12,52 +12,51 @@
         "quote":"Nel sogno c'è sempre qualcosa di assurdo e confuso, non ci si libera mai della vaga sensazione ch'è tutto falso, che un bel momento ci si dovrà svegliare.”            ― Dino Buzzati, The Tartar Steppe"
     },
     {
-        "id": 2,
+        "authorId": "2",
         "quote":"Los Angeles was the kind of place where everybody was from somewhere else and nobody really droppped anchor. It was a transient place. People drawn by the dream, people running from the nightmare. Twelve million people and all of them ready to make a break for it if necessary. Figuratively, literally, metaphorically -- any way you want to look at it -- everbody in L.A. keeps a bag packed. Just in case.                ― Michael Connelly, The Brass Verdict"
     },
     {
-        "id": 2,
+        "authorId": "2",
         "quote":"There were a billion lights out there on the horizon and I knew that all of them put together weren't enough to light the darkness in the hearts of some men.            ― Michael Connelly, The Scarecrow"
     },
     {
-        "id": 2,
+        "authorId": "2",
         "quote":"The setting sun burned the sky pink and orange in the same bright hues as surfers' bathing suits. It was beautiful deception, Bosch thought, as he drove north on the Hollywood Freeway to home. Sunsets did that here. Made you forget it was the smog that made their colors so brilliant, that behind every pretty picture there could be an ugly story.                                                                                  ― Michael Connelly, The Black Echo"
     },
     {
-        "id": 3,
+        "authorId": "3",
         "quote":"Deserves it! I daresay he does. Many that live deserve death. And some that die deserve life. Can you give it to them? Then do not be too eager to deal out death in judgement. For even the very wise cannot see all ends.                                 — J.R.R. Tolkien (The Fellowship of the Ring (The Lord of the Rings, #1))"
     },
     {
-        "id": 3,
+        "authorId": "3",
         "quote": "Fantasy is escapist, and that is its glory. If a soldier is imprisioned by the enemy, don't we consider it his duty to escape?. . .If we value the freedom of mind and soul, if we're partisans of liberty, then it's our plain duty to escape, and to take as many people with us as we can!                                                          — J.R.R. Tolkien"
     },
     {
-        "id": 3,
+        "authorId": "3",
         "quote":"The Road goes ever on and on Down from the door where it began. Now far ahead the Road has gone, And I must follow, if I can, Pursuing it with eager feet, Until it joins some larger way, Where many paths and errands meet. And whither then? I cannot say     — J.R.R. Tolkien (The Fellowship of the Ring (The Lord of the Rings, #1))"
     },
     {
-        "id": 4,
+        "authorId": "4",
         "quote": "My life was narrated for me by others. Their voices were forceful, emphatic, absolute. It had never occurred to me that my voice might be as strong as theirs.      — Tara Westover (Educated)"
     },
     {
-        "id": 4,
+        "authorId": "4",
         "quote": "The thing about having a mental breakdown is that no matter how obvious it is that you're having one, it is somehow not obvious to you. I'm fine, you think. So what if I watched TV for twenty-four straight hours yesterday. I'm not falling apart. I'm just lazy. Why it's better to think yourself lazy than think yourself in distress, I'm not sure. But it was better. More than better: it was vital.                           — Tara Westover (Educated)"
     },
     {
-        "id": 4,
+        "authorId": "4",
         "quote": "Everything I had worked for, all my years of study, had been to purchase for myself this one privilege: to see and experience more truths than those given to me by my father, and to use those truths to construct my own mind. I had come to believe that the ability to evaluate many ideas, many histories, many points of view, was at the heart of what it means to self-create. If I yielded now, I would lose more than an argument. I would lose custody of my own mind. This was the price I was being asked to pay, I understood that now. What my father wanted to cast from me wasn’t a demon: it was me.                                                                                — Tara Westover (Educated)"
     },
     {
-        "id": 5,
+        "authorId": "5",
         "quote":"If you only read the books that everyone else is reading, you can only think what everyone else is thinking.                                                             — Haruki Murakami (Norwegian Wood)"
     },
     {
-        "id": 5,
+        "authorId": "5",
         "quote": "And once the storm is over, you won’t remember how you made it through, how you managed to survive. You won’t even be sure, whether the storm is really over. But one thing is certain. When you come out of the storm, you won’t be the same person who walked in. That’s what this storm’s all about.                                          — Haruki Murakami"
     },
     {
-        "id": 5,
+        "authorId": "5",
         "quote":"Why do people have to be this lonely? What's the point of it all? Millions of people in this world, all of them yearning, looking to others to satisfy them, yet isolating themselves. Why? Was the earth put here just to nourish human loneliness?    — Haruki Murakami (Sputnik Sweetheart)"
-    },
-
+    }
 ]
