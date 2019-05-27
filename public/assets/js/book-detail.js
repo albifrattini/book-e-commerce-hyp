@@ -64,7 +64,7 @@ function displayBook(book) {
 
             <div class="row">
                 <div class="text-center">
-                    <h3>
+                    <h3 class="textFont">
                         ${book.title}
                     </h3>
                     <hr style="max-width: 1000px;">
@@ -73,16 +73,16 @@ function displayBook(book) {
             <div class="row">
                 <div class="col-md-6">
                     <img src="${book.coverUrl}" alt="${book.title} cover" id="bookCover">
-                    <h5>
+                    <h5 class="textFont" style="padding-left:20px;">
                         by <a href="/pages/author-detail.html?id=${book.authorId}">${book.authorName}</a>
                     </h5>
                 </div>
                 <div class="col-md-6">
                     <div>
-                        <p>${book.description}</p>
-                        <p>Published by: ${book.publisher}</p>
-                        <p>${book.price} €</p>
-                        <h5>Availability: ${book.status}</h5>
+                        <p class="textFont">${book.description}</p>
+                        <p class="textFont"><b>Published by:</b> ${book.publisher}</p>
+                        <p class="textFont">${book.price} €</p>
+                        <h5 class="textFont"><b>Availability:</b> ${book.status}</h5>
                         <div style="margin-top: 50px;"></div>
                         <div class="row">
                             <div class="col-lg-2">
@@ -103,7 +103,7 @@ function displaySimilarBooks(books) {
         `
             <div class="row">
                 <div class="text-center">
-                    <h3>
+                    <h3 class="textFont">
                         Similar Books
                     </h3>
                     <hr style="max-width: 1000px;">
@@ -123,7 +123,7 @@ function displaySimilarBooks(books) {
                     <div class="col-md-3 col-sm-3">
                         <div class="polaroid">
                             <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%" height="auto"></a>
-                            <p class="price text-center" style="color: black; padding: 5px">
+                            <p class="price text-center textFont" style="color: black; padding: 5px">
                             ${books[index].title}<br>
                             ${books[index].price} €</p>
                         </div>
@@ -143,7 +143,7 @@ function startReviewSection() {
         `
             <div class="row">
                 <div class="text-center">
-                    <h3>
+                    <h3 class="textFont">
                         Book Reviews
                     </h3>
                     <hr style="max-width: 1000px;">
@@ -165,10 +165,10 @@ function displayBookReviews(review) {
                     </div>
                 </div>
                 <div class="col-sm-10 col-md-10">
-                    <h4>${review.reviewer}</h4>
+                    <h4 class="textFont">${review.reviewer}</h4>
                     <div id="rating"></div>
                     <br>
-                    <p>${review.description}</p>
+                    <p class="textFont">${review.description}</p>
                 </div>
             </div>
             <hr>
