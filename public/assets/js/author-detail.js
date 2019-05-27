@@ -31,8 +31,18 @@ function getAuthorDetails() {
         })
         .then(function (data) {
             displayAuthor(data[0]);
-            data.map(displayWrittenBooks);
-    });
+            // data.map(displayWrittenBooks);
+        })
+        .then(function() {
+            fetch(`/v2/authors/quotes?authorId=${id}`)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    data.map(displayQuotes);
+                });
+        });
+
 
 }
 
@@ -47,25 +57,37 @@ function displayAuthor(author) {
                 <img src="${author.profileUrl}" alt="${author.authorName} cover" style="width:100%">
                 <hr style="max-width: 1000px;">
                 <p class="textFont">
-                ${author.presentation}
-                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#demo">  
+                    ${author.presentation}<br>              
+                    <div id="biography" class="collapse textFont">
+                        ${author.authorBiography}
+                    </div>
+                    <button type="button" id="changeButton" class="btn btn-link" 
+                        onclick="changeButtonText()" data-toggle="collapse" 
+                        data-target="#biography">  
                         show more
                     </button>
-                <div id="demo" class="collapse">
-                    ${author.authotBiography}
-                </div>
                 </p>
             </div>              
         `
     );
 }
 
+ //change text from more to less
+ function changeButtonText(){ 
+      var btnText = document.getElementById("changeButton");
+      if (btnText.innerHTML === "show less") {
+            btnText.innerHTML = "show more"; 
+      } else {
+        btnText.innerHTML = "show less"; 
+      }
+    }
+
+
 function displayQuotes(author) {
     $('#quotes').append(
         `
-            <h3 class="text-center textFont">Best Quotes</h3>
-            <hr style="max-width: 1000px;">
             <div>${author.quote}</div>
+            <hr style="max-width: 1000px;">
         `
         );
 }
