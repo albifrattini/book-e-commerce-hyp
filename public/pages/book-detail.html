@@ -3,22 +3,22 @@
     
  <head>
      <!-- Adding useful meta tags -->
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     
-    <title>Books</title>
-     
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         
+        <title>Books</title>
+         
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
-     <!-- Load font awesome icons -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <!-- Load font awesome icons -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-     <!-- Font family -->
-     <link href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic" rel="stylesheet">
+         <!-- Font family -->
+         <link href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic" rel="stylesheet">
 
-     <!-- Our CSS -->
-     <link rel="stylesheet" href="/assets/css/style.css">
+         <!-- Our CSS -->
+         <link rel="stylesheet" href="/assets/css/style.css">
    
 </head>
 
@@ -27,63 +27,63 @@
 <body class="body-background">
      
     <!--NAVBAR--> 
-    <div class="navbar-wrapper">
-        <div class="container">
-            <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
-                <div class="container-fluid" id="editNavContainer">
-                    <div class="navbar-header">
-                
-                    <!--collapse bar -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class = "sr-only">Toggle navigation</span>
-                            <span class="icon-bar"> </span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        
-                        <a class="navbar-brand" id="home" href="#">Libreggiamo</a>
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
+                    <div class="container-fluid" id="editNavContainer">
+                        <div class="navbar-header">
+                    
+                        <!--collapse bar -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class = "sr-only">Toggle navigation</span>
+                                <span class="icon-bar"> </span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            
+                            <a class="navbar-brand" id="home" href="#">Libreggiamo</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#" id="events">Events</a></li>
+                                <li><a  id="books" href="#">Books</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                            <!-- Button to open the modal login form -->
+                            <li><button class="button login" onclick="showLogin()">Login</button></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#" id="events">Events</a></li>
-                            <li><a  id="books" href="#">Books</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                        <!-- Button to open the modal login form -->
-                        <li><button class="button login" onclick="showLogin()">Login</button></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>            
-        </div>
-     </div>
+                </nav>            
+            </div>
+         </div>
      <!--end navbar-->
 
 
      <!-- Log in Form -->
      <!-- The Modal -->
-     <div id="id01" class="modal">
-        <!-- Modal Content -->
-        <form class="modal-content animate" action="/action_page.php"> 
-            <div class="container">
-                <label for="uname"><b>Mail</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+         <div id="id01" class="modal">
+            <!-- Modal Content -->
+            <form class="modal-content animate" action="/action_page.php"> 
+                <div class="container">
+                    <label for="uname" class="textFont"><b>Mail</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
 
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                <div class="container text-center">
-                    <button type="submit" class="button login">Login</button>
-                    <br>
-                    <a href="#" class="text-center"> Register</a>
+                    <label for="psw" class="textFont"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <div class="container text-center">
+                        <button type="submit" class="button login textFont">Login</button>
+                        <br>
+                        <a href="#" class="text-center textFont"> Register</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="container">
-                <button type="button" onclick="closeLogin()" class="cancelbtn">Cancel</button>              
-                <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-        </form>
-     </div>
+                <div class="container">
+                    <button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>              
+                    <span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
+                </div>
+            </form>
+         </div>
      
 
      <br>
@@ -98,13 +98,13 @@
      <footer>
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-4">
-                    <h4>Info</h4>                  
-                    <a class="a link" id="contactUs" href="#" >Contact Us</a><br>
-                    <a class="a link" id="ordering" href="#" >Ordering and Shipping</a>
+                    <h4 class="textFont">Info</h4>                  
+                    <a class="a link textFont" id="contactUs" href="#" >Contact Us</a><br>
+                    <a class="a link textFont" id="ordering" href="#" >Ordering and Shipping</a>
                 </div>
                 <!-- The social media icon bar -->
                 <div class="col-md-4 col-sm-4 col-xs-4">
-                    <h4>Connect</h4><br>
+                    <h4 class="textFont">Connect</h4><br>
                     <div class="icon-bar">
                         <a><i class="fa fa-facebook"></i></a> 
                         <a><i class="fa fa-twitter"></i></a> 

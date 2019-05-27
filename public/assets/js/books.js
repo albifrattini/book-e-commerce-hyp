@@ -50,10 +50,10 @@ function displayBooks(books) {
 				$('#bookList').append(
 					`
 					
-					<div class="col-md-3 col-sm-3">
-			            <div class="polaroid">
-			                <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%" height="auto"></a>
-			                <p class="price text-center" style="color: black; padding: 5px">
+					<div class="col-md-3 col-sm-3" class="bookPresentation" >
+			            <div class="polaroid" >
+			                <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%"></a>
+			                <p class="price text-center" style="color: black; padding: 5px" id="textFont">
 			                ${books[index].title}<br>
 			                ${books[index].price} €</p>
 			            </div>
@@ -68,6 +68,8 @@ function displayBooks(books) {
 	}
 
 }
+
+
 
 
 function addDropdownValues() {

@@ -36,24 +36,38 @@ function getAuthorDetails() {
 
 }
 
+
 function displayAuthor(author) {
 
     $('#author').append(
         `
-            <h3 class="text-center">${author.authorName}</h3>
+            <h3 class="text-center textFont">${author.authorName}</h3>
             <hr style="max-width: 1000px;">
             <div class="container">
-                <img src="${author.profileUrl}" alt="${author.authorName} cover" id="authorImg">
+                <img src="${author.profileUrl}" alt="${author.authorName} cover" style="width:100%">
                 <hr style="max-width: 1000px;">
-                <p>${author.authorBiography}</p>
-            </div>          
-             
-                
-
-        
+                <p class="textFont">
+                ${author.presentation}
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#demo">  
+                        show more
+                    </button>
+                <div id="demo" class="collapse">
+                    ${author.authotBiography}
+                </div>
+                </p>
+            </div>              
         `
     );
+}
 
+function displayQuotes(author) {
+    $('#quotes').append(
+        `
+            <h3 class="text-center textFont">Best Quotes</h3>
+            <hr style="max-width: 1000px;">
+            <div>${author.quote}</div>
+        `
+        );
 }
 
 getAuthorDetails();

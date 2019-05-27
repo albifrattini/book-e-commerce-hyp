@@ -68,15 +68,15 @@
          <!-- Modal Content -->
          <form class="modal-content animate" action="/action_page.php"> 
             <div class="container">
-                <label for="uname"><b>Mail</b></label>
+                <label for="uname" ><b id="textFont">Mail</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
 
-                <label for="psw"><b>Password</b></label>
+                <label for="psw"><b id="textFont">Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
                 <div class="container text-center">
-                    <button type="submit" class="button login">Login</button>
+                    <button type="submit" class="button login" id="textFont">Login</button>
                     <br>
-                    <a href="#" class="text-center"> Register</a>
+                    <a href="#" class="text-center" id="textFont"> Register</a>
                 </div>
             </div>
 
@@ -90,18 +90,24 @@
 
      <br>
 
+     <div class="container">
+         <img src="https://images.unsplash.com/photo-1495568995596-9e40959aa178?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" width="100%">
+     </div>
+
+     <hr>
+
 
      <div class="container" >
     	
     		<div class="row">
 	    		<div class="col-lg-2">
 					<select class="browser-default custom-select" id="genreDropdown">
-					  <option value="" selected> --- no genre --- </option>
+					  <option value="" selected id="textFont"> --- no genre --- </option>
 					</select>
 				</div>
 				<div class="col-lg-2">
 			    	<select class="browser-default custom-select" id="themeDropdown">
-					  <option value="" selected> --- no theme --- </option>
+					  <option value="" selected id="textFont"> --- no theme --- </option>
 					</select>
 				</div>
 	    	</div>
@@ -128,13 +134,13 @@
      <footer>
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-4">
-                    <h4>Info</h4>                  
-                    <a class="a link" id="contactUs" href="#" >Contact Us</a><br>
-                    <a class="a link" id="ordering" href="#" >Ordering and Shipping</a>
+                    <h4 id="textFont">Info</h4>                  
+                    <a class="a link" id="contactUs" href="#" style="font-family: 'Lora', serif;">Contact Us</a><br>
+                    <a class="a link" id="ordering" href="#" style="font-family: 'Lora', serif;">Ordering and Shipping</a>
                 </div>
                 <!-- The social media icon bar -->
                 <div class="col-md-4 col-sm-4 col-xs-4">
-                    <h4>Connect</h4><br>
+                    <h4 id="textFont">Connect</h4><br>
                     <div class="icon-bar">
                         <a><i class="fa fa-facebook"></i></a> 
                         <a><i class="fa fa-twitter"></i></a> 
