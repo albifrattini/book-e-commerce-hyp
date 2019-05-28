@@ -51,7 +51,7 @@ function showFavouriteBooks(book) {
   $('#favourite').append(
     `
       <div class="column">
-        <div class="card">
+        <div class="card textFont">
           <a href="/pages/book-detail.html?ISBN=${book.ISBN}">
             <img src="${book.coverUrl}" alt="${book.title} cover" style="width:120%;">
           </a>
@@ -66,7 +66,7 @@ function showBestSellerBooks(book) {
   $('#best').append(
     `
       <div class="column">
-        <div class="card">
+        <div class="card textFont">
           <a href="/pages/book-detail.html?ISBN=${book.ISBN}">
             <img src="${book.coverUrl}" alt="${book.title} cover" style="width:120%;">
           </a>

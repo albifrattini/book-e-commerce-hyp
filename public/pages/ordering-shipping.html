@@ -30,7 +30,7 @@
    <!--NAVBAR--> 
     <div class="navbar-wrapper">
         <div class="container">
-            <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
+            <nav class="navbar navbar-default navbar-fixed-top textFont" id="mainNav">
                 <div class="container-fluid" id="editNavContainer">
                     <div class="navbar-header">
                 
@@ -42,7 +42,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         
-                        <a class="navbar-brand" id="home" href="#">Libreggiamo</a>
+                        <a class="navbar-brand textFont" id="home" href="#">Libreggiamo</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
@@ -66,22 +66,22 @@
      <div id="id01" class="modal">
         <!-- Modal Content -->
         <form class="modal-content animate" action="/action_page.php"> 
-            <div class="container">
-                <label for="uname"><b>Mail</b></label>
+            <div class="containerLoginModal">
+                <label for="uname"><b class="textFont">Mail</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
 
-                <label for="psw"><b>Password</b></label>
+                <label for="psw"><b class="textFont">Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
-                <div class="container text-center">
-                    <button type="submit" class="button login">Login</button>
+                <div class=" text-center">
+                    <button type="submit" class="button login textFont">Login</button>
                     <br>
-                    <a href="#" class="text-center"> Register</a>
+                    <a href="#" class="text-center textFont" id="register"> Register</a>
                 </div>
-            </div>
+            
 
-            <div class="container">
-                <button type="button" onclick="closeLogin()" class="cancelbtn">Cancel</button>              
-                <span class="psw">Forgot <a href="#">password?</a></span>
+            
+                <button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>              
+                <span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
             </div>
         </form>
      </div>
@@ -108,9 +108,9 @@
      <footer>
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-4">
-                    <h4>Info</h4>                  
-                    <a class="a link" id="contactUs" href="#" >Contact Us</a><br>
-                    <a class="a link" id="ordering" href="#" >Ordering and Shipping</a>
+                    <h4 class="textFont">Info</h4>                  
+                    <a class="a link textFont" id="contactUs" href="#" >Contact Us</a><br>
+                    <a class="a link textFont" id="ordering" href="#" >Ordering and Shipping</a>
                 </div>
                 <!-- The social media icon bar -->
                 <div class="col-md-4 col-sm-4 col-xs-4">
@@ -119,7 +119,6 @@
                         <a><i class="fa fa-facebook"></i></a> 
                         <a><i class="fa fa-twitter"></i></a> 
                         <a><i class="fa fa-google"></i></a>
-                        <a><i class="fa fa-youtube"></i></a> 
                     </div>
                     
                 </div>

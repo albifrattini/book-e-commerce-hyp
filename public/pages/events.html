@@ -31,7 +31,7 @@
 <!--NAVBAR--> 
     <div class="navbar-wrapper">
         <div class="container">
-            <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
+            <nav class="navbar navbar-default navbar-fixed-top textFont" id="mainNav">
                 <div class="container-fluid" id="editNavContainer">
                     <div class="navbar-header">
                 
@@ -43,7 +43,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         
-                        <a class="navbar-brand" id="home" href="#">Libreggiamo</a>
+                        <a class="navbar-brand textFont" id="home" href="#">Libreggiamo</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
@@ -65,26 +65,26 @@
      <!-- Log in Form -->
      <!-- The Modal -->
      <div id="id01" class="modal">
-         <!-- Modal Content -->
-         <form class="modal-content animate" action="/action_page.php"> 
-            <div class="container">
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="/action_page.php"> 
+            <div class="containerLoginModal">
                 <label for="uname"><b class="textFont">Mail</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
 
                 <label for="psw"><b class="textFont">Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
-                <div class="container text-center">
+                <div class=" text-center">
                     <button type="submit" class="button login textFont">Login</button>
                     <br>
-                    <a href="#" class="text-center textFont"> Register</a>
+                    <a href="#" class="text-center textFont" id="register"> Register</a>
                 </div>
-            </div>
+            
 
-            <div class="container">
+            
                 <button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>              
                 <span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
             </div>
-         </form>
+        </form>
      </div>
      
 
@@ -127,7 +127,6 @@
                         <a><i class="fa fa-facebook"></i></a> 
                         <a><i class="fa fa-twitter"></i></a> 
                         <a><i class="fa fa-google"></i></a>
-                        <a><i class="fa fa-youtube"></i></a> 
                     </div>
                     
                 </div>

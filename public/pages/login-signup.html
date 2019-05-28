@@ -2,22 +2,23 @@
 <html lang="us">
     
  <head>
-     <!-- Adding useful meta tags -->
+<!-- Adding useful meta tags -->
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
      
-    <title>Ordering and Shipping Informations</title>
+    <title>Register</title>
      
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../assets/css/login.css"> 
+     <!-- Load font awesome icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+     <!-- Font family -->
+     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+     <!-- Our CSS -->
+     <link rel="stylesheet" href="/assets/css/style.css">
    
 </head>
 
@@ -25,117 +26,153 @@
 <!--Background color-->
 <body class="body-background">
      
-    <!-- NAVBAR - navbar-wrapper can be used
-    ========================================= -->
-    <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <!-- Collapsable bar -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                    <!-- Needed only in order to put the typical Hamburger menu -->
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>                        
-                </button>
-                <a class="navbar-brand" href="#" id="home">Libreggiamo</a>
-            </div>
-            <!-- The part that will collapse -->
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#" id="events">Events</a>
-                    </li>
-                    <li>
-                        <a href="#" id="books">Books</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-user"></span></a>
-                    </li>
-                </ul>
-            </div>
+        <!--NAVBAR--> 
+    <div class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top textFont" id="mainNav">
+                <div class="container-fluid" id="editNavContainer">
+                    <div class="navbar-header">
+                
+                    <!--collapse bar -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class = "sr-only">Toggle navigation</span>
+                            <span class="icon-bar"> </span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        
+                        <a class="navbar-brand textFont" id="home" href="#">Libreggiamo</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" id="events">Events</a></li>
+                            <li><a id="books" href="#">Books</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                        <!-- Button to open the modal login form -->
+                        <li><button class="button login" onclick="showLogin()">Login</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>            
         </div>
-    </nav>            
-     
-<!--     
-    <div class="container center-block" style="margin-top: 100px">
-	    <div class="row">
-	      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-	        <div class="card card-signin my-5">
-	          <div class="card-body">
-	            <h5 class="card-title text-center">Sign In</h5>
-	            <form class="form-signin">
+     </div>
+     <!--end navbar-->
 
-	              <div class="form-label-group">
-	                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-	                <label for="inputEmail">Email address</label>
-	              </div>
 
-	              <div class="form-label-group">
-	                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-	                <label for="inputPassword">Password</label>
-	              </div>
+     <!-- Log in Form -->
+     <!-- The Modal -->
+     <div id="id01" class="modal">
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="/action_page.php"> 
+            <div class="containerLoginModal">
+                <label for="uname"><b class="textFont">Mail</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
 
-	              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-	              <hr class="my-4">
-	            </form>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-  	</div>
+                <label for="psw"><b class="textFont">Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <div class=" text-center">
+                    <button type="submit" class="button login textFont">Login</button>
+                    <br>
+                    <a href="#" class="text-center textFont" id="register"> Register</a>
+                </div>
+            
 
-	<div class="container" style="margin-top: 100px">
-		<div class="row">
-			<div class="col-lg-5">
-				<form id="registerForm" action="/v2/users/signUp" method="post">
-					<div class="form-group">
-				        <label for="name">Name</label>
-				        <input type="name" name="name" class="form-control" id="inputName" placeholder="Name">
-				    </div>
-			    	<div class="form-group">
-				        <label for="inputEmail">Email</label>
-				        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
-				    </div>
-				    <div class="form-group">
-				        <label for="inputPassword">Password</label>
-				        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
-				    </div>
-				    <div class="row text-center">	
-			    		<button type="submit" class="btn btn-primary">Register</button>
-					</div>
-				</form> 
-			</div>
-		</div>		
-	</div>
--->
-	<div class="container" style="margin-top: 100px">
-		<div class="row">
-			<div class="col-lg-5">
-				<form id="registerForm">
-					<div class="form-group">
-				        <label for="inputName">Name</label>
-				        <input type="text" name="name" class="form-control" id="inputName" placeholder="Name">
-				    </div>
-			    	<div class="form-group">
-				        <label for="inputEmail">Email</label>
-				        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
-				    </div>
-				    <div class="form-group">
-				        <label for="inputPassword">Password</label>
-				        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
-				    </div>
-				    <div class="row text-center">	
-			    		<input type="button" onclick="sendData()" class="btn btn-primary" value="Register"></button>
-					</div>
-				</form> 
-			</div>
-		</div>		
-	</div>
+            
+                <button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>              
+                <span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
+            </div>
+        </form>
+     </div>
+         
+
+     <br>
+
+
+	    <!-- Welcome img -->
+	    <div class="container">
+	    	<img src="https://images.unsplash.com/photo-1533745848184-3db07256e163?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width: 100%;">
+	    </div> 
+
+	 <br>
+	 <br>
+
+		<div class="container">
+			<div class="row" id="registrationForm">
+				<div class="col-md-12">
+					<form id="registerForm">
+						<div class="form-group">
+					        <label for="inputName" class="textFont">Name</label>
+					        <input type="text" name="name" class="form-control" id="inputName" placeholder="Name">
+					    </div>
+					    <div class="form-group">
+					        <label for="inputSurname" class="textFont">Surname</label>
+					        <input type="text" name="name" class="form-control" id="inputSurname" placeholder="Surname">
+					    </div>
+				    	<div class="form-group">
+					        <label for="inputEmail" class="textFont" >Email</label>
+					        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+					    </div>
+					    <div class="form-group">
+					        <label for="inputPassword" class="textFont">Password</label>
+					        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+					    </div>
+					    <div class="form-group">
+					        <label for="inputPassword" class="textFont">Repeat password</label>
+					        <input type="password" name="password" class="form-control" id="inputPasswordAgain" placeholder="Password">
+					    </div>
+					    <div class="row text-center">	
+				    		<input id="btnRegistration" type="button" onclick="sendData()" class="btn btn-primary" value="Register"></button>
+						</div>
+					</form> 
+				</div>
+			</div>		
+		</div>
+
+		
+
+		<!-- Modal after Registration-->
+		<div id="registrationModal" class="modalAfterRegistration">
+
+		  <!-- Modal content -->
+		  <div class="modal-content-registration">
+		    <a href="#" id="closeReg" class="close">&times;</a>
+		    <p class="textFont textFont" style="font-size: 28px;">
+		    	Thank you for registering
+		    </p>
+		  </div>
+
+		</div>
+
+		
+		<br>
+	    <br>
+	    <br>
+
+
+
+     <!--FOOTER-->
+     <footer>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <h4 class="textFont">Info</h4>                  
+                    <a class="a link" id="contactUs" href="#" >Contact Us</a><br>
+                    <a class="a link" id="ordering" href="#" >Ordering and Shipping</a>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <h4 class="textFont" style="padding-bottom: 10px;">Connect</h4>
+                    <div class="icon-bar">
+                        <a  class="facebook"><i class="fa fa-facebook"></i></a> 
+                        <a  class="twitter"><i class="fa fa-twitter"></i></a> 
+                        <a  class="google"><i class="fa fa-google"></i></a>
+                    </div>                   
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <img src="/assets/img/logo.jpg" class="logo">
+                </div>
+            </div>
+        </footer>
+     <!--end footer-->
 
      
 
@@ -143,7 +180,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/assets/js/login-signup.js"></script>
+    <script type="text/javascript" src="/assets/js/login-signup.js"></script>   
+	<script type="text/javascript" src="/assets/js/navbar-footer-links.js"></script>
     
 </body>
 

@@ -32,7 +32,7 @@ function showEvents(event) {
 				             class="imgEvent">	
 
 				            <div class="overlay">
-				            	<div class="overlayText">
+				            	<div class="overlayText textFont">
 				            		<p class="textFont">${event.eventLocation}</p>
 				            		<p "textFont">${event.eventDate.substring(0,10)}</p>
 				            	</div>
@@ -40,7 +40,7 @@ function showEvents(event) {
 				        </a>
 			        </div>
 
-			        <div class="titleEventContainer">
+			        <div class="titleEventContainer textFont">
 			            <h4 class="text-center textFont">${event.eventName}</h4>
 			        </div>
 			       </div>

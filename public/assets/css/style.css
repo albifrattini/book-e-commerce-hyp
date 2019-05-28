@@ -1,14 +1,14 @@
-.body-background {
-    background-color: #FFFFFF;
-}
-
-
 body {
     padding-top: 20px;   
 }
 
 
 * {box-sizing:border-box}
+
+
+.body-background {
+    background-color: #FFFFFF;
+}
 
 
 .container, .bookContainer {
@@ -18,69 +18,70 @@ body {
     position: relative;
 }
 
-@media (max-width: 767px) {
-  #bookContainer{
-    width: 30%;
-  }
-}
-@media (max-width: 767px){
-  #booksDisplay {
-    width: 60%;
-  }
-
-}
-
 
 .textFont {
-    /*font-family: 'Lora', serif;*/
     font-family: 'Montserrat', sans-serif;
 }
 
 
 /* NAVBAR STYLING */
 #mainNav {
-    /*font-family: 'Lora', serif;*/
-    font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     font-size: 16px;
     height: 50px;  
 }
 
+
 /* centering navbar elements */
 .navbar-nav>li>a {
-    line-height: 30px;
+    line-height: 36px;
     height: 55px;
 }
+
 
 /* brand */
 .navbar-brand {
     font-size: 26px;
     line-height: 30px;
-    /*font-family: 'Lora', serif;*/
-    font-family: 'Montserrat', sans-serif;
 }
+
 
 #editNavContainer {
   background-color: #f9f7f7;
 }
 
 
-
-
-
-
 /*-----------------------------------------------------------------------------------------*/
-
 /* Login styling */
 /* Full-width inputs */
 input[type=text], input[type=password] {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  padding: 6px 6px;
+  margin-top: 0px;
+  margin-bottom: 12px;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  border-radius: 4px;
 }
+
+
+/* Editing login modal form */
+.containerLoginModal {
+    width: 80%;
+    margin: 6% auto;
+    position: relative;
+}
+
+
+/* resizing login modal form for smartphones */
+@media (max-width: 767px){
+  .containerLoginModal {
+    width: 60%;
+    padding-bottom: 50px;
+  }
+}
+
 
 /* Set a style for all login buttons */
 .login {
@@ -101,6 +102,7 @@ button:hover {
   opacity: 0.8;
 }
 
+
 /* Extra style for the cancel button (red) */
 .cancelbtn {
   width: auto;
@@ -110,11 +112,13 @@ button:hover {
   border-radius: 10px;
 }
 
+
 /* The "Forgot password" text */
 span.psw {
   float: right;
   padding-top: 16px;
 }
+
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
@@ -126,6 +130,7 @@ span.psw {
     width: 100%;
   }
 }
+
 
 /* The Modal (background) */
 .modal {
@@ -142,10 +147,11 @@ span.psw {
   padding-top: 60px;
 }
 
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5px auto; /* 15% from the top and centered */
+  margin: 200px auto; /* 15% from the top and centered */
   border: 1px solid #888;
   width: 40%; /* Could be more or less, depending on screen size */
 }
@@ -157,19 +163,20 @@ span.psw {
   animation: animatezoom 0.6s
 }
 
+
 @-webkit-keyframes animatezoom {
   from {-webkit-transform: scale(0)} 
   to {-webkit-transform: scale(1)}
 }
 
+
 @keyframes animatezoom {
   from {transform: scale(0)} 
   to {transform: scale(1)}
 }
+
+
 /*-----------------------------------------------------------------------------------------*/
-
-
-
 /* CAROUSEL STYLING */
 /* Slideshow container */
 .slideshow-container {
@@ -178,10 +185,12 @@ span.psw {
   margin: auto;
 }
 
+
 /* Hide the images by default */
 .mySlides {
   display: none;
 }
+
 
 /* Next & previous buttons */
 .prev, .next {
@@ -199,29 +208,31 @@ span.psw {
   user-select: none;
 }
 
+
 /* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
+
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
+
 /* Caption text */
 .textCarousel {
   color: #FFFFFF;
   font-size: 24px;
-  /*font-family: 'Lora', serif;*/
-  font-family: 'Montserrat', sans-serif;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
   width: 100%;
   text-align: center;
 }
+
 
 /* The dots/bullets/indicators */
 .dot {
@@ -235,12 +246,13 @@ span.psw {
   transition: background-color 0.6s ease;
 }
 
+
 .active, .dot:hover {
   background-color: #717171;
 }
+
+
 /*-----------------------------------------------------------------------------------------*/
-
-
 /* CARDS STYLING */
 .containerTabs {
   padding-top: 5px;
@@ -250,12 +262,14 @@ span.psw {
   margin: 2% auto;
 }
 
+
 /* Float four columns side by side */
 .column {
   /*float: left;*/
   width: 25%;
   padding: 0 10px;
 }
+
 
 .col-container {
     display: flex; /* Make the container element behave like a table */
@@ -271,8 +285,10 @@ span.psw {
   }
 }
 
+
 /* Remove extra left and right margins, due to padding in columns */
 .rowHome {margin: 0 -5px;}
+
 
 /* Clear floats after the columns */
 .rowHome:after {
@@ -281,7 +297,8 @@ span.psw {
   clear: both;
 }
 
-/* Style the counter cards */
+
+/* Style the counter random cards */
 .card {
   /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 6px;
@@ -289,15 +306,15 @@ span.psw {
   text-align: center;
   max-width: 200px;
   margin: auto;
-  /*font-family: 'Lora', serif;*/
-  font-family: 'Montserrat', sans-serif;
   border-radius: 15px;
 }
 
+
 .price {
   color: grey;
-  font-size: 16px;
+  font-size: 12px;
 }
+
 
 .card button {
   border: none;
@@ -310,12 +327,13 @@ span.psw {
   max-width: 100%;
   min-width: 80%;
   font-size: 18px;
-
 }
+
 
 .card button:hover {
   opacity: 0.7;
 }
+
 
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
@@ -325,12 +343,12 @@ span.psw {
     margin-bottom: 20px;
   }
 }
+
+
 /*-----------------------------------------------------------------------------------------*/
-
-
 /*FOOTER STYLING*/
 footer {
-    padding: 1%;
+    padding: 4%;
     width: 100%;
     background-color: #3c4859;
     color: #EFEFEF;
@@ -340,29 +358,44 @@ footer {
     text-align: center;
 }
 
+
 /* Links styling */
 .link {
   color: #FFFFFF;
 }
 
+
 .link:hover {
   color:#BDBDBD;
 }
 
+
 .logo {
-  max-width: 100px;
-  max-height: 100px;
+  width: 100px;
   border-radius: 50px;
+}
+
+
+@media (max-width: 600px) {
+  .logo{
+    width: 80px;
+  }
 }
 
 
 /* Style the icon bar links */
 .icon-bar a {
-  padding: 4px;
+  padding: 5px;
   color: white;
-  font-size: 17px;
+  font-size: 15px;
   background-color: #000;
 }
+
+
+.fa-facebook {
+  padding: 2px;
+}
+
 
 /* Style the social media icons with color, if you want */
 .icon-bar a:hover {
@@ -372,19 +405,19 @@ footer {
 
 /*-----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------*/
-
 /*CONTACT US PAGE FORM*/
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
   width: 100%; /* Full width */
-  padding: 12px; 
+  padding: 6px; 
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; 
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 0px; 
-  margin-bottom: 16px; 
+  margin-top: 0px;
+  margin-bottom: 12px;
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
+
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
@@ -396,10 +429,12 @@ input[type=submit] {
   cursor: pointer;
 }
 
+
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
   background-color: #45a049;
 }
+
 
 /* Add a background color and some padding around the form */
 .containerForm {
@@ -411,9 +446,9 @@ input[type=submit]:hover {
   padding: 20px;
 }
 
-/*-----------------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------------------*/
 
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
 /* EVENTS PAGE */
 /* Style the buttons */
 .btnFilter {
@@ -424,10 +459,12 @@ input[type=submit]:hover {
   cursor: pointer;
 }
 
+
 /* Add a light grey background on mouse-over */
 .btnFilter:hover {
   background-color: #ddd;
 }
+
 
 /* Add a dark background to the active button */
 .btnFilter.active {
@@ -435,11 +472,13 @@ input[type=submit]:hover {
   color: white;
 }
 
+
 #myBtnContainer {
   width: 100%;
   padding-left: 120px;
   margin: 2% auto;
 }
+
 
 .containerEvents {
   width: 90%;
@@ -447,10 +486,19 @@ input[type=submit]:hover {
   padding-bottom: 80px;
 }
 
+@media (max-width: 676px){
+  .containerEvents {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
 .singlEventContainer {
   position: relative;
   width: 100%;
 }
+
 
 .imgEvent {
   display: block;
@@ -458,6 +506,7 @@ input[type=submit]:hover {
   height: 300px;
 
 }
+
 
 .overlay {
   position: absolute;
@@ -472,10 +521,12 @@ input[type=submit]:hover {
   transition: .5s ease;/* slide effect */
 }
 
+
 .singlEventContainer:hover .overlay {
   width: 100%;
   left: 0;
 }
+
 
 .overlayText {
   color: black;
@@ -487,9 +538,8 @@ input[type=submit]:hover {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   white-space: nowrap;
-  /*font-family: 'Lora', serif;*/
-  font-family: 'Montserrat', sans-serif;
 }
+
 
 div.polaroid {
   width: 100%;
@@ -498,17 +548,16 @@ div.polaroid {
   margin-bottom: 25px;
 }
 
+
 div.titleEventContainer {
   text-align: center;
   padding: 5px 5px;
-  /*font-family: 'Lora', serif;*/
-  font-family: 'Montserrat', sans-serif;
 }
 
-/*-----------------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------------------*/
 
-/* EVENT PAGE*/
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/* SINGLE EVENT PAGE*/
 .imgEventPage {
   width: 100%;
   height: auto;
@@ -517,12 +566,14 @@ div.titleEventContainer {
   margin-right: auto;
 }
 
+
 .containerBook {
    width: 80%;
    height: auto;
    margin: 1% auto;
    padding-bottom: 100px;
 }
+
 
 /*-----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------*/
@@ -534,6 +585,7 @@ div.titleEventContainer {
   margin-right: auto;
 }
 
+
 .avatar {
   vertical-align: middle;
   width: 80px;
@@ -541,45 +593,93 @@ div.titleEventContainer {
   border-radius: 50%;
 }
 
+
 .checked {
   color: orange;
 }
 
 
-/*-----------------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------------------*/
-/* BREADCRUMBS */
-
-/* Style the list */
-ul.breadcrumb {
-  padding: 10px 16px;
-  list-style: none;
-  background-color: #FFFFFF;
+@media (max-width: 767px) {
+  #bookContainer{
+    width: 30%;
+  }
 }
 
-/* Display list items side by side */
-ul.breadcrumb li {
-  display: inline;
-  font-size: 18px;
+
+@media (max-width: 767px){
+  #booksDisplay {
+    width: 60%;
+  }
 }
 
-/* Add a slash symbol (/) before/behind each list item */
-ul.breadcrumb li+li:before {
-  padding: 8px;
+
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/* REGISTRATION PAGE*/
+#registrationForm {
+  padding-left: 200px;
+  padding-right: 200px;"
+}
+
+
+input[type=text], input[type=email] {
+  width: 100%;
+  padding: 6px 6px;
+  margin-top: 0px;
+  margin-bottom: 12px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+
+@media (max-width: 767px){
+  #registrationForm {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+}
+
+
+/* The Modal (background) */
+.modalAfterRegistration {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+.modal-content-registration {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 40px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+.close:hover,
+.close:focus {
   color: black;
-  content: "/\00a0";
-}
-
-/* Add a color to all links inside the list */
-ul.breadcrumb li a {
-  color: #0275d8;
   text-decoration: none;
+  cursor: pointer;
 }
-
-/* Add a color on mouse-over */
-ul.breadcrumb li a:hover {
-  color: #01447e;
-  text-decoration: underline;
-}
-
-

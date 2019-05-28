@@ -37,7 +37,7 @@
     <!--NAVBAR--> 
     <div class="navbar-wrapper">
         <div class="container">
-            <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
+            <nav class="navbar navbar-default navbar-fixed-top textFont" id="mainNav">
                 <div class="container-fluid" id="editNavContainer">
                     <div class="navbar-header">
                 
@@ -49,7 +49,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         
-                        <a class="navbar-brand" id="home" href="#">Libreggiamo</a>
+                        <a class="navbar-brand textFont" id="home" href="#">Libreggiamo</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
@@ -71,27 +71,27 @@
      <!-- Log in Form -->
     	 <!-- The Modal -->
     	 <div id="id01" class="modal">
-      	  	<!-- Modal Content -->
-      		<form class="modal-content animate" action="/action_page.php"> 
-        		<div class="container">
-          			<label for="uname"><b class="textFont">Mail</b></label>
-          			<input type="text" placeholder="Enter Username" name="uname" required>
+          <!-- Modal Content -->
+          <form class="modal-content animate" action="/action_page.php"> 
+              <div class="containerLoginModal">
+                  <label for="uname"><b class="textFont">Mail</b></label>
+                  <input type="text" placeholder="Enter Username" name="uname" required>
 
-          			<label for="psw"><b class="textFont">Password</b></label>
-          			<input type="password" placeholder="Enter Password" name="psw" required>
-    				<div class="container text-center">
-          				<button type="submit" class="button login textFont">Login</button>
-          				<br>
-          				<a href="#" class="text-center textFont"> Register</a>
-          			</div>
-        		</div>
+                  <label for="psw"><b class="textFont">Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" required>
+                  <div class=" text-center">
+                      <button type="submit" class="button login textFont">Login</button>
+                      <br>
+                      <a href="#" class="text-center textFont" id="register"> Register</a>
+                  </div>
+              
 
-        		<div class="container">
-          			<button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>     			
-          			<span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
-        		</div>
-      		</form>
-    	 </div>
+              
+                  <button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>              
+                  <span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
+              </div>
+          </form>
+       </div>
      
 
      <br>
@@ -102,18 +102,18 @@
 
         <div class="mySlides">
              <img src="https://images.unsplash.com/photo-1528932574509-27a7e195a75b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%">
-            <div class="textCarousel">We have all kind of genres and themes</div>
+            <div class="textCarousel textFont">We have all kind of genres and themes</div>
         </div>
 
         <!-- Full-width images with number and caption text -->
         <div class="mySlides">
             <img src="https://images.unsplash.com/photo-1504542944432-f022df771055?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%">
-            <div class="textCarousel">Join us and start reading a billion different books</div>
+            <div class="textCarousel textFont">Join us and start reading a billion different books</div>
         </div>
 
         <div class="mySlides">
             <img src="https://images.unsplash.com/photo-1535546204504-586398ee6677?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%">
-            <div class="textCarousel">Meet your favourite author joining our events </div>
+            <div class="textCarousel textFont">Meet your favourite author joining our events </div>
         </div>
 
     <!-- Next and previous buttons -->
@@ -205,7 +205,6 @@
                         <a><i class="fa fa-facebook"></i></a> 
                         <a><i class="fa fa-twitter"></i></a> 
                         <a><i class="fa fa-google"></i></a>
-                        <a><i class="fa fa-youtube"></i></a> 
                     </div>
                     
                 </div>
