@@ -68,21 +68,21 @@
          <!-- Modal Content -->
          <form class="modal-content animate" action="/action_page.php"> 
             <div class="container">
-                <label for="uname" ><b id="textFont">Mail</b></label>
+                <label for="uname" ><b class="textFont">Mail</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
 
-                <label for="psw"><b id="textFont">Password</b></label>
+                <label for="psw"><b class="textFont">Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
                 <div class="container text-center">
-                    <button type="submit" class="button login" id="textFont">Login</button>
+                    <button type="submit" class="button login textFont">Login</button>
                     <br>
-                    <a href="#" class="text-center" id="textFont"> Register</a>
+                    <a href="#" class="text-center textFont"> Register</a>
                 </div>
             </div>
 
             <div class="container">
-                <button type="button" onclick="closeLogin()" class="cancelbtn">Cancel</button>              
-                <span class="psw">Forgot <a href="#">password?</a></span>
+                <button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>              
+                <span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
             </div>
          </form>
      </div>
@@ -97,26 +97,26 @@
      <hr>
 
 
-     <div class="container" >
+     <div class="container" style="padding-left: 30px; padding-right: 30px;" >
     	
     		<div class="row">
-	    		<div class="col-lg-2">
+	    		<div class="col-md-6">
 					<select class="browser-default custom-select" id="genreDropdown">
-					  <option value="" selected id="textFont"> --- no genre --- </option>
+					  <option value="" selected class="textFont"> --- no genre --- </option>
 					</select>
 				</div>
-				<div class="col-lg-2">
+				<div class="col-md-6">
 			    	<select class="browser-default custom-select" id="themeDropdown">
-					  <option value="" selected id="textFont"> --- no theme --- </option>
+					  <option value="" selected class="textFont"> --- no theme --- </option>
 					</select>
 				</div>
 	    	</div>
     		<div class="row">
-    			<div class="col-lg-8">
-    				<input class="form-control" type="text" placeholder="Search" aria-label="Search" id="titleOrAuthorSearch">
+    			<div class="col-md-10">
+    				<input class="form-control" type="text" placeholder="Search" aria-label="Search" id="titleOrAuthorSearch" class="textFont">
     			</div>
-    			<div class="col-lg-2">
-					<input type="button" name="search" onclick="getBooks()" class="btn btn-primary" value="Search">	
+    			<div class="col-md-2" style="padding-top: 5px;">
+					<input type="button" name="search" onclick="getBooks()" class="btn btn-primary " value="Search" class="textFont">	
 				</div>
 			</div>
 	 </div> 
@@ -124,7 +124,9 @@
      <hr>
 
          <!--display books-->
-        <div class="container" id="bookList"></div>
+        <div class="container" id="bookList">
+            
+        </div>
 
     
 
@@ -135,12 +137,12 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-4">
                     <h4 id="textFont">Info</h4>                  
-                    <a class="a link" id="contactUs" href="#" style="font-family: 'Lora', serif;">Contact Us</a><br>
-                    <a class="a link" id="ordering" href="#" style="font-family: 'Lora', serif;">Ordering and Shipping</a>
+                    <a class="a link textFont" id="contactUs" href="#">Contact Us</a><br>
+                    <a class="a link textFont" id="ordering" href="#">Ordering and Shipping</a>
                 </div>
                 <!-- The social media icon bar -->
                 <div class="col-md-4 col-sm-4 col-xs-4">
-                    <h4 id="textFont">Connect</h4><br>
+                    <h4 class="textFont" style="padding-bottom: 10px;">Connect</h4>
                     <div class="icon-bar">
                         <a><i class="fa fa-facebook"></i></a> 
                         <a><i class="fa fa-twitter"></i></a> 

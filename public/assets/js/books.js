@@ -50,12 +50,12 @@ function displayBooks(books) {
 				$('#bookList').append(
 					`
 					
-					<div class="col-md-3 col-sm-3" class="bookPresentation" >
-			            <div class="polaroid" >
-			                <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%"></a>
-			                <p class="price text-center" style="color: black; padding: 5px" id="textFont">
-			                ${books[index].title}<br>
-			                ${books[index].price} €</p>
+					<div class="col-md-3 col-sm-3">
+			            <div class="polaroid" id="booksDisplay" >
+			                <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%"></a>			       
+				                <p class="price text-center textFont" style="color: black; padding: 5px">
+				                ${books[index].title}<br>
+				                ${books[index].price} €</p>
 			            </div>
 			        </div>
 			        

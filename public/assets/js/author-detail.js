@@ -31,7 +31,6 @@ function getAuthorDetails() {
         })
         .then(function (data) {
             displayAuthor(data[0]);
-            // data.map(displayWrittenBooks);
         })
         .then(function() {
             fetch(`/v2/authors/quotes?authorId=${id}`)
@@ -40,6 +39,15 @@ function getAuthorDetails() {
                 })
                 .then(function (data) {
                     data.map(displayQuotes);
+                });
+        })
+         .then(function() {
+            fetch(`/v2/authors/${id}`)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    displayBooksWrittenBy(data);
                 });
         });
 
@@ -53,8 +61,9 @@ function displayAuthor(author) {
         `
             <h3 class="text-center textFont">${author.authorName}</h3>
             <hr style="max-width: 1000px;">
-            <div class="container">
-                <img src="${author.profileUrl}" alt="${author.authorName} cover" style="width:100%">
+           
+                <img src="${author.profileUrl}" alt="${author.authorName} cover" 
+                    style="width:80%; padding-left:150px;">
                 <hr style="max-width: 1000px;">
                 <p class="textFont">
                     ${author.presentation}<br>              
@@ -67,7 +76,7 @@ function displayAuthor(author) {
                         show more
                     </button>
                 </p>
-            </div>              
+                        
         `
     );
 }
@@ -90,6 +99,34 @@ function displayQuotes(author) {
             <hr style="max-width: 1000px;">
         `
         );
+}
+
+function displayBooksWrittenBy(books) {
+
+    for (var i = 0; i < books.length/4; i++) {
+        $('#booksWritten').append('<div class="row">');
+        for (var j = 0; j < 4; j++) {
+            var index = i*4+j;
+            if (index < books.length) {
+                $('#booksWritten').append(
+                    `
+                    
+                    <div class="col-md-3 col-sm-3">
+                        <div class="polaroid" id="bookContainer">
+                            <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%" height="auto"></a>
+                            <p class="price text-center textFont" style="color: black; padding: 5px">
+                            ${books[index].title}<br>
+                            ${books[index].price} €</p>
+                        </div>
+                    </div>
+                    
+                    
+                    `
+                );
+            }
+        }
+        $('#booksWritten').append('</div>');
+    }
 }
 
 getAuthorDetails();

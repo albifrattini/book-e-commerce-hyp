@@ -52,26 +52,26 @@ function displayEvent(event) {
 
          <br>
 
-         <h3 class="text-center">${event.eventName}</h3>
+         <h3 class="text-center textFont">${event.eventName}</h3>
          <hr style="max-width: 1000px;">
          
          <div class="container">
-            <div class="row">
+          
 
-               <div class="col-md-6">
+               <div>
                  <img src="${event.imageUrl}" alt="${event.eventLocation} cover" class="imgEventPage">
                </div>
-                    
-               <div class="col-md-6">
-                 <p style="margin: 3% auto;">${event.eventDescription}</p>
-                 <p style="margin: 3% auto;">${event.eventLocation}</p>
-                 <p style="margin: 3% auto;">${event.eventDate.substring(0,10)}</p>
-                 <a href="/pages/author-detail.html?id=${event.authorId}">${event.authorName}</a><br>
-                 <a href="/pages/book-detail.html?ISBN=${event.ISBN}">${event.title}</a>
+                 <hr>   
+               <div>
+                 <p style="margin: 3% auto; font-size:18px;" class="textFont">${event.eventDescription}</p>
+                 <p style="margin: 3% auto; font-size:16px;" class="textFont">${event.eventLocation}</p>
+                 <p style="margin: 3% auto; font-size:16px;" class="textFont">${event.eventDate.substring(0,10)}</p>
+                 <a href="/pages/author-detail.html?id=${event.authorId}" class="textFont">${event.authorName}</a><br>
+                 <a href="/pages/book-detail.html?ISBN=${event.ISBN}" class="textFont">${event.title}</a>
                  
                </div>
             
-            </div>
+           
         </div>
 
         <br>
