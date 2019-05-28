@@ -52,6 +52,7 @@ function showEvents(event) {
 	);
 }
 
+
 // Add active class to the current control button (highlight it)
 var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("btnFilter");

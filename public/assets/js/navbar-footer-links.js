@@ -17,6 +17,7 @@ var modal = document.getElementById('id01');
 
 function showLogin() {
   document.getElementById('id01').style.display='block';
+  // closeToggle();
   // $('#myNavBar').attr('class', 'collapse navbar-collapse');
 }
 
@@ -30,5 +31,15 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+function closeToggle() {
+	console.log('ciao');
+	var element = document.getElementById('navbar-toggle');
+	element.className += ' collapsed';
+	var element2 = document.getElementById('myNavbar');
+	element.className = element.className.replace(' show', '');
+}
+
+
 
 addStaticLinks();

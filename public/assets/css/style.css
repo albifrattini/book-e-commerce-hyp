@@ -32,13 +32,16 @@ body {
 
 
 .textFont {
-    font-family: 'Lora', serif;
+    /*font-family: 'Lora', serif;*/
+    font-family: 'Montserrat', sans-serif;
 }
 
 
 /* NAVBAR STYLING */
 #mainNav {
-    font-family: 'Lora', serif;
+    /*font-family: 'Lora', serif;*/
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
     font-size: 16px;
     height: 50px;  
 }
@@ -53,7 +56,8 @@ body {
 .navbar-brand {
     font-size: 26px;
     line-height: 30px;
-    font-family: 'Lora', serif;
+    /*font-family: 'Lora', serif;*/
+    font-family: 'Montserrat', sans-serif;
 }
 
 #editNavContainer {
@@ -210,7 +214,8 @@ span.psw {
 .textCarousel {
   color: #FFFFFF;
   font-size: 24px;
-  font-family: 'Lora', serif;
+  /*font-family: 'Lora', serif;*/
+  font-family: 'Montserrat', sans-serif;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
@@ -284,7 +289,8 @@ span.psw {
   text-align: center;
   max-width: 200px;
   margin: auto;
-  font-family: 'Lora', serif;
+  /*font-family: 'Lora', serif;*/
+  font-family: 'Montserrat', sans-serif;
   border-radius: 15px;
 }
 
@@ -326,7 +332,7 @@ span.psw {
 footer {
     padding: 1%;
     width: 100%;
-    background-color: #707070;
+    background-color: #3c4859;
     color: #EFEFEF;
     bottom: 0;
     left: 0;
@@ -375,7 +381,7 @@ input[type=text], select, textarea {
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; 
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; 
+  margin-top: 0px; 
   margin-bottom: 16px; 
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
@@ -431,7 +437,7 @@ input[type=submit]:hover {
 
 #myBtnContainer {
   width: 100%;
-  max-width: 1000px;
+  padding-left: 120px;
   margin: 2% auto;
 }
 
@@ -481,7 +487,8 @@ input[type=submit]:hover {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   white-space: nowrap;
-  font-family: 'Lora', serif;
+  /*font-family: 'Lora', serif;*/
+  font-family: 'Montserrat', sans-serif;
 }
 
 div.polaroid {
@@ -494,7 +501,8 @@ div.polaroid {
 div.titleEventContainer {
   text-align: center;
   padding: 5px 5px;
-  font-family: 'Lora', serif;
+  /*font-family: 'Lora', serif;*/
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*-----------------------------------------------------------------------------------------*/
@@ -535,6 +543,43 @@ div.titleEventContainer {
 
 .checked {
   color: orange;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/* BREADCRUMBS */
+
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #FFFFFF;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
 }
 
 
