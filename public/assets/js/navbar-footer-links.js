@@ -1,13 +1,13 @@
 function addStaticLinks() {
 
-	console.log('Adding static links.');
-
 	const homeUrl = window.location.origin;
 	$('#home').attr('href', homeUrl);
 	$('#events').attr('href', homeUrl+'/pages/events.html');
 	$('#books').attr('href', homeUrl+'/pages/books.html');
 	$('#contactUs').attr('href', homeUrl+'/pages/contactUs.html');
 	$('#ordering').attr('href', homeUrl+'/pages/ordering-shipping.html');
+	$('#register').attr('href', homeUrl+'/pages/login-signup.html');
+	$('#closeReg').attr('href', homeUrl);
 
 } 
 
@@ -15,15 +15,16 @@ function addStaticLinks() {
 // Get the modal
 var modal = document.getElementById('id01');
 
+
 function showLogin() {
   document.getElementById('id01').style.display='block';
-  // closeToggle();
-  // $('#myNavBar').attr('class', 'collapse navbar-collapse');
 }
+
 
 function closeLogin() {
   document.getElementById('id01').style.display='none';
 }
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -31,6 +32,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
 
 function closeToggle() {
 	console.log('ciao');

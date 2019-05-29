@@ -27,6 +27,21 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+var slideIndex = 0;
+carousel();
+//timer changing slides
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1} 
+  x[slideIndex-1].style.display = "block"; 
+  setTimeout(carousel, 6000); // Change image every 5 seconds
+}
+
 
 
 //Import books
@@ -51,7 +66,7 @@ function showFavouriteBooks(book) {
   $('#favourite').append(
     `
       <div class="column">
-        <div class="card">
+        <div class="card textFont">
           <a href="/pages/book-detail.html?ISBN=${book.ISBN}">
             <img src="${book.coverUrl}" alt="${book.title} cover" style="width:120%;">
           </a>
@@ -66,7 +81,7 @@ function showBestSellerBooks(book) {
   $('#best').append(
     `
       <div class="column">
-        <div class="card">
+        <div class="card textFont">
           <a href="/pages/book-detail.html?ISBN=${book.ISBN}">
             <img src="${book.coverUrl}" alt="${book.title} cover" style="width:120%;">
           </a>

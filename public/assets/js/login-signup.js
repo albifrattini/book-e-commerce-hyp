@@ -30,17 +30,18 @@ function sendData() {
 
 }
 
-function addStaticLinks() {
 
-	const homeUrl = window.location.origin;
+// Get the modal
+var modal1 = document.getElementById("registrationModal");
 
-	$('#home').attr('href', homeUrl);
-	$('#events').attr('href', homeUrl+'/pages/events.html');
-	$('#books').attr('href', homeUrl+'/pages/books.html');
+// Get the button that opens the modal
+var btn1 = document.getElementById("btnRegistration");
 
+// When the user clicks on the button, open the modal 
+btn1.onclick = function() {
+  modal1.style.display = "block";
 }
 
-addStaticLinks();
 
 
 
