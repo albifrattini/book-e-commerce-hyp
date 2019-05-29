@@ -131,9 +131,10 @@ module.exports.getAllBooks = function(offset, limit) {
 
 module.exports.getBookByIsbn = function(bookIsbn) {
 	return dbConnection('books')
+		.where('books.ISBN', bookIsbn)
 		.join('writtenby', 'books.ISBN', 'writtenby.ISBN')
 		.join('authors', 'writtenby.authorId', 'authors.id')
-		.where('books.ISBN', bookIsbn)
+		.join('presentedat', 'books.ISBN', 'presentedat.ISBN')
 		.first();
 }
 

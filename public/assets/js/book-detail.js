@@ -81,6 +81,7 @@ function displayBook(book) {
                     <div>
                         <p class="textFont">${book.description}</p>
                         <p class="textFont"><b>Published by:</b> ${book.publisher}</p>
+                        <p class="textFont"><b>Presented at this</b> <a href="/pages/event-detail.html?id=${book.eventId}">event</a></p>
                         <p class="textFont">${book.price} €</p>
                         <h5 class="textFont"><b>Availability:</b> ${book.status}</h5>
                         <div style="margin-top: 50px;"></div>
