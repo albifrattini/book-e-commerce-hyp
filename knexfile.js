@@ -4,7 +4,9 @@ module.exports = {
     connection: 'postgres://localhost/bookstore'
   },
   production: {
+  	debug: true,
     client: 'pg',
-    connection: process.env.DATABASE_URL
+    connection: process.env.DATABASE_URL,
+    ssl: true
   }
 };

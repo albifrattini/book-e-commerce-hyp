@@ -17,13 +17,11 @@ const swaggerDoc = jsyaml.safeLoad(spec);
 
 app.use(morgan('tiny'));
 app.use(session({
-	// this function is called only if there is not a req.sessionID provided coming from the client.
-	// When server shuts down, the key is lost and for this reason every request coming from the client
-	// (possibly having already a key) is processed again and reassigned a new key.
 	genid: (request) => {
 		console.log("Genid: " + request.sessionID);
 		return uuid();
 	},
+	// secret: process.env.SECRET,
 	secret: "qualcosa",
 	resave: false,
 	saveUninitialized: true
