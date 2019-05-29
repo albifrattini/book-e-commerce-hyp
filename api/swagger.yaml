@@ -289,7 +289,7 @@ paths:
       description: "Login of a user"
       operationId: "login"
       consumes:
-      - "application/json"
+      - "application/x-www-form-urlencoded"
       produces:
       - "application/json"
       parameters:
@@ -352,6 +352,19 @@ paths:
         404:
           description: "unauthorized"
       x-swagger-router-controller: "User"
+  /users/isLoggedIn:
+    get:
+      tags:
+      - "user"
+      summary: "Is user logged in"
+      description: "Logout of a user"
+      operationId: "isLoggedIn"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "is login"
+      x-swagger-router-controller: "User"
   /cart:
     get:
       tags:
@@ -370,7 +383,7 @@ paths:
           description: "unauthorized"
       x-swagger-router-controller: "Cart"
   /cart/{bookIsbn}:
-    post:
+    get:
       tags:
       - "user"
       summary: "addToCart"

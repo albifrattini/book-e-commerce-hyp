@@ -26,6 +26,6 @@ module.exports.addToCart = function addToCart (request, response, next) {
 	cartEl.email = request.session.user;
 
 	Cart.addToCart(cartEl).then(result => {
-		response.status(200).send("Inseritooooo");
+		response.json(result);
 	});
 }

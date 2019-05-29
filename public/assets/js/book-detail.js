@@ -86,7 +86,7 @@ function displayBook(book) {
                         <div style="margin-top: 50px;"></div>
                         <div class="row">
                             <div class="col-lg-2">
-                                <input type="button" name="addToCart" class="btn btn-primary" value="Add to cart">
+                                <input type="button" name="addToCart" class="btn btn-primary" value="Add to cart" onclick="addToCart()">
                             </div>
                         </div>
                     </div>
@@ -196,6 +196,19 @@ function insertStarRating(rating) {
             );
         }
     }
+}
+
+function addToCart() {
+
+    if (!userLogged) return alert('You cannot add an element in the cart without logging in first!');
+
+    fetch(`/v2/cart/${isbn}`)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(answer) {
+            alert(`The books with ISBN = ${isbn} has been added to your cart!`);
+        });
 }
 
 getBookDetails();

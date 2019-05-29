@@ -1,6 +1,7 @@
 const fs = require("fs"), path = require("path");
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
 const uuid = require('uuid/v4')
@@ -14,7 +15,7 @@ const { setupDb } = require('./service/DataLayer');
 const spec = fs.readFileSync(path.join(__dirname, "api/swagger.yaml"), "utf8");
 const swaggerDoc = jsyaml.safeLoad(spec);
 
-// app.use(morgan('tiny'));
+app.use(morgan('tiny'));
 app.use(session({
 	// this function is called only if there is not a req.sessionID provided coming from the client.
 	// When server shuts down, the key is lost and for this reason every request coming from the client
@@ -28,7 +29,7 @@ app.use(session({
 	saveUninitialized: true
 }));
 
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 swaggerTools.initializeMiddleware(swaggerDoc, function(middleware) {

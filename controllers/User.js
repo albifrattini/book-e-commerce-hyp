@@ -41,13 +41,16 @@ module.exports.login = async function login (request, response, next) {
 	const validPassword = await bcrypt.compare(credentials.password, user.password);
 	if (!validPassword) return response.status(400).send('Invalid email or password.');
 
-	response.status(200).send("Entratooooo");
+	response.status(200).send({
+			info: 'Login successful!',
+			user: _.pick(user, ['name', 'email'])
+		});
 
 	request.session.user = user.email;
 	request.session.loggedin = true;
 	request.session.save();
 
-	next();
+	// next();
 }
 
 module.exports.logout = function logout (request, response, next) {
@@ -55,7 +58,19 @@ module.exports.logout = function logout (request, response, next) {
 	request.session.destroy();
 
 	response.status(200).send('Logout successful!');
-	
+
+}
+
+module.exports.isLoggedIn = function isLoggedIn (request, response, next) {
+
+	// response.json(request.session.user);
+	response.send({
+		info: "Tells which user is logged in",
+		user: request.session.user
+	});
+
+	// next();
+
 }
 
 function validateUser(user) {

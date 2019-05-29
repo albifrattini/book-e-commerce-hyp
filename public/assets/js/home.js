@@ -46,6 +46,7 @@ function carousel() {
 
 //Import books
 function retrieveBooks() {
+
   fetch("/v2/books?limit=4")
     .then(function(response){
       return response.json();
@@ -70,7 +71,6 @@ function showFavouriteBooks(book) {
           <a href="/pages/book-detail.html?ISBN=${book.ISBN}">
             <img src="${book.coverUrl}" alt="${book.title} cover" style="width:120%;">
           </a>
-          <p class="price">${book.price} €</p>
         </div>
       </div>
     `
@@ -85,7 +85,6 @@ function showBestSellerBooks(book) {
           <a href="/pages/book-detail.html?ISBN=${book.ISBN}">
             <img src="${book.coverUrl}" alt="${book.title} cover" style="width:120%;">
           </a>
-          <p class="price">${book.price} €</p>
         </div>
       </div>
     `
@@ -93,4 +92,3 @@ function showBestSellerBooks(book) {
 }
 
 retrieveBooks();
-

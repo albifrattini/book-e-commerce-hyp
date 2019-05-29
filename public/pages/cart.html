@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="us">
+    
+ <head>
+     <!-- Adding useful meta tags -->
+     <meta charset="UTF-8"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+     <title>Cart</title>
+     
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+
+
+     <!-- Load font awesome icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <!-- Font family -->
+     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+     <!-- Our CSS -->
+     <link rel="stylesheet" href="/assets/css/style.css">
+   
+</head>
+
+    
+<!--Background color-->
+<body class="body-background">
+     
+<!--NAVBAR--> 
+    <div class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top textFont" id="mainNav">
+                <div class="container-fluid" id="editNavContainer">
+                    <div class="navbar-header">
+                
+                    <!--collapse bar -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" id="navbar-toggle">
+                            <span class = "sr-only">Toggle navigation</span>
+                            <span class="icon-bar"> </span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        
+                        <a class="navbar-brand textFont" id="home" href="#">Libreggiamo</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#"  id="events">Events</a></li>
+                            <li><a  id="books" href="#">Books</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                        <!-- Button to open the modal login form -->
+                        <li id="isLogged"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>            
+        </div>
+     </div>
+     <!--end navbar-->
+
+
+     <!-- Log in Form -->
+     <!-- The Modal -->
+         <div id="id01" class="modal">
+          <!-- Modal Content -->
+          <form class="modal-content animate"> 
+              <div class="containerLoginModal">
+                  <label for="uname"><b class="textFont">Mail</b></label>
+                  <input type="text" placeholder="Enter Username" name="uname" id="inputEmail" required>
+
+                  <label for="psw"><b class="textFont">Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" id="inputPassword" required>
+                  <div class=" text-center">
+                      <input type="button" class="button login textFont" value="Login" onclick="sendData()">
+                      <br>
+                      <a href="#" class="text-center textFont" id="register"> Register</a>
+                  </div>
+              
+
+              
+                  <button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>              
+                  <span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
+              </div>
+          </form>
+       </div>
+     
+
+     <br>
+
+     <div class="container">
+         <h3 class="textFont text-center">Your cart</h3>
+         <hr>
+     </div>
+
+     <div class="container">
+         <img src="/assets/img/purchase.jpg" width="100%">
+     </div>
+
+
+
+
+		
+     <hr style="max-width: 870px;">
+
+         <!--display books-->
+        <div class="container" id="bookList">
+            
+        </div>
+
+        
+    <div id="priceAndPurchase"></div>
+
+    
+
+
+
+    <!--FOOTER-->
+     <footer>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <h4 id="textFont">Info</h4>                  
+                    <a class="a link textFont" id="contactUs" href="#">Contact Us</a><br>
+                    <a class="a link textFont" id="ordering" href="#">Ordering and Shipping</a>
+                </div>
+                <!-- The social media icon bar -->
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <h4 class="textFont" style="padding-bottom: 10px;">Connect</h4>
+                    <div class="icon-bar">
+                        <a><i class="fa fa-facebook"></i></a> 
+                        <a><i class="fa fa-twitter"></i></a> 
+                        <a><i class="fa fa-google"></i></a>
+                    </div>
+                    
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <!--insert img-->
+                  <img src="/assets/img/logo.jpg" class="logo">
+                </div>
+            </div>
+     </footer>
+     <!--end footer-->   
+
+     
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/assets/js/cart.js"></script>
+    <script type="text/javascript" src="/assets/js/navbar-footer-links.js"></script>
+
+    
+</body>
+
+</html>
