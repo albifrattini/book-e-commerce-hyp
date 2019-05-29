@@ -486,11 +486,17 @@ input[type=submit]:hover {
   padding-bottom: 80px;
 }
 
-@media (max-width: 676px){
+@media (max-width: 1024px){
   .containerEvents {
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
+  }
+}
+
+@media (max-width: 1024px){
+  #myBtnContainer {
+    padding-left: 0px;
   }
 }
 
@@ -612,6 +618,22 @@ div.titleEventContainer {
   }
 }
 
+
+
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/* AUTHOR PAGE*/
+#coverAuthor {
+  width:80%;
+  padding-left:150px;"
+}
+
+
+@media (max-width: 767px){
+  #coverAuthor {
+    width: 90%;
+    padding-left: 40px;
+}
 
 /*-----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------*/

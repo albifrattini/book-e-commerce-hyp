@@ -62,8 +62,7 @@ function displayAuthor(author) {
             <h3 class="text-center textFont">${author.authorName}</h3>
             <hr style="max-width: 1000px;">
            
-                <img src="${author.profileUrl}" alt="${author.authorName} cover" 
-                    style="width:80%; padding-left:150px;">
+                <img src="${author.profileUrl}" alt="${author.authorName} cover" id="coverAuthor">
                 <hr style="max-width: 1000px;">
                 <p class="textFont">
                     ${author.presentation}<br>              
