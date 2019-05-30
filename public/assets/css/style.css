@@ -50,6 +50,25 @@ body {
   background-color: #f9f7f7;
 }
 
+.userButton {
+  padding-right: 30px;
+  padding-bottom: 0px;
+  line-height: 45px;
+  font-size: 20px;
+  background-color: #f9f7f7;
+}
+
+.logoutButton {
+  width: auto;
+  padding: 5px 10px;
+  background-color: #E89696;
+  color: black;
+  border-radius: 5px;
+}
+
+.dropdown-menu {
+  padding: 20px;
+}
 
 /*-----------------------------------------------------------------------------------------*/
 /* Login styling */
