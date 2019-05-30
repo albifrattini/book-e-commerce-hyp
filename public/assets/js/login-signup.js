@@ -1,12 +1,10 @@
-function sendData() {
+function sendFormData() {
 
 	var http = new XMLHttpRequest();
 
-	var params = 	"name=" + document.getElementById('inputName').value +
-    				"&email=" + document.getElementById('inputEmail').value +
-    				"&password=" + document.getElementById('inputPassword').value;
-
-    document.getElementById('registerForm').reset();
+	var params = 	"name=" + document.getElementById('registerName').value +
+    				"&email=" + document.getElementById('registerEmail').value +
+    				"&password=" + document.getElementById('registerPassword').value;
 
     // Raises and Alert with some informations and goes back to index.html!
     http.addEventListener("load", function(event) {
@@ -24,23 +22,16 @@ function sendData() {
     http.open("POST", "/v2/users/signUp", true);
 
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    // http.setRequestHeader('Content-type', 'application/json');
 
     // The data sent is what the user provided in the form
     http.send(params);
 
+    document.getElementById("registerForm").reset();
+
 }
 
 
-// Get the modal
-var modal1 = document.getElementById("registrationModal");
-
-// Get the button that opens the modal
-var btn1 = document.getElementById("btnRegistration");
-
-// When the user clicks on the button, open the modal 
-btn1.onclick = function() {
-  modal1.style.display = "block";
-}
 
 
 

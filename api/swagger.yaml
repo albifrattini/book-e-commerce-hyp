@@ -287,9 +287,9 @@ paths:
       - "user"
       summary: "Login"
       description: "Login of a user"
-      operationId: "signInUser"
+      operationId: "login"
       consumes:
-      - "application/json"
+      - "application/x-www-form-urlencoded"
       produces:
       - "application/json"
       parameters:
@@ -337,6 +337,73 @@ paths:
         404:
           description: "unauthorized"
       x-swagger-router-controller: "User"
+  /users/logout:
+    get:
+      tags:
+      - "user"
+      summary: "Logout"
+      description: "Logout of a user"
+      operationId: "logout"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "succesfull login"
+        404:
+          description: "unauthorized"
+      x-swagger-router-controller: "User"
+  /users/isLoggedIn:
+    get:
+      tags:
+      - "user"
+      summary: "Is user logged in"
+      description: "Logout of a user"
+      operationId: "isLoggedIn"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "is login"
+      x-swagger-router-controller: "User"
+  /cart:
+    get:
+      tags:
+      - "user"
+      summary: "getCart"
+      description: "SignUp of a user"
+      operationId: "getCart"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "succesfull login"
+        404:
+          description: "unauthorized"
+      x-swagger-router-controller: "Cart"
+  /cart/{bookIsbn}:
+    get:
+      tags:
+      - "user"
+      summary: "addToCart"
+      description: "SignUp of a user"
+      operationId: "addToCart"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "bookIsbn"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "succesfull login"
+        404:
+          description: "unauthorized"
+      x-swagger-router-controller: "Cart"
 definitions:
   Book:
     type: "object"

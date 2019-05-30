@@ -22,10 +22,10 @@ module.exports.signUpUser = function(user) {
 	return dbConnection('users').insert(user);
 }
 
-module.exports.signInUser = function(email, password) {
+module.exports.login = function(email, password) {
 	return dbConnection('users').where('email', email).andWhere('password', password).first();
 }
 
-module.exports.isAlreadyRegistered = function(email) {
+module.exports.findUser = function(email) {
 	return dbConnection('users').where('email', email).first();
 }

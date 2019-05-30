@@ -58,7 +58,7 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                         <!-- Button to open the modal login form -->
-                        <li><button class="button login" onclick="showLogin()">Login</button></li>
+                        <li id="isLogged"></li>
                         </ul>
                     </div>
                 </div>
@@ -72,15 +72,15 @@
     	 <!-- The Modal -->
     	 <div id="id01" class="modal">
           <!-- Modal Content -->
-          <form class="modal-content animate" action="/action_page.php"> 
+          <form class="modal-content animate"> 
               <div class="containerLoginModal">
                   <label for="uname"><b class="textFont">Mail</b></label>
-                  <input type="text" placeholder="Enter Username" name="uname" required>
+                  <input type="text" placeholder="Enter Username" name="uname" id="inputEmail" required>
 
                   <label for="psw"><b class="textFont">Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="psw" required>
+                  <input type="password" placeholder="Enter Password" name="psw" id="inputPassword" required>
                   <div class=" text-center">
-                      <button type="submit" class="button login textFont">Login</button>
+                      <input type="button" class="button login textFont" value="Login" onclick="sendData()">
                       <br>
                       <a href="#" class="text-center textFont" id="register"> Register</a>
                   </div>

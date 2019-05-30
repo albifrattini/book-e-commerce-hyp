@@ -33,12 +33,17 @@ carousel();
 function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
   }
   slideIndex++;
   if (slideIndex > x.length) {slideIndex = 1} 
   x[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
   setTimeout(carousel, 6000); // Change image every 5 seconds
 }
 
@@ -46,6 +51,7 @@ function carousel() {
 
 //Import books
 function retrieveBooks() {
+
   fetch("/v2/books?limit=4")
     .then(function(response){
       return response.json();
@@ -70,7 +76,6 @@ function showFavouriteBooks(book) {
           <a href="/pages/book-detail.html?ISBN=${book.ISBN}">
             <img src="${book.coverUrl}" alt="${book.title} cover" style="width:120%;">
           </a>
-          <p class="price">${book.price} €</p>
         </div>
       </div>
     `
@@ -85,7 +90,6 @@ function showBestSellerBooks(book) {
           <a href="/pages/book-detail.html?ISBN=${book.ISBN}">
             <img src="${book.coverUrl}" alt="${book.title} cover" style="width:120%;">
           </a>
-          <p class="price">${book.price} €</p>
         </div>
       </div>
     `
@@ -93,4 +97,3 @@ function showBestSellerBooks(book) {
 }
 
 retrieveBooks();
-

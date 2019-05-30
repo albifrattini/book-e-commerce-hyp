@@ -36,7 +36,7 @@
                     <div class="navbar-header">
                 
                     <!--collapse bar -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" id="navbar-toggle">
                             <span class = "sr-only">Toggle navigation</span>
                             <span class="icon-bar"> </span>
                             <span class="icon-bar"></span>
@@ -47,12 +47,12 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="#" class="a selectable" id="events">Events</a></li>
-                            <li><a class="a selectable" id="books" href="#">Books</a></li>
+                            <li><a href="#"  id="events">Events</a></li>
+                            <li><a  id="books" href="#">Books</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                         <!-- Button to open the modal login form -->
-                        <li><button class="button login" onclick="showLogin()">Login</button></li>
+                        <li id="isLogged"></li>
                         </ul>
                     </div>
                 </div>
@@ -64,26 +64,28 @@
 
      <!-- Log in Form -->
      <!-- The Modal -->
-     <div id="id01" class="modal">
-        <!-- Modal Content -->
-        <form class="modal-content animate" action="/action_page.php"> 
-            <div class="containerLoginModal">
-                <label for="uname"><b class="textFont">Mail</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+         <div id="id01" class="modal">
+          <!-- Modal Content -->
+          <form class="modal-content animate"> 
+              <div class="containerLoginModal">
+                  <label for="uname"><b class="textFont">Mail</b></label>
+                  <input type="text" placeholder="Enter Username" name="uname" id="inputEmail" required>
 
-                <label for="psw"><b class="textFont">Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                <div class=" text-center">
-                    <button type="submit" class="button login textFont">Login</button>
-                    <br>
-                    <a href="#" class="text-center textFont" id="register"> Register</a>
-                </div>
+                  <label for="psw"><b class="textFont">Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" id="inputPassword" required>
+                  <div class=" text-center">
+                      <input type="button" class="button login textFont" value="Login" onclick="sendData()">
+                      <br>
+                      <a href="#" class="text-center textFont" id="register"> Register</a>
+                  </div>
+              
 
-                <button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>              
-                <span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
-            </div>
-        </form>
-     </div>
+              
+                  <button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>              
+                  <span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
+              </div>
+          </form>
+       </div>
      
 
      <br>
