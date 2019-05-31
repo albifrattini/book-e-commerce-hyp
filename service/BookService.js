@@ -189,6 +189,10 @@ module.exports.getEventsByMonth = function (month) {
 		.whereRaw('EXTRACT(MONTH FROM ??) = ?', ['eventDate', month]);
 }
 
+module.exports.getAllAuthors = function () {
+	return dbConnection('authors');
+}
+
 module.exports.getAuthorById = function (authorId) {
 	return dbConnection('authors')
 		.where('authors.id', authorId)

@@ -231,6 +231,25 @@ paths:
         404:
           description: "Events not found"
       x-swagger-router-controller: "Book"
+  /authors:
+    get:
+      tags:
+      - "author"
+      summary: "Authors available"
+      description: "List of all authors"
+      operationId: "getAllAuthors"
+      produces:
+      - "applications/json"
+      responses:
+        200:
+          description: "A collection of authors"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Author"
+        404:
+          description: "Unexpected error"
+      x-swagger-router-controller: "Book"
   /authors/{authorId}:
     get:
       tags:
