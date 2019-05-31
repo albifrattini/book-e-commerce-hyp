@@ -71,13 +71,13 @@ function displayBook(book) {
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                     <img src="${book.coverUrl}" alt="${book.title} cover" id="bookCover">
                     <h5 class="textFont" style="padding-left:20px;">
                         by <a href="/pages/author-detail.html?id=${book.authorId}">${book.authorName}</a>
                     </h5>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                     <div>
                         <p class="textFont">${book.description}</p>
                         <p class="textFont"><b>Published by:</b> ${book.publisher}</p>

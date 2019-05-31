@@ -50,6 +50,7 @@ body {
   background-color: #f9f7f7;
 }
 
+
 .userButton {
   padding-right: 30px;
   padding-bottom: 0px;
@@ -57,6 +58,7 @@ body {
   font-size: 20px;
   background-color: #f9f7f7;
 }
+
 
 .logoutButton {
   width: auto;
@@ -66,9 +68,11 @@ body {
   border-radius: 5px;
 }
 
+
 .dropdown-menu {
   padding: 20px;
 }
+
 
 /*-----------------------------------------------------------------------------------------*/
 /* Login styling */
@@ -508,14 +512,14 @@ input[type=submit]:hover {
 @media (max-width: 1024px){
   .containerEvents {
     width: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
 @media (max-width: 1024px){
   #myBtnContainer {
-    padding-left: 0px;
+    padding-left: 15px;
   }
 }
 
@@ -623,6 +627,12 @@ div.titleEventContainer {
   color: orange;
 }
 
+
+@media (max-width: 769px) {
+  #bookCover {
+    width: 80%;
+  }
+}
 
 @media (max-width: 767px) {
   #bookContainer{
