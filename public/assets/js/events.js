@@ -24,7 +24,7 @@ function showEvents(event) {
 	$('#eventsShown').append(
 		` 	
 			
-				 <div class="col-md-6 col-sm-6" id="resizeEvents">
+				 <div class="col-md-6 col-sm-6">
 			      <div class="polaroid">
 			        <div class="singlEventContainer">  
 				        <a href="/pages/event-detail.html?id=${event.id}">

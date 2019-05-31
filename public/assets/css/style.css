@@ -652,16 +652,37 @@ div.titleEventContainer {
 /*-----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------*/
 /* AUTHOR PAGE*/
-#coverAuthor {
-  width:80%;
-  padding-left:150px;"
+#coverAuthors {/* cover img in all author page*/
+    min-width: 60%;
+    max-width: 70%;
+    border-radius: 300px;
+    height: 203px;
 }
 
 
+@media (max-width: 769px){
+  #coverAuthors {
+    max-width: 68%;
+    height: 154px;
+  }
+}
+#coverAuthor {/* cover img in author-detail*/
+  width: 90%;
+  padding-left: 100px;
+}
+
 @media (max-width: 767px){
   #coverAuthor {
-    width: 90%;
-    padding-left: 40px;
+    width: 100%;
+    padding-left: 0px;
+  }
+}
+
+.authorContainer {
+  width: 100%;
+  position: relative;
+  padding-left: 100px;
+  padding-right: 30px;
 }
 
 /*-----------------------------------------------------------------------------------------*/
