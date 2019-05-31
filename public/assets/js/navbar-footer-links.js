@@ -11,6 +11,7 @@ function addStaticLinks() {
 	$('#ordering').attr('href', homeUrl+'/pages/ordering-shipping.html');
 	$('#register').attr('href', homeUrl+'/pages/login-signup.html');
 	$('#closeReg').attr('href', homeUrl);
+	$('#authors').attr('href', homeUrl+'/pages/author.html');
 
 } 
 
