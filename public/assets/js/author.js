@@ -1,13 +1,13 @@
-let id = URL.id;
+
 
 function getAuthors() {
 	$('#authorList').html("");
-	fetch(`/v2/authors/${id}`)
+	fetch(`/v2/authors/`)
 		.then(function(response){
 			return response.json();
 		})
 		.then(function(authors){
-			displayAuthor(authors);
+			authors.map(displayAuthor);
 		});
 }
 
@@ -15,13 +15,18 @@ function displayAuthor(author) {
 
 				$('#authorList').append(
 					`
-					
-					<div class="col-md-4 col-sm-4">
-			            <div class="polaroid" >
-			                <a href="/pages/author-detail.html?id=${author.authorId}"><img src="${author.profileUrl}" alt="${author.authorName} cover" id="coverAuthor">		       
-				                ${author.authorName}</a>
-			            </div>
+				<div class="col-md-6 col-sm-6">
+			        <div class="authorContainer">  
+				        <a href="/pages/author-detail.html?id=${author.id}">
+				            <img src="${author.profileUrl}" alt="${author.authorName} cover" 
+				             id="coverAuthors">	         	
+				        </a>
 			        </div>
+
+			        <div class="container textFont">
+			            <h4 class="text-center textFont">${author.authorName}</h4>
+			        </div>
+			    </div>
 			        
 					`
 				);
