@@ -371,7 +371,7 @@ span.psw {
 /*-----------------------------------------------------------------------------------------*/
 /*FOOTER STYLING*/
 footer {
-    padding: 4%;
+    padding: 2%;
     width: 100%;
     background-color: #3c4859;
     color: #EFEFEF;
@@ -394,6 +394,7 @@ footer {
 
 
 .logo {
+  margin-top: 4%;
   width: 100px;
   border-radius: 50px;
 }
@@ -402,6 +403,7 @@ footer {
 @media (max-width: 600px) {
   .logo{
     width: 80px;
+    margin-top: 30%;
   }
 }
 
@@ -653,10 +655,10 @@ div.titleEventContainer {
 /*-----------------------------------------------------------------------------------------*/
 /* AUTHOR PAGE*/
 #coverAuthors {/* cover img in all author page*/
-    min-width: 60%;
-    max-width: 70%;
+	width: 203px;
     border-radius: 300px;
     height: 203px;
+    background-size: cover;
 }
 
 
