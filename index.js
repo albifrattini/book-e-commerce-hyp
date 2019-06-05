@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const passport = require('passport');
 const uuid = require('uuid/v4')
 const morgan = require('morgan');
 const swaggerTools = require("swagger-tools");
