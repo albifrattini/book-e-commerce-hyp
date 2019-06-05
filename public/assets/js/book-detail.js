@@ -121,7 +121,7 @@ function displaySimilarBooks(books) {
                 $('#similarBooks').append(
                     `
                     
-                    <div class="col-md-3 col-sm-3 col-xs-5">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
                         <div class="polaroid" >
                             <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%" height="auto"></a>
                             <p class="price text-center textFont" style="color: black; padding: 5px">
