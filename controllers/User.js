@@ -50,7 +50,6 @@ module.exports.login = async function login (request, response, next) {
 	request.session.loggedin = true;
 	request.session.save();
 
-	// next();
 }
 
 module.exports.logout = function logout (request, response, next) {
