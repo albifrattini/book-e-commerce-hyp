@@ -92,15 +92,23 @@
 
      <br>
 
+     <div class="container">
+     <!-- Breadcrumb -->
+             <ul class="breadcrumb">
+              <li><a href="#" id="homeBread"class="textFont">Home</a></li>
+              <li class="textFont">Events</li>
+            </ul>
 
-     
      <h1 class="text-center textFont">Discover our Events</h1>
-     <hr style="max-width: 1000px;">
 
+     <hr style="max-width: 1000px;">
+     
+     </div>
 
 
     <!-- Filter button system -->
      <div id="myBtnContainer">
+        
         <button class="btnFilter active textFont" onclick="getEvents()"> Show all</button>
         <button class="btnFilter textFont" onclick="getEventsByMonth(new Date().getMonth() + 1)"> This Month</button>
         <button class="btnFilter textFont" onclick="getEventsByMonth(new Date().getMonth() + 2)"> Next Month</button>

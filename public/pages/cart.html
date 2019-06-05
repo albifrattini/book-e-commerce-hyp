@@ -93,8 +93,16 @@
      <br>
 
      <div class="container">
+        <!-- Breadcrumb -->
+         <ul class="breadcrumb">
+           <li><a href="/" class="textFont">Home</a></li>
+           <li class="textFont">Shopping</li>
+         </ul> 
+
          <h3 class="textFont text-center">Your cart</h3>
+
          <hr>
+
      </div>
 
      <div class="container">
@@ -108,12 +116,25 @@
      <hr style="max-width: 870px;">
 
          <!--display books-->
-        <div class="container" id="bookList">
+    <div class="container" id="bookList">
             
-        </div>
+    </div>
 
         
     <div id="priceAndPurchase"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-8 col-md-2 col-sm-offset-8 col-sm-2">
+                 <input type="button" name="purchase" class="btn btn-primary" id="purchaseStyle" value="Purchase">
+            </div>
+            <div class="col-md-2">
+                 <input type="button" name="discard" class="btn btn-danger" value="EmptyCart">
+            </div>
+        </div>
+    </div>
+
+
 
     
 

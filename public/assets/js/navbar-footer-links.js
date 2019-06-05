@@ -4,8 +4,11 @@ function addStaticLinks() {
 
 	const homeUrl = window.location.origin;
 	$('#home').attr('href', homeUrl);
+	$('#homeBread').attr('href', homeUrl);
 	$('#events').attr('href', homeUrl+'/pages/events.html');
+	$('#eventsBread').attr('href', homeUrl+'/pages/events.html');
 	$('#books').attr('href', homeUrl+'/pages/books.html');
+	$('#booksBread').attr('href', homeUrl+'/pages/books.html');
 	$('#cart').attr('href', homeUrl+'/pages/cart.html');
 	$('#contactUs').attr('href', homeUrl+'/pages/contactUs.html');
 	$('#ordering').attr('href', homeUrl+'/pages/ordering-shipping.html');
@@ -98,13 +101,16 @@ function loginOrProfile (user) {
   				<button class="btn btn-secondary dropdown-toggle userButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     			<span class="glyphicon glyphicon-user"></span>
   				</button>
+
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			    <h5 class="dropdown-item">${userLogged}</h5>
-			    <h4><a class="dropdown-item" href="/pages/cart.html">Cart</a></h5>
-			    <br>
-			    <br>
+
+			    <h5 class="dropdown-item textFont">${userLogged}</h5>
+
+			    <h4><a class="dropdown-item textFont" href="/pages/cart.html" id="cartLink">Cart</a></h5>
+			    
 			    <button class="dropdown-item logoutButton" type="button" onclick="logout()">Logout</button>
 			  </div>
+			  
 			</div>
 			`
 		);

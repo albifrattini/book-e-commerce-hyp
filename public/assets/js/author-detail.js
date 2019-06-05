@@ -59,9 +59,18 @@ function displayAuthor(author) {
 
     $('#author').append(
         `
+         <div class="container">
+
+                <!-- Breadcrumb -->
+                    <ul class="breadcrumb">
+                      <li><a href="/" class="textFont">Home</a></li>
+                      <li><a href="/pages/author.html"class="textFont">Authors</a></li>
+                      <li class="textFont">Author</li>
+                    </ul>
+
             <h3 class="text-center textFont">${author.authorName}</h3>
             <hr style="max-width: 1000px;">
-           
+
                 <img src="${author.profileUrl}" alt="${author.authorName} cover" id="coverAuthor">
                 <hr style="max-width: 1000px;">
                 <p class="textFont">
@@ -75,6 +84,7 @@ function displayAuthor(author) {
                         show more
                     </button>
                 </p>
+         </div>
                         
         `
     );
