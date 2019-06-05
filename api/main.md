@@ -7,7 +7,7 @@
 | Member n. | Role           | First name   | Last Name    | Matricola   | Email address                         | 
 | --------- | -------------- | ------------ | ------------ | ----------- | ------------------------------------- |
 | 1         | administrator  | Alberto      | Frattini     | 898440      | alberto.frattini@mail.polimi.it       |
-| 2         | Member         | Gabriele     | Ghiringhelli | 914499      | gabriele.ghiringhelli@mail.polimi.it  |
+| 2         | member         | Gabriele     | Ghiringhelli | 914499      | gabriele.ghiringhelli@mail.polimi.it  |
 
 ## Links to other deliverables
 
@@ -57,29 +57,29 @@ application. How these map to the OpenAPI data model?
 
 ### Tools used
 
-Describe here which tools, languages and frameworks did you use for the backend
-of the application.
+Tools, languages and frameworks used for the backend of the application:
+- JavaScript as main programming language
+- Node.js as run-time environment
+- Swagger framework
+- PostgreSQL as database
+- Main NPM modules: express, express-session, swagger, knex, pg, bcrypt and joi.
 
 ### Discussion
 
-Describe here:
 - How did you make sure your web application adheres to the provided OpenAPI
   specification?
 - Why do you think your web application adheres to common practices to partition
   the web application (static assets vs. application data)
-- Describe synthetically why and how did you manage session state, what are the
-  state change triggering actions (e.g., POST to login etc..).
-- Which technology did you use (relational or a no-SQL database) for managing
-  the data model?
+- There are two action that can be performed only if a user is registered and logged into the platform: Adding and checking the cart. To do so, we have used 'express-session' and, attaching a parameter to the request coming towards the server, we could check if the user is logged in and who this user is and show the content of the cart accordingly. Before logging in, a user must register and can do it through the specific registration page. Then, the user
+can log in and start putting books into the cart.
+- The data model have been managed through a relational database: PostgreSQL.
 
 ## Other information
 
 ### Task assignment
 
-Describe here how development tasks have been subdivided among members of the
-group, e.g.:
-- Foo worked on front end (80%) and OpenAPI Spec (20% of the time)
-- Bar worked on ....
+- Alberto worked on front end (30%) and OpenAPI Spec (80% of the time)
+- Gabriele worked on front end (70%) and OpenAPI Spec (20% of the time)
 
 ### Analysis of existing API
 
