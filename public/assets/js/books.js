@@ -50,8 +50,8 @@ function displayBooks(books) {
 				$('#bookList').append(
 					`
 					
-					<div class="col-md-3 col-sm-3 col-xs-offset-3">
-			            <div class="polaroid" id="booksDisplay" >
+					<div class="col-md-3 col-sm-3" id="colResizeForSmart">
+			            <div class="polaroid" >
 			                <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%"></a>			       
 				                <p class="price text-center textFont" style="color: black; padding: 5px">
 				                ${books[index].title}<br>
@@ -83,7 +83,7 @@ function fillGenreDropdown(el) {
 
 	$('#genreDropdown').append(
 			`
-			<option value="${el.genre}">${el.genre}</option>
+			<option label="${el.genre}">${el.genre}</option>
 			`
 	);
 

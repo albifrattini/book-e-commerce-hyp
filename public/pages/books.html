@@ -70,10 +70,10 @@
           <!-- Modal Content -->
           <form class="modal-content animate"> 
               <div class="containerLoginModal">
-                  <label for="uname"><b class="textFont">Mail</b></label>
-                  <input type="text" placeholder="Enter Username" name="uname" id="inputEmail" required>
+                  <label for="inputEmail"><b class="textFont">Mail</b></label>
+                  <input type="text" placeholder="Enter Username" id="inputEmail" required>
 
-                  <label for="psw"><b class="textFont">Password</b></label>
+                  <label for="inputPassword"><b class="textFont">Password</b></label>
                   <input type="password" placeholder="Enter Password" name="psw" id="inputPassword" required>
                   <div class=" text-center">
                       <input type="button" class="button login textFont" value="Login" onclick="sendData()">
@@ -105,7 +105,7 @@
     </div>
 
      <div class="container">
-         <img src="https://images.unsplash.com/photo-1495568995596-9e40959aa178?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" width="100%">
+         <img src="https://images.unsplash.com/photo-1495568995596-9e40959aa178?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="glass img" width="100%">
      </div>
 
 
@@ -115,14 +115,22 @@
     	
     		<div class="row">
 	    		<div class="col-md-6">
-					<select class="browser-default custom-select" id="genreDropdown">
-					  <option value="" selected class="textFont"> --- no genre --- </option>
-					</select>
+					<label>
+                        <select class="browser-default custom-select" id="genreDropdown">
+                          <optgroup label="genres">
+    					     <option value="" selected class="textFont"> --- no genre --- </option>
+                          </optgroup>
+    					</select>
+                    </label>
 				</div>
 				<div class="col-md-6">
-			    	<select class="browser-default custom-select" id="themeDropdown">
-					  <option value="" selected class="textFont"> --- no theme --- </option>
-					</select>
+                    <label>
+			    	    <select class="browser-default custom-select" id="themeDropdown">
+                           <optgroup label="themes">
+					          <option value="" selected class="textFont"> --- no theme --- </option>
+                           </optgroup>
+					    </select>
+                    </label>
 				</div>
 	    	</div>
     		<div class="row">
@@ -168,7 +176,7 @@
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4">
                   <!--insert img-->
-                  <img src="/assets/img/logo.jpg" class="logo">
+                  <img src="/assets/img/logo.jpg" alt="logo img" class="logo">
                 </div>
             </div>
         </footer>

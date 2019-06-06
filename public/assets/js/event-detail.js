@@ -47,7 +47,7 @@ function displayEvent(event) {
          <div class="container">
             <img src="https://images.unsplash.com/photo-1506377872008-6645d9d29ef7?
             ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid
-            =eyJhcHBfaWQiOjF9" style="width: 100%;"">
+            =eyJhcHBfaWQiOjF9" alt="bookstore img" style="width: 100%;"">
          </div>
 
          <br>

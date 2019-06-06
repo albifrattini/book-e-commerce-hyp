@@ -76,11 +76,11 @@
           <!-- Modal Content -->
           <form class="modal-content animate"> 
               <div class="containerLoginModal">
-                  <label for="uname"><b class="textFont">Mail</b></label>
-                  <input type="text" placeholder="Enter Username" name="uname" id="inputEmail" required>
+                  <label for="inputEmail" ><b class="textFont">Mail</b></label>
+                  <input type="text" placeholder="Enter Username" id="inputEmail" required>
 
-                  <label for="psw"><b class="textFont">Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="psw" id="inputPassword" required>
+                  <label for="inputPassword"><b class="textFont">Password</b></label>
+                  <input type="password" placeholder="Enter Password" id="inputPassword" required>
                   <div class=" text-center">
                       <input type="button" class="button login textFont" value="Login" onclick="sendData()">
                       <br>
@@ -103,21 +103,17 @@
     <div class="slideshow-container" id="slideshow">
 
         <div class="mySlides">
-             <img src="https://images.unsplash.com/photo-1528932574509-27a7e195a75b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%">
+             <img src="https://images.unsplash.com/photo-1528932574509-27a7e195a75b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%" alt="carousel img1">
             <div class="textCarousel textFont">We have all kind of genres and themes</div>
         </div>
         <div class="mySlides">
-            <img src="https://images.unsplash.com/photo-1504542944432-f022df771055?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%">
+            <img src="https://images.unsplash.com/photo-1504542944432-f022df771055?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%" alt="carousel img2">
             <div class="textCarousel textFont">Join us and start reading a billion different books</div>
         </div>
         <div class="mySlides">
-            <img src="https://images.unsplash.com/photo-1535546204504-586398ee6677?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%">
+            <img src="https://images.unsplash.com/photo-1535546204504-586398ee6677?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9" style="width:100%" alt="carousel img3">
             <div class="textCarousel textFont">Meet your favourite author joining our events </div>
         </div>
-
-    <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
 
@@ -137,7 +133,7 @@
     <div class="container">
     	<div class="row">
     		<div class="col-md-6 col-sm-6">
-    			<img src="assets/img/fitz.jpg" style="width: 100%;">			
+    			<img src="assets/img/fitz.jpg" style="width: 100%;" alt="fitz img">			
     		</div>
     		<div class="col-md-6 col-sm-6" style="padding: 10px; font-size: 18px;">
     			<p class="text-center textFont">
@@ -212,7 +208,7 @@
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4">
                   <!--insert img-->
-                  <img src="/assets/img/logo.jpg" class="logo">
+                  <img src="/assets/img/logo.jpg" alt="logo img" class="logo">
                 </div>
             </div>
         </footer>
