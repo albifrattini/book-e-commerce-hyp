@@ -18,27 +18,6 @@ function addStaticLinks() {
 
 } 
 
-//Login functions
-// Get the modal
-var modal = document.getElementById('id01');
-
-
-function showLogin() {
-  document.getElementById('id01').style.display='block';
-}
-
-
-function closeLogin() {
-  document.getElementById('id01').style.display='none';
-}
-
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 
 function sendData() {
 
@@ -47,13 +26,12 @@ function sendData() {
     var params =  "email=" + document.getElementById('inputEmail').value +
                   "&password=" + document.getElementById('inputPassword').value;
 
-    document.getElementById('id01').style.display='none';
 
     // Raises and Alert with some informations and goes back to index.html!
     http.addEventListener("load", function(event) {
         let resp = JSON.parse(event.target.responseText);
         alert(`${resp.info}, ${resp.user.name}!`);
-        location.reload();
+        window.location = window.location.origin;
     });
 
     // Define what happens in case of error
@@ -116,7 +94,7 @@ function loginOrProfile (user) {
 		);
 	} else {
 		$('#isLogged').html(
-			`<button class="button login" onclick="showLogin()">Login</button>`
+			`<button class="button login" onclick="window.location.href='/pages/login-signup.html'">Login</button>`
 		);
 	}
 }

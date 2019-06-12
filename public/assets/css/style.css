@@ -143,23 +143,6 @@ input[type=text], input[type=password] {
 }
 
 
-/* Editing login modal form */
-.containerLoginModal {
-    width: 80%;
-    margin: 6% auto;
-    position: relative;
-}
-
-
-/* resizing login modal form for smartphones */
-@media (max-width: 767px){
-  .containerLoginModal {
-    width: 60%;
-    padding-bottom: 50px;
-  }
-}
-
-
 /* Set a style for all login buttons */
 .login {
   background-color: #f9f7f7;
@@ -179,78 +162,6 @@ button:hover {
   opacity: 0.8;
 }
 
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #EF5350;
-  color: black;
-  border-radius: 10px;
-}
-
-
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
-}
-
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 200px auto; /* 15% from the top and centered */
-  border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
-}
-
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-
-
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
 
 
 /*-----------------------------------------------------------------------------------------*/
@@ -726,6 +637,9 @@ div.titleEventContainer {
   padding-right: 200px;"
 }
 
+#btnLogin {
+  margin-top:88px;
+}
 
 input[type=text], input[type=email] {
   width: 100%;
@@ -738,11 +652,17 @@ input[type=text], input[type=email] {
   border-radius: 4px;
 }
 
+@media (max-width: 500px){
+  #btnLogin {
+    margin-top: 0px;
+    margin-bottom: 60px;
+  }
+}
 
-@media (max-width: 767px){
+@media (max-width: 768px){
   #registrationForm {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
 }
