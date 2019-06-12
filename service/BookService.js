@@ -123,27 +123,27 @@ module.exports.booksDbSetup = function(database) {
 }
 
 module.exports.getAllBooks = function(offset, limit) {
-	var query = dbConnection('books')
-		.join('writtenby', 'books.ISBN', 'writtenby.ISBN')
-		.join('authors', 'writtenby.authorId', 'authors.id');
+	var query = dbConnection('books');
+		// .join('writtenby', 'books.ISBN', 'writtenby.ISBN')
+		// .join('authors', 'writtenby.authorId', 'authors.id');
 	return query.limit(limit).offset(offset);
 }
 
 module.exports.getBookByIsbn = function(bookIsbn) {
 	return dbConnection('books')
 		.where('books.ISBN', bookIsbn)
-		.join('writtenby', 'books.ISBN', 'writtenby.ISBN')
-		.join('authors', 'writtenby.authorId', 'authors.id')
-		.join('presentedat', 'books.ISBN', 'presentedat.ISBN')
+		// .join('writtenby', 'books.ISBN', 'writtenby.ISBN')
+		// .join('authors', 'writtenby.authorId', 'authors.id')
+		// .join('presentedat', 'books.ISBN', 'presentedat.ISBN')
 		.first();
 }
 
 module.exports.getBooksThroughFilter = function (filter) {
-	var query = dbConnection('books')
-		.join('writtenby', 'books.ISBN', 'writtenby.ISBN')
-		.join('authors', 'writtenby.authorId', 'authors.id');
+	var query = dbConnection('books');
+
 	if (filter[0]) {
 		let titleOrAuthor = filter[0].toLowerCase();
+		query = query.join('writtenby', 'books.ISBN', 'writtenby.ISBN').join('authors', 'writtenby.authorId', 'authors.id');
 		query.whereRaw('LOWER(??) LIKE ?', ['books.title', `%${titleOrAuthor}%`]).orWhere(dbConnection.raw('LOWER(??) LIKE ?', ['authors.authorName', `%${titleOrAuthor}%`]));
 	}
 	if (filter[1]) {
@@ -169,6 +169,18 @@ module.exports.getBooksBySimilarity = function (bookIsbn) {
 module.exports.getReviewsOfBook = function (bookIsbn) {
 	return dbConnection('hasreviews')
 		.where('hasreviews.ISBN', bookIsbn);
+}
+
+module.exports.getAuthorsOfBook = function(bookIsbn) {
+	return dbConnection('writtenby')
+		.where('writtenby.ISBN', bookIsbn)
+		.join('authors', 'writtenby.authorId', 'authors.id');
+}
+
+module.exports.getEventsOfBook = function(bookIsbn) {
+	return dbConnection('presentedat')
+		.where('presentedat.ISBN', bookIsbn)
+		.join('events', 'presentedat.eventId', 'events.id');
 }
 
 module.exports.getAllEvents = function () {

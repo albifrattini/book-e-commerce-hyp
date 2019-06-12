@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  description: "This is the book store built for Hypermedia course at Polimi."
+  description: "This is the book store built for Hypermedia course at Polimi. We have three main entities: Book, Author and Event. Through the website, the user can navigate between a selection of books, adding them to the personal cart and purchasing them."
   version: "1.0.0"
   title: "Libreggiamo"
   contact:
@@ -13,9 +13,9 @@ host: "localhost:3000"
 basePath: "/v2"
 tags:
 - name: "book"
-  description: "Available book"
+  description: "A book available in the website"
 - name: "author"
-  description: "Author of some book"
+  description: "An author that has written some book in the inventory"
 - name: "event"
   description: "Event in which some book is presented"
 schemes:
@@ -112,7 +112,7 @@ paths:
         404:
           description: "Book not found"
       x-swagger-router-controller: "Book"
-  /books/similar/{bookIsbn}:
+  /books/{bookIsbn}/similar:
     get:
       tags:
       - "book"
@@ -137,13 +137,63 @@ paths:
         404:
           description: "Books not found"
       x-swagger-router-controller: "Book"
-  /books/reviews/{bookIsbn}:
+  /books/{bookIsbn}/reviews:
     get:
       tags:
       - "book"
       summary: "Find book's reviews by Isbn"
       description: "Returns book's reviews"
       operationId: "getReviewsOfBook"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "bookIsbn"
+        in: "path"
+        description: "Isbn of book's reviews to return"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Book"
+        400:
+          description: "Invalid Isbn supplied"
+        404:
+          description: "Reviews not found"
+      x-swagger-router-controller: "Book"
+  /books/{bookIsbn}/authors:
+    get:
+      tags:
+      - "book"
+      summary: "Find book's reviews by Isbn"
+      description: "Returns book's reviews"
+      operationId: "getAuthorsOfBook"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "bookIsbn"
+        in: "path"
+        description: "Isbn of book's reviews to return"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Book"
+        400:
+          description: "Invalid Isbn supplied"
+        404:
+          description: "Reviews not found"
+      x-swagger-router-controller: "Book"
+  /books/{bookIsbn}/events:
+    get:
+      tags:
+      - "book"
+      summary: "Find book's reviews by Isbn"
+      description: "Returns book's reviews"
+      operationId: "getEventsOfBook"
       produces:
       - "application/json"
       parameters:
@@ -401,22 +451,39 @@ paths:
         404:
           description: "unauthorized"
       x-swagger-router-controller: "Cart"
-  /cart/{bookIsbn}:
-    get:
+  /cart/add:
+    post:
       tags:
       - "user"
       summary: "addToCart"
-      description: "SignUp of a user"
+      description: "Adding a book to the shopping cart of a user"
       operationId: "addToCart"
       consumes:
       - "application/json"
       produces:
       - "application/json"
       parameters:
-      - name: "bookIsbn"
-        in: "path"
+      - name: "isbn"
+        in: "query"
         required: true
         type: "string"
+      responses:
+        200:
+          description: "succesfull login"
+        404:
+          description: "unauthorized"
+      x-swagger-router-controller: "Cart"
+  /cart/empty:
+    delete:
+      tags:
+      - "user"
+      summary: "Empty the Cart"
+      description: "Deleting all the elements from the cart"
+      operationId: "emptyCart"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
       responses:
         200:
           description: "succesfull login"
@@ -530,15 +597,3 @@ definitions:
       name: "Mario Rossi"
       email: "example@example.com"
       password: "****"
-
-
-
-
-
-
-
-
-
-
-
-

@@ -62,32 +62,6 @@
         </div>
      </div>
      <!--end navbar-->
-
-
-     <!-- Log in Form -->
-     <!-- The Modal -->
-         <div id="id01" class="modal">
-          <!-- Modal Content -->
-          <form class="modal-content animate"> 
-              <div class="containerLoginModal">
-                  <label for="uname"><b class="textFont">Mail</b></label>
-                  <input type="text" placeholder="Enter Username" name="uname" id="inputEmail" required>
-
-                  <label for="psw"><b class="textFont">Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="psw" id="inputPassword" required>
-                  <div class=" text-center">
-                      <input type="button" class="button login textFont" value="Login" onclick="sendData()">
-                      <br>
-                      <a href="#" class="text-center textFont" id="register"> Register</a>
-                  </div>
-              
-
-              
-                  <button type="button" onclick="closeLogin()" class="cancelbtn textFont">Cancel</button>              
-                  <span class="psw textFont">Forgot <a href="#" class="textFont">password?</a></span>
-              </div>
-          </form>
-       </div>
      
 
      <br>
@@ -113,23 +87,19 @@
 
 
 		
-     <hr style="max-width: 870px;">
+    <hr style="max-width: 870px;">
 
          <!--display books-->
-    <div class="container" id="bookList">
-            
-    </div>
+    <div class="container" id="bookList"></div>
 
-        
-    <div id="priceAndPurchase"></div>
 
     <div class="container">
         <div class="row">
             <div class="col-md-offset-8 col-md-2 col-sm-offset-8 col-sm-2">
-                 <input type="button" name="purchase" class="btn btn-primary" id="purchaseStyle" value="Purchase">
+                 <input type="button" name="purchase" class="btn btn-primary" id="purchaseStyle" value="Purchase" onclick="purchaseCart()">
             </div>
-            <div class="col-md-2">
-                 <input type="button" name="discard" class="btn btn-danger" value="EmptyCart">
+            <div class="col-md-2 col-sm-2">
+                 <input type="button" name="discard" class="btn btn-danger" value="Empty Cart" onclick="emptyCart()">
             </div>
         </div>
     </div>

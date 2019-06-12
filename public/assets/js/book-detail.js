@@ -23,7 +23,8 @@ var URL = function () {
 }();
 
 let isbn = URL.ISBN;
-console.log(isbn);
+let book;
+let authors;
 
 function getBookDetails() {
 
@@ -32,10 +33,21 @@ function getBookDetails() {
             return response.json();
         })
         .then(function (data) {
-            displayBook(data);
+            book = data;
+        })
+        .then(function () {
+            fetch(`/v2/books/${isbn}/authors`)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    authors = data;
+                    displayBook();
+                    if(authors.length > 1) addOtherAuthors();
+                });
         })
         .then(function() {
-            fetch(`/v2/books/similar/${isbn}`)
+            fetch(`/v2/books/${isbn}/similar`)
                 .then(function (response) {
                     return response.json();
                 })
@@ -44,7 +56,7 @@ function getBookDetails() {
                 });
         })
         .then(function() {
-            fetch(`/v2/books/reviews/${isbn}`)
+            fetch(`/v2/books/${isbn}/reviews`)
                 .then(function (response) {
                     return response.json();
                 })
@@ -52,12 +64,32 @@ function getBookDetails() {
                     startReviewSection();
                     data.map(displayBookReviews);
                 });
+        })
+        .then(function() {
+            fetch(`/v2/books/${isbn}/events`)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    startEventsSection();
+                    data.map(displayEvents);
+                });
         });
 
 
 }
 
-function displayBook(book) {
+function addOtherAuthors() {
+    for (var i = 1; i < authors.length; i++) {
+        $('#bookAuthors').append(
+            `
+                    , <a href="/pages/author-detail.html?id=${authors[i].authorId}">${authors[1].authorName}</a>
+            `
+        );
+    }
+}
+
+function displayBook() {
 
     $('#book').append(
         `
@@ -73,15 +105,14 @@ function displayBook(book) {
             <div class="row">
                 <div class="col-md-6 col-sm-6">
                     <img src="${book.coverUrl}" alt="${book.title} cover" id="bookCover">
-                    <h5 class="textFont" style="padding-left:20px;">
-                        by <a href="/pages/author-detail.html?id=${book.authorId}">${book.authorName}</a>
-                    </h5>
+                    <h5 class="textFont" style="padding-left:20px;" id="bookAuthors">
+                        by <a href="/pages/author-detail.html?id=${authors[0].authorId}">${authors[0].authorName}</a>
+                    <h5>
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div>
                         <p class="textFont">${book.description}</p>
                         <p class="textFont"><b>Published by:</b> ${book.publisher}</p>
-                        <p class="textFont"><b>Presented at this</b> <a href="/pages/event-detail.html?id=${book.eventId}">event</a></p>
                         <p class="textFont">${book.price} €</p>
                         <h5 class="textFont"><b>Availability:</b> ${book.status}</h5>
                         <div style="margin-top: 50px;"></div>
@@ -94,6 +125,42 @@ function displayBook(book) {
                 </div>
 
         </div>
+        `
+    );
+
+}
+
+
+
+function displayEvents(event) {
+    
+    $('#eventsOfBook').append(
+        `   
+            
+                 <div class="col-md-6 col-sm-6">
+                  <div class="polaroid">
+                    <div class="singlEventContainer">  
+                        <a href="/pages/event-detail.html?id=${event.id}">
+                            <img src="${event.imageUrl}" alt="${event.eventName} cover" 
+                             class="imgEvent">  
+
+                            <div class="overlay">
+                                <div class="overlayText textFont">
+                                    <h3 class="textFont" style="font-weight: bold">${event.eventLocation}</h3>
+                                    <h3 class="textFont">${event.eventDate.substring(0,10)}</h3>
+                                </div>
+                            </div>                  
+                        </a>
+                    </div>
+
+                    <div class="titleEventContainer textFont">
+                        <h4 class="text-center textFont">${event.eventName}</h4>
+                    </div>
+                   </div>
+                 </div>
+            
+        
+           
         `
     );
 
@@ -155,6 +222,22 @@ function startReviewSection() {
     );
 }
 
+function startEventsSection() {
+    $('#eventsOfBook').append(
+        `
+            <div class="row">
+                <div class="text-center">
+                    <h3 class="textFont">
+                        Presentation Events
+                    </h3>
+                    <hr style="max-width: 1000px;">
+                </div>
+            </div>
+            <div style="margin-bottom: 20px"></div>
+        `
+    );
+}
+
 function displayBookReviews(review) {
 
     $('#bookReviews').append(
@@ -203,7 +286,12 @@ function addToCart() {
 
     if (!userLogged) return alert('You cannot add an element in the cart without logging in first!');
 
-    fetch(`/v2/cart/${isbn}`)
+    const book = {ISBN: `${isbn}`};
+
+    fetch(`/v2/cart/add?isbn=${isbn}`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'}
+        })
         .then(function(response) {
             return response.json();
         })

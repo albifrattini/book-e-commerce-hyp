@@ -54,5 +54,13 @@
 		"eventDate": "2019-06-23",
 		"eventDescription": "The event will take place at 15.00. In the first part, the author will explain how the idea for the book started and how it turned out to be a successful book. At 16.00 the interview will finish and questions can be asked. For the people that want to join us, the author will offer an aperitivo and face to face speaking.",
         "imageUrl" : "/assets/img/libreriaRandom.jpg"
+	},
+	{
+		"eventName": "The tartar steppe presentation",
+		"bookPresented": "8804668040",
+		"eventLocation": "Mondadori, Torino",
+		"eventDate": "2019-06-20",
+		"eventDescription": "The event will take place at 15.00. In the first part, the author will explain how the idea for the book started and how it turned out to be a successful book. At 16.00 the interview will finish and questions can be asked. For the people that want to join us, the author will offer an aperitivo and face to face speaking.",
+        "imageUrl" : "/assets/img/mondadoriLivorno.jpg"
 	}
 ]

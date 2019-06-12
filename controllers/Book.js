@@ -48,9 +48,24 @@ module.exports.getBooksBySimilarity = function getBooksBySimilarity (request, re
 
 module.exports.getReviewsOfBook = function getReviewsOfBook (request, response, next) {
 	const bookIsbn = request.swagger.params['bookIsbn'].value;
-	console.log(bookIsbn);
 	Book.getReviewsOfBook(bookIsbn).then(reviews => {
 		response.json(reviews);
+		next();
+	});
+}
+
+module.exports.getEventsOfBook = function getEventsOfBook (request, response, next) {
+	const bookIsbn = request.swagger.params['bookIsbn'].value;
+	Book.getEventsOfBook(bookIsbn).then(events => {
+		response.json(events);
+		next();
+	});
+}
+
+module.exports.getAuthorsOfBook = function getAuthorsOfBook (request, response, next) {
+	const bookIsbn = request.swagger.params['bookIsbn'].value;
+	Book.getAuthorsOfBook(bookIsbn).then(authors => {
+		response.json(authors);
 		next();
 	});
 }

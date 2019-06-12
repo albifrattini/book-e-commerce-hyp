@@ -1,4 +1,4 @@
-let totalPrice = 0.0;
+let nItems;
 
 function getCart() {
 
@@ -7,6 +7,7 @@ function getCart() {
 			return response.json();
 		})
 		.then(function(data) {
+			nItems = data.length;
 			if(data.length > 0) {
 				displayBooks(data);
 			} else {
@@ -22,16 +23,15 @@ function displayBooks(books) {
 		for (var j = 0; j < 4; j++) {
 			var index = i*4+j;
 			if (index < books.length) {
-				totalPrice += parseFloat(books[index].price);
 				$('#bookList').append(
 					`
-					
 					<div class="col-md-3 col-sm-3" id="resizeColumnBooks">
 			            <div class="polaroid" id="booksDisplay" >
 			                <a href="/pages/book-detail.html?ISBN=${books[index].ISBN}"><img src="${books[index].coverUrl}" alt="${books[index].title} cover" style="width:100%"></a>			       
 				                <p class="price text-center textFont" style="color: black; padding: 5px">
 				                ${books[index].title}<br>
-				                ${books[index].price} €</p>
+				                ${books[index].price} €<br>
+				                Qty: ${books[index].quantity}</p>
 			            </div>
 			        </div>
 			        
@@ -46,25 +46,42 @@ function displayBooks(books) {
 
 }
 
-function displayPriceAndPurchase () {
-	$('#priceAndPurchase').html(
-		`
-			<div class="row">
-                <div class="col-sm-6 col-md-6">
-                    <div class="text-center">
-                        <h3>${totalPrice}</h3>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6">
-                    <div class="text-center">
-                        <input type="button" name="purchase" class="btn btn-primary" value="Purchase" onclick="">
-                    </div>
-                </div>
-            </div>
-		`
-	);
+function purchaseCart() {
+
+	if(nItems < 1) return alert('There are no books in your cart...');
+
+	fetch('/v2/cart/empty', {
+		method: 'DELETE'
+		})
+		.then(function(response) {
+	 		alert(`You have purchased your books successfully!\nThank you! :) The Cart is now empty!`);
+	 		window.location = window.location.origin;
+	});
+
+}
+
+function emptyCart() {
+
+	if(nItems < 1) return alert('There are no books in your cart...');
+
+	fetch('/v2/cart/empty', {
+        method: 'DELETE'
+    	})
+    	.then(function(response) {
+			alert(`The Cart is now empty!`);
+			location.reload();
+	});
+
 }
 
 
 getCart();
-// displayPriceAndPurchase();
+
+
+
+
+
+
+
+
+
