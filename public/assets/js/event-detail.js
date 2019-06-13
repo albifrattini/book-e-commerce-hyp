@@ -44,24 +44,18 @@ function displayEvent(event) {
 
     $('#event').append(
         `
-         <div class="container">
-            <img src="https://images.unsplash.com/photo-1506377872008-6645d9d29ef7?
-            ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid
-            =eyJhcHBfaWQiOjF9" alt="bookstore img" style="width: 100%;"">
-         </div>
-
-         <br>
 
          <h3 class="text-center textFont">${event.eventName}</h3>
-         <hr style="max-width: 1000px;">
-         
-         <div class="container">
-          
 
-               <div>
+         <hr style="max-width: 1000px;">
+
+         <div class="container">
+
+            <div>
                  <img src="${event.imageUrl}" alt="${event.eventLocation} cover" class="imgEventPage">
-               </div>
-                 <hr>   
+            </div>
+
+             
                <div>
                  <p style="margin: 3% auto; font-size:18px;" class="textFont">${event.eventDescription}</p>
                  <p style="margin: 3% auto; font-size:16px;" class="textFont">${event.eventLocation}</p>
@@ -70,9 +64,17 @@ function displayEvent(event) {
                  <a href="/pages/book-detail.html?ISBN=${event.ISBN}" class="textFont">${event.title}</a>
                  
                </div>
+
+               <hr>
             
+            <div>
+                <img src="https://images.unsplash.com/photo-1506377872008-6645d9d29ef7?
+                    ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid
+                    =eyJhcHBfaWQiOjF9" alt="bookstore img" style="width: 100%;"">
+            </div>
+                
            
-        </div>
+         </div>
 
         <br>
         
