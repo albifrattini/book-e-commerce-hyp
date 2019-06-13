@@ -104,7 +104,7 @@ function displayAuthor(author) {
 function displayQuotes(author) {
     $('#quotes').append(
         `
-            <div>${author.quote}</div>
+            <div class="textFont">${author.quote}</div>
             <hr style="max-width: 1000px;">
         `
         );
