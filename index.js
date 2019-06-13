@@ -21,12 +21,17 @@ app.use(session({
 		return uuid();
 	},
 	// secret: process.env.SECRET,
-	secret: "qualcosa",
+	secret: process.env.SECRET,
 	resave: false,
 	saveUninitialized: true
 }));
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Used to redirect to the SwaggerUi documentation when accessing the url: ADDR/backend/swaggerui
+app.get('/backend/swaggerui', function(request, response) {
+	response.redirect('/docs');
+});
 
 
 swaggerTools.initializeMiddleware(swaggerDoc, function(middleware) {
