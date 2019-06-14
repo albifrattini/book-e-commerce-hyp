@@ -42,7 +42,7 @@ module.exports.login = async function login (request, response, next) {
 	if (!validPassword) return response.status(400).send('Invalid email or password.');
 
 	response.status(200).send({
-			info: 'Login successful!',
+			info: 'Login successful',
 			user: _.pick(user, ['name', 'email'])
 		});
 

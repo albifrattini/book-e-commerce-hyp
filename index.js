@@ -3,8 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const uuid = require('uuid/v4')
-const morgan = require('morgan');
+const uuid = require('uuid/v4');
 const swaggerTools = require("swagger-tools");
 const jsyaml = require("js-yaml");
 const serverPort = process.env.PORT || 3000;
@@ -14,7 +13,6 @@ const { setupDb } = require('./service/DataLayer');
 const spec = fs.readFileSync(path.join(__dirname, "api/swagger.yaml"), "utf8");
 const swaggerDoc = jsyaml.safeLoad(spec);
 
-app.use(morgan('tiny'));
 app.use(session({
 	genid: (request) => {
 		console.log("Genid: " + request.sessionID);
