@@ -11,7 +11,7 @@ info:
   license:
     name: "Apache-2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "localhost:3000"
+host: "polimi-hyp-2019-team-10496529.herokuapp.com"
 basePath: "/v2"
 tags:
 - name: "book"
@@ -23,7 +23,7 @@ tags:
 - name: "cart"
   description: "The personal cart of a user"
 schemes:
-- "http"
+- "https"
 paths:
   /books:
     get:
@@ -541,7 +541,7 @@ definitions:
     title: "Book"
     description: "A book for sale in the store"
     example:
-      ISBN: "8888888888"
+      ISBN: "8804668040"
       title: "Il deserto dei tartari"
       genre: "Fiction"
       theme: "War"
