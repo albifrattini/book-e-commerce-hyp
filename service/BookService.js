@@ -124,17 +124,12 @@ module.exports.booksDbSetup = function(database) {
 
 module.exports.getAllBooks = function(offset, limit) {
 	var query = dbConnection('books');
-		// .join('writtenby', 'books.ISBN', 'writtenby.ISBN')
-		// .join('authors', 'writtenby.authorId', 'authors.id');
 	return query.limit(limit).offset(offset);
 }
 
 module.exports.getBookByIsbn = function(bookIsbn) {
 	return dbConnection('books')
 		.where('books.ISBN', bookIsbn)
-		// .join('writtenby', 'books.ISBN', 'writtenby.ISBN')
-		// .join('authors', 'writtenby.authorId', 'authors.id')
-		// .join('presentedat', 'books.ISBN', 'presentedat.ISBN')
 		.first();
 }
 

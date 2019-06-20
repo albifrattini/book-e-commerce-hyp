@@ -22,7 +22,6 @@ module.exports.addToCart = function addToCart (request, response, next) {
 	if (!request.session.loggedin) return response.status(403).send("You need to login in order to add elements to your cart!");
 
 	let cartEl = {};
-	// cartEl.ISBN = request.swagger.params['bookIsbn'].value;
 	cartEl.ISBN = request.swagger.params['isbn'].value;
 	cartEl.email = request.session.user;
 	cartEl.quantity = 1;
