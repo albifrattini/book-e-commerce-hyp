@@ -8,14 +8,20 @@ function sendFormData() {
 
     // Raises and Alert with some informations and goes back to index.html!
     http.addEventListener("load", function(event) {
-    	let resp = JSON.parse(event.target.responseText);
-		alert(`${resp.info}\nWelcome to Libreggiamo, ${resp.user.name}!\nLogin through the Profile button.`);
+        console.log(this.status);
+        if(this.status == 200) {
+            let resp = JSON.parse(event.target.responseText);
+            alert(`${resp.info}\nWelcome to Libreggiamo, ${resp.user.name}!\nNow you can Login.`);
+        } else {
+            alert(`${this.status} Bad Request!\n${event.target.responseText}`);
+        }
     });
 
-    // Define what happens in case of error
+    /*
     http.addEventListener("error", function(event) {
       	alert(event.target.responseText);
     });
+    */
 
     // Set up our request
     http.open("POST", "/v2/users/signUp", true);
@@ -40,15 +46,20 @@ function sendData() {
 
     // Raises and Alert with some informations and goes back to index.html!
     http.addEventListener("load", function(event) {
-        let resp = JSON.parse(event.target.responseText);
-        alert(`${resp.info}, ${resp.user.name}!`);
-        window.location = window.location.origin;
+        if(this.status == 200) {
+            let resp = JSON.parse(event.target.responseText);
+            alert(`${resp.info}, ${resp.user.name}!`);
+            window.location = window.location.origin;
+        } else {
+            alert(`${this.status} Bad Request!\n${event.target.responseText}`);
+        }
     });
 
-    // Define what happens in case of error
+    /*
     http.addEventListener("error", function(event) {
         alert(event.target.responseText);
     });
+    */
 
     // Set up our request
     http.open("POST", "/v2/users/login", true);
