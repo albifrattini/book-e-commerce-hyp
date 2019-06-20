@@ -107,7 +107,7 @@ function displayBook() {
                     <img src="${book.coverUrl}" alt="${book.title} cover" id="bookCover">
                     <h5 class="textFont" style="padding-left:20px;" id="bookAuthors">
                         by <a href="/pages/author-detail.html?id=${authors[0].authorId}">${authors[0].authorName}</a>
-                    <h5>
+                    </h5>
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div>
