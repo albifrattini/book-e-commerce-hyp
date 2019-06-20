@@ -30,7 +30,6 @@ function getEventDetails() {
 
     fetch(`/v2/events/${id}`)
         .then(function (response) {
-            console.log(response);
             return response.json();
         })
         .then(function (data) {
