@@ -33,8 +33,8 @@ function showEvents(event) {
 
 				            <div class="overlay">
 				            	<div class="overlayText textFont">
-				            		<h3 class="textFont" style="font-weight: bold">${event.eventLocation}</h3>
-				            		<h3 class="textFont">${event.eventDate.substring(0,10)}</h3>
+				            		<div class="textFont" style="font-weight: bold">${event.eventLocation}</div>
+				            		<div class="textFont">${event.eventDate.substring(0,10)}</div>
 				            	</div>
 				    		</div>              	
 				        </a>

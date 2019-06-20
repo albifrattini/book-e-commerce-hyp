@@ -94,6 +94,19 @@ body {
 	padding-right: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  #purchaseStyle {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  #purchaseStyle {
+    margin-bottom: 100px;
+  }
+}
+
+
 /*-----------------------------------------------------------------------------------------*/
 /* Style the breadcrumbs */
 ul.breadcrumb {
@@ -496,7 +509,7 @@ input[type=submit]:hover {
 
 .overlayText {
   color: black;
-  font-size: 16px;
+  font-size: 19px;
   position: absolute;
   top: 50%;
   left: 50%;

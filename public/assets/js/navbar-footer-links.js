@@ -45,7 +45,7 @@ function loginOrProfile (user) {
 		$('#isLogged').html(
 			`
 			<div class="dropdown">
-  				<button class="btn btn-secondary dropdown-toggle userButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  				<button aria-label="UP button" title="UP button" class="btn btn-secondary dropdown-toggle userButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     			<span class="glyphicon glyphicon-user"></span>
   				</button>
 

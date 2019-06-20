@@ -15,10 +15,8 @@ const swaggerDoc = jsyaml.safeLoad(spec);
 
 app.use(session({
 	genid: (request) => {
-		console.log("Genid: " + request.sessionID);
 		return uuid();
 	},
-	// secret: process.env.SECRET,
 	secret: process.env.SECRET,
 	resave: false,
 	saveUninitialized: true
