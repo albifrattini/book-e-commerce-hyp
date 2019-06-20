@@ -11,7 +11,7 @@ function getCart() {
 			if(data.length > 0) {
 				displayBooks(data);
 			} else {
-				$('#bookList').append(`<h3>${data}</h3>`);
+				$('#bookList').append(`<h4>No books in the cart...</h4>`);
 			}
 		});
 }

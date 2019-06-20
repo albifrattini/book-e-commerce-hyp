@@ -89,36 +89,6 @@ getEventDetails();
 
 
 
-/* I've to decide if i want them...
-        <div class="container">
-            <h4 class="text-center">How to join us</h4>
-            <hr style="max-width: 1000px;">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="/assets/img/map.png" style="width: 20%; margin-left: 85px;">
-                    <div class="container text-center">
-                    <p>${event.eventLocation}</p> 
-                    </div>             
-                </div>
-                <div class="col-md-4">
-                    <img src="/assets/img/calendar.png" style="width:20%; margin-left: 85px; opacity: 0.7">
-                    <div class="container text-center">
-                        <p>${event.eventDate.substring(0,10)}</p> 
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <img src="/assets/img/calendar.png" style="width:20%; margin-left: 85px; opacity: 0.7">
-                    <div class="container text-center">
-                        <p>${event.eventDate.substring(0,10)}</p> 
-                    </div>
-                </div>
-            </div>
-        </div>*/
-
-
-
-
-
 
 
 
